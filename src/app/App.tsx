@@ -4,15 +4,24 @@ import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widjets/Navbar";
-import { ThemeSwitcher } from "widjets/ThemeSwitcher";
+import { Sidebar } from "widjets/Sidebar";
+import { Suspense } from "react";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <AppRouter />
+      <Suspense fallback=''>
+        <Navbar />
+        <div className='content-page'>
+          <Sidebar />
+          <div className='page-wrapper'>
+            <AppRouter />
+          </div>
+        </div>
+      </Suspense>
     </div>
   );
 };
