@@ -10,5 +10,6 @@ export const buildDevServer = (
       app: "Google Chrome",
     },
     historyApiFallback: true,
+    hot: true,
   };
 };
