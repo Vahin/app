@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 const MainPage: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('main');
   return <div>{t("Главная")}</div>;
 };
 
