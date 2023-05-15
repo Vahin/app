@@ -44,6 +44,7 @@ module.exports = {
       markupOnly: true,
       ignoreAttribute: ['to'],
     }],
+    'max-len': [2, { ignoreComments: true, code: 100 }],
   },
   globals: {
     __IS_DEV__: true,
