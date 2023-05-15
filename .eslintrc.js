@@ -39,7 +39,10 @@ module.exports = {
     'no-unused-vars': 1,
     'import/no-extraneous-dependencies': 0,
     'no-underscore-dangle': 0,
-    'i18next/no-literal-string': [2, { markupOnly: true }],
+    'i18next/no-literal-string': [2, {
+      markupOnly: true,
+      ignoreAttribute: ['to'],
+    }],
   },
   globals: {
     __IS_DEV__: true,

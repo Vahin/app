@@ -12,6 +12,26 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     ],
   };
 
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          ['i18next-extract', {
+            nsSeparator: '~',
+            locales: ['ru', 'en'],
+            keyAsDefaultValue: ['ru_RU'],
+          }],
+
+        ],
+      },
+
+    },
+  };
+
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
@@ -42,5 +62,11 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssLoader, svgLoader, fileLoader];
+  return [
+    fileLoader,
+    svgLoader,
+    babelLoader,
+    typescriptLoader,
+    cssLoader,
+  ];
 };
