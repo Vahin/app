@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'plugin:i18next/recommended',
   ],
   overrides: [
   ],
@@ -21,6 +22,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'i18next',
   ],
   rules: {
     'react/function-component-definition': 0,
@@ -37,6 +39,7 @@ module.exports = {
     'no-unused-vars': 1,
     'import/no-extraneous-dependencies': 0,
     'no-underscore-dangle': 0,
+    'i18next/no-literal-string': [2, { markupOnly: true }],
   },
   globals: {
     __IS_DEV__: true,
