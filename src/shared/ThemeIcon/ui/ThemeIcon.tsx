@@ -1,7 +1,7 @@
-import { FC, SVGProps } from "react";
-import cls from "./ThemeIcon.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import Icon from "../assets/Icon.svg";
+import { FC, SVGProps } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './ThemeIcon.module.scss';
+import Icon from '../assets/Icon.svg';
 
 interface ThemeIconProps extends SVGProps<SVGSVGElement> {
   className?: string;

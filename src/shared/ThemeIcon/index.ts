@@ -1,1 +1,1 @@
-export { ThemeIcon } from "./ui/ThemeIcon";
+export { ThemeIcon } from './ui/ThemeIcon';
