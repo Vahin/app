@@ -8,7 +8,6 @@ export const BugButton: FC = () => {
   const { t } = useTranslation();
 
   const toggleError = () => {
-    console.log('1');
     setError(true);
   };
 
