@@ -12,11 +12,16 @@
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
-    }
+    },
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
     }
-  }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ]
 }
