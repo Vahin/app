@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,16 +19,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,
     'react/jsx-uses-react': 0,
-    'react/jsx-filename-extension': [2, { extensions: ['js', 'jsx', 'tsx'] }],
+    'react/jsx-filename-extension': [2, {
+      extensions: ['js', 'jsx', 'tsx'],
+    }],
     'import/no-unresolved': 0,
     'import/extensions': 0,
     'import/prefer-default-export': 0,
@@ -42,17 +41,18 @@ module.exports = {
       markupOnly: true,
       ignoreAttribute: ['to', 'data-testid'],
     }],
-    'max-len': [2, { ignoreComments: true, code: 100 }],
+    'max-len': [2, {
+      ignoreComments: true,
+      code: 100,
+    }],
   },
   globals: {
     __IS_DEV__: true,
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 0,
-      },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}', '**/src/**/*.stories.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 0,
     },
-  ],
+  }],
 };
