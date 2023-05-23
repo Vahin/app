@@ -1,4 +1,3 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RuleSetRule } from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
@@ -38,7 +37,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     use: ['@svgr/webpack'],
   };
 
-  const cssLoader = buildCssLoader(isDev)
+  const cssLoader = buildCssLoader(isDev);
 
   const typescriptLoader = {
     test: /\.tsx?$/,
