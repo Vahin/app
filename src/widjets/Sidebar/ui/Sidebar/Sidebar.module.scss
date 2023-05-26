@@ -18,4 +18,20 @@
   align-items: center;
   gap: 10px;
   width: 100%;
+  transition: all 0.3s;
+}
+
+.Sidebar.collapsed .switchers {
+  flex-direction: column;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;
+}
+
+.Navbar {
+  margin-top: 20px;
+  margin-left: 25px;
 }

@@ -1,0 +1,9 @@
+.Header {
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--invert-bg-color);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+}

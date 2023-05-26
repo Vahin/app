@@ -1,15 +1,33 @@
 .Navbar {
-  width: 100%;
-  height: var(--navbar-height);
-  background: var(--invert-bg-color);
   display: flex;
-  align-items: center;
-  padding: 20px;
-  margin: 0;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.linkbox {
+.link {
   display: flex;
-  gap: 15px;
-  margin-left: auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+}
+
+.linkText {
+  opacity: 1;
+  transition: all 0.2s;
+  transition-delay: 0.1s;
+  transform-origin: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.collapsed .linkText {
+  transform: scaleX(0);
+  transition-delay: 0;
+  opacity: 0;
 }

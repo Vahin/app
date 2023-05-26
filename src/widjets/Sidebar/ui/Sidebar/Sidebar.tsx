@@ -1,8 +1,9 @@
 import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Navbar } from 'widjets/Navbar';
 import { ThemeSwitcher } from 'widjets/ThemeSwitcher';
 import { LangSwitcher } from 'widjets/LangSwitcher';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import cls from './Sidebar.module.scss';
 
@@ -28,15 +29,20 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         className,
       ])}
     >
+      <Navbar className={cls.Navbar} collapsed={collapsed} />
       <Button
         data-testid="sidebar-toggle"
         onClick={toggleClickHandler}
+        className={cls.collapseBtn}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        size={ButtonSize.L}
+        square
       >
-        { t('Переключить') }
+        { collapsed ? '>' : '<' }
       </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher />
+        <LangSwitcher short={collapsed} />
       </div>
     </div>
   );
