@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -13,91 +11,51 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const PrimaryLight: Story = {
+export const Default: Story = {
   args: {
     children: 'Button',
   },
 };
 
-export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const Clear: Story = {
   args: {
-    ...PrimaryLight.args,
-  },
-};
-
-export const ClearLight: Story = {
-  args: {
-    ...PrimaryLight.args,
+    ...Default.args,
     theme: ButtonTheme.CLEAR,
   },
 };
 
-export const ClearDark: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const OutlineSizeS: Story = {
   args: {
-    ...ClearLight.args,
-  },
-};
-
-export const OutlineLightS: Story = {
-  args: {
-    ...PrimaryLight.args,
+    ...Default.args,
     theme: ButtonTheme.OUTLINE,
     size: ButtonSize.S,
   },
 };
 
-export const OutlineDarkS: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const OutlineSizeM: Story = {
   args: {
-    ...OutlineLightS.args,
-  },
-};
-
-export const OutlineLightM: Story = {
-  args: {
-    ...PrimaryLight.args,
+    ...Default.args,
     theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
   },
 };
 
-export const OutlineDarkM: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const Background: Story = {
   args: {
-    ...OutlineLightM.args,
-  },
-};
-
-export const BackgroundLight: Story = {
-  args: {
-    ...PrimaryLight.args,
+    ...Default.args,
     theme: ButtonTheme.BACKGROUND,
   },
+  decorators: [ThemeDecorator(true)],
 };
 
-export const BackgroundDark: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const BackgroundInverted: Story = {
   args: {
-    ...BackgroundLight.args,
-  },
-};
-
-export const BackgroundInvertedLight: Story = {
-  args: {
-    ...PrimaryLight.args,
+    ...Default.args,
     theme: ButtonTheme.BACKGROUND_INVERTED,
   },
 };
 
-export const BackgroundInvertedDark: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
-  args: {
-    ...BackgroundInvertedLight.args,
-  },
-};
-
-export const SquareLightS: Story = {
+export const SquareSizeS: Story = {
   args: {
     children: '>',
     theme: ButtonTheme.BACKGROUND_INVERTED,
@@ -106,51 +64,23 @@ export const SquareLightS: Story = {
   },
 };
 
-export const SquareDarkS: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const SquareSizeM: Story = {
   args: {
-    ...SquareLightS.args,
-  },
-};
-
-export const SquareLightM: Story = {
-  args: {
-    ...SquareLightS.args,
+    ...SquareSizeS.args,
     size: ButtonSize.M,
   },
 };
 
-export const SquareDarkM: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const SquareSizeL: Story = {
   args: {
-    ...SquareLightM.args,
-  },
-};
-
-export const SquareLightL: Story = {
-  args: {
-    ...SquareLightS.args,
+    ...SquareSizeS.args,
     size: ButtonSize.L,
   },
 };
 
-export const SquareDarkL: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
+export const SquareSizeXL: Story = {
   args: {
-    ...SquareLightL.args,
-  },
-};
-
-export const SquareLightXL: Story = {
-  args: {
-    ...SquareLightS.args,
+    ...SquareSizeS.args,
     size: ButtonSize.XL,
-  },
-};
-
-export const SquareDarkXL: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
-  args: {
-    ...SquareLightXL.args,
   },
 };

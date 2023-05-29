@@ -1,0 +1,10 @@
+.viewport {
+  background-color: var(--bg-color);
+  margin: -16px;
+  padding: 16px;
+  min-height: 100vh;
+}
+
+.viewport.inverted {
+  background-color: var(--invert-bg-color);
+}

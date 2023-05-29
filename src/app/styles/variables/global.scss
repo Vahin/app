@@ -1,7 +1,7 @@
 :root {
   --font-family-main: "Arial", serif;
-  --font-size-s: 8px;
-  --font-line-s: 16px;
+  --font-size-s: 12px;
+  --font-line-s: 20px;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
   --font-size-m: 16px;
   --font-line-m: 24px;
@@ -17,4 +17,10 @@
   --navbar-height: 50px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 75px;
+
+  // z - индексы
+  --modal-z-index: 10;
+
+  // Цвета
+  --overlay-color: rgba(0 0 0 / 60%);
 }

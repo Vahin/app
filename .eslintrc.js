@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,
@@ -45,6 +45,10 @@ module.exports = {
       ignoreComments: true,
       code: 100,
     }],
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 2,
   },
   globals: {
     __IS_DEV__: true,
@@ -53,6 +57,7 @@ module.exports = {
     files: ['**/src/**/*.test.{ts,tsx}', '**/src/**/*.stories.{ts,tsx}'],
     rules: {
       'i18next/no-literal-string': 0,
+      'max-len': 0,
     },
   }],
 };

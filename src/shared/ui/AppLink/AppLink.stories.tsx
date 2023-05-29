@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 
 import { AppLink, AppLinkTheme } from './AppLink';
 
@@ -24,24 +22,9 @@ export const PrimaryLight: Story = {
   },
 };
 
-export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
-  args: {
-    ...PrimaryLight.args,
-    theme: AppLinkTheme.PRIMARY,
-  },
-};
-
 export const InvertedLight: Story = {
   args: {
     ...PrimaryLight.args,
-    theme: AppLinkTheme.INVERTED,
-  },
-};
-
-export const InvertedDark: Story = {
-  decorators: [ThemeDecorator(Theme.dark)],
-  args: {
     theme: AppLinkTheme.INVERTED,
   },
 };
