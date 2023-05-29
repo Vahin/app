@@ -49,6 +49,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 2,
+    'no-param-reassign': 0,
   },
   globals: {
     __IS_DEV__: true,
