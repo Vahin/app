@@ -24,6 +24,14 @@ export const Clear: Story = {
   },
 };
 
+export const ClearInverted: Story = {
+  args: {
+    ...Default.args,
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+  decorators: [ThemeDecorator(true)],
+};
+
 export const OutlineSizeS: Story = {
   args: {
     ...Default.args,

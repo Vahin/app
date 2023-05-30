@@ -21,7 +21,7 @@ export const Header: FC<HeaderProps> = (props) => {
 
   return (
     <div className={classNames(cls.Header, {}, [className])}>
-      <Button onClick={onToggleModal} theme={ButtonTheme.CLEAR}>
+      <Button onClick={onToggleModal} theme={ButtonTheme.CLEAR_INVERTED}>
         {t('Войти')}
       </Button>
       <Modal isOpen={isOpenAuthModal} onClose={onToggleModal}>
