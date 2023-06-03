@@ -1,0 +1,15 @@
+.input {
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--invert-bg-color);
+  color: var(--inverted-secondary-color);
+  font: var(--font-m);
+
+  &:focus {
+    border: 1px solid  var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+}

@@ -1,4 +1,4 @@
-import React, {
+import {
   FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -9,6 +9,7 @@ interface ModalProps {
   className?: string;
   children?: ReactNode;
   isOpen?: boolean;
+  lazy?: boolean,
   onClose?: () => void;
 }
 const ANIMATION_DELAY: number = 300;
@@ -18,11 +19,19 @@ export const Modal: FC<ModalProps> = (props) => {
     className,
     children,
     isOpen,
+    lazy,
     onClose,
   } = props;
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -60,6 +69,10 @@ export const Modal: FC<ModalProps> = (props) => {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

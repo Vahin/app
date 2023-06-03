@@ -1,8 +1,8 @@
 import { FC, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/authByUsername';
 import cls from './Header.module.scss';
 
 interface HeaderProps {
@@ -15,18 +15,23 @@ export const Header: FC<HeaderProps> = (props) => {
 
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
 
-  const onToggleModal = useCallback(() => {
-    setIsOpenAuthModal((prev) => !prev);
+  const onCloseModal = useCallback(() => {
+    setIsOpenAuthModal(false);
+  }, [setIsOpenAuthModal]);
+
+  const onShowModal = useCallback(() => {
+    setIsOpenAuthModal(true);
   }, [setIsOpenAuthModal]);
 
   return (
     <div className={classNames(cls.Header, {}, [className])}>
-      <Button onClick={onToggleModal} theme={ButtonTheme.CLEAR_INVERTED}>
+      <Button onClick={onShowModal} theme={ButtonTheme.CLEAR_INVERTED}>
         {t('Войти')}
       </Button>
-      <Modal isOpen={isOpenAuthModal} onClose={onToggleModal}>
-        {t('ew')}
-      </Modal>
+      <LoginModal
+        isOpen={isOpenAuthModal}
+        onClose={onCloseModal}
+      />
     </div>
   );
 };
