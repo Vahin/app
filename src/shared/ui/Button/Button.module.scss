@@ -12,6 +12,10 @@
   outline: none;
 }
 
+.clear.disabled {
+  opacity: 0.5;
+}
+
 .clearInverted {
   color: var(--inverted-primary-color);
 }
@@ -20,6 +24,11 @@
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   background: none;
+
+  &.disabled {
+    border-color: var(--primary-color-50);
+    color: var(--primary-color-50);
+  }
 }
 
 .background {
@@ -72,8 +81,4 @@
 
 .size_xl {
   font: var(--font-xl);
-}
-
-.disabled {
-  opacity: 0.5;
 }

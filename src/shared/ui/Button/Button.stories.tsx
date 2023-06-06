@@ -32,19 +32,18 @@ export const ClearInverted: Story = {
   decorators: [ThemeDecorator(true)],
 };
 
-export const OutlineSizeS: Story = {
-  args: {
-    ...Default.args,
-    theme: ButtonTheme.OUTLINE,
-    size: ButtonSize.S,
-  },
-};
-
 export const OutlineSizeM: Story = {
   args: {
     ...Default.args,
     theme: ButtonTheme.OUTLINE,
     size: ButtonSize.M,
+  },
+};
+
+export const OutlineDisabled: Story = {
+  args: {
+    ...OutlineSizeM.args,
+    disabled: true,
   },
 };
 
@@ -90,12 +89,5 @@ export const SquareSizeXL: Story = {
   args: {
     ...SquareSizeS.args,
     size: ButtonSize.XL,
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    children: 'Button',
-    disabled: true,
   },
 };
