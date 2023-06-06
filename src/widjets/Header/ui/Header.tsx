@@ -3,6 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/authByUsername';
+import { getUserAuthData, userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
 import cls from './Header.module.scss';
 
 interface HeaderProps {
@@ -14,6 +16,8 @@ export const Header: FC<HeaderProps> = (props) => {
   const { t } = useTranslation();
 
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
+  const authData = useSelector(getUserAuthData);
+  const dispatch = useDispatch();
 
   const onCloseModal = useCallback(() => {
     setIsOpenAuthModal(false);
@@ -23,11 +27,23 @@ export const Header: FC<HeaderProps> = (props) => {
     setIsOpenAuthModal(true);
   }, [setIsOpenAuthModal]);
 
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+  }, [dispatch]);
+
   return (
     <div className={classNames(cls.Header, {}, [className])}>
-      <Button onClick={onShowModal} theme={ButtonTheme.CLEAR_INVERTED}>
-        {t('Войти')}
-      </Button>
+      {
+        authData ? (
+          <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED}>
+            {t('Выйти')}
+          </Button>
+        ) : (
+          <Button onClick={onShowModal} theme={ButtonTheme.CLEAR_INVERTED}>
+            {t('Войти')}
+          </Button>
+        )
+      }
       <LoginModal
         isOpen={isOpenAuthModal}
         onClose={onCloseModal}

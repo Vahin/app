@@ -2,22 +2,32 @@ import './styles/index.scss';
 
 import { Header } from 'widjets/Header';
 import { Sidebar } from 'widjets/Sidebar';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 
-const App = () => (
-  <div className="app">
-    <Suspense fallback="">
-      <Header />
+const App = () => {
+  const dispatch = useDispatch();
 
-      <div className="content-page">
-        <Sidebar />
-        <div className="page-wrapper">
-          <AppRouter />
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
+
+  return (
+    <div className="app">
+      <Suspense fallback="">
+        <Header />
+
+        <div className="content-page">
+          <Sidebar />
+          <div className="page-wrapper">
+            <AppRouter />
+          </div>
         </div>
-      </div>
-    </Suspense>
-  </div>
-);
+      </Suspense>
+    </div>
+  );
+};
 
 export default App;

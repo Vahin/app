@@ -1,5 +1,4 @@
-import { Counter } from 'entities/Counter';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const MainPage: FC = () => {
@@ -8,7 +7,6 @@ const MainPage: FC = () => {
   return (
     <div>
       {t('Главная')}
-      <Counter />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/react';
-import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
@@ -9,7 +8,6 @@ const preview: Preview = {
     StyleDecorator,
     ThemeDecorator(),
     RouterDecorator,
-    StoreDecorator,
   ],
   globalTypes: {
     theme: {

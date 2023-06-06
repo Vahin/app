@@ -1,13 +1,18 @@
 {
-  "Страница не найдена": "Page not found",
-  "Главная": "Main",
+  "Авторизация": "Authorization",
+  "Войти": "Log In",
+  "Выйти": "Log Out",
   "Загрузка": "Loading ...",
-  "О сайте": "About",
+  "Логин": "Login",
+  "Обновить страницу": "Refresh page",
+  "Пароль": "Password",
   "Переключить": "Toggle",
+  "Произошла непредвиденная ошибка": "Something went wrong",
+  "СЛОМАТЬ ВСЁ": "CRUSH ALL",
+  "Страница не найдена": "Page not found",
   "Язык": "Русский",
   "Короткий язык": "RU",
-  "Произошла непредвиденная ошибка": "Something went wrong",
-  "Обновить страницу": "Reload page",
-  "СЛОМАТЬ ВСЁ": "CRUSH IT",
-  "Войти": "Log In"
+  "Главная": "Main",
+  "О сайте": "About",
+  "Вы ввели неверный логин или пароль": "Incorrect username or password"
 }
