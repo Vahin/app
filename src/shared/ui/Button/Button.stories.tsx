@@ -40,7 +40,7 @@ export const OutlineSizeM: Story = {
   },
 };
 
-export const OutlineDisabled: Story = {
+export const OutlineDis: Story = {
   args: {
     ...OutlineSizeM.args,
     disabled: true,
