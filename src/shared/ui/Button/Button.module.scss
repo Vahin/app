@@ -1,6 +1,7 @@
 .Button {
   cursor: pointer;
   padding: 10px 20px;
+  transition: color 0.3s ease-in;
 }
 
 .clear,
@@ -23,8 +24,8 @@
 
   &.disabled {
     cursor: default;
-    border-color: var(--primary-color-60);
-    color: var(--primary-color-60);
+    border-color: var(--primary-color-translucent);
+    color: var(--primary-color-translucent);
   }
 }
 

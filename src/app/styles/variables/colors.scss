@@ -6,8 +6,6 @@
   // turquoise
   --color-turquoise: 82 232 225;
   --turquoise: rgb(var(--color-turquoise));
-  --turquoise-50: rgba(var(--color-turquoise) / 50%);
-  --turquoise-60: rgba(var(--color-turquoise) / 60%);
 
   // light-steel-blue
   --color-light-steel-blue: 185 209 209;
@@ -16,10 +14,12 @@
   // teal
   --color-teal: 0 106 100;
   --teal: rgb(var(--color-teal));
-  --teal-50: rgba(var(--color-teal) / 50%);
-  --teal-60: rgba(var(--color-teal) / 60%);
 
   // dark-slate-gray
   --color-dark-slate-gray: 37 37 37;
   --dark-slate-gray: rgb(var(--color-dark-slate-gray));
+
+  // light-slate-gray
+  --color-light-slate-gray: 119, 136, 153;
+  --light-slate-gray: rgb(var(--color-light-slate-gray));
 }
