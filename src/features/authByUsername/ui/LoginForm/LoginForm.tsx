@@ -66,7 +66,7 @@ export const LoginForm = memo((props: LoginFormProps) => {
       />
       <Button
         className={cls.submitBtn}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
+        theme={ButtonTheme.OUTLINE}
         onClick={onLoginClick}
         disabled={isLoading}
       >

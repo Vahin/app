@@ -1,10 +1,15 @@
 :root[data-theme="light"] {
+  // backgrounds
   --bg-color: rgb(199 199 199);
   --invert-bg-color: rgb(44 44 44);
-  --primary-color: rgba(var(--teal) / 100%);
-  --primary-color-50: rgba(var(--teal) / 50%);
-  --secondary-color: rgba(var(--dark-slate-gray) / 100%);
-  --inverted-primary-color: rgba(var(--turquoise) / 100%);
-  --inverted-primary-color-50: rgba(var(--turquoise) / 50%);
-  --inverted-secondary-color: rgba(var(--light-steel-blue) / 100%);
+
+  // primary
+  --primary-color: var(--teal);
+  --primary-color-60: var(--teal-60);
+  --inverted-primary-color: var(--turquoise);
+  --inverted-primary-color-60: var(--turquoise-60);
+
+  // secondary
+  --secondary-color: var(--dark-slate-gray);
+  --inverted-secondary-color: var(--light-steel-blue);
 }

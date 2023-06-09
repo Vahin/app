@@ -12,10 +12,6 @@
   outline: none;
 }
 
-.clear.disabled {
-  opacity: 0.5;
-}
-
 .clearInverted {
   color: var(--inverted-primary-color);
 }
@@ -26,8 +22,9 @@
   background: none;
 
   &.disabled {
-    border-color: var(--primary-color-50);
-    color: var(--primary-color-50);
+    cursor: default;
+    border-color: var(--primary-color-60);
+    color: var(--primary-color-60);
   }
 }
 
