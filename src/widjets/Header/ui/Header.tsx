@@ -44,10 +44,13 @@ export const Header: FC<HeaderProps> = (props) => {
           </Button>
         )
       }
+      {isOpenAuthModal && (
       <LoginModal
         isOpen={isOpenAuthModal}
         onClose={onCloseModal}
       />
+      )}
+
     </div>
   );
 };
