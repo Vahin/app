@@ -1,4 +1,6 @@
-import { FC, useCallback, useState } from 'react';
+import {
+  memo, useCallback, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
@@ -11,7 +13,7 @@ interface HeaderProps {
   className?: string;
 }
 
-export const Header: FC<HeaderProps> = (props) => {
+export const Header = memo((props: HeaderProps) => {
   const { className } = props;
   const { t } = useTranslation();
 
@@ -53,4 +55,4 @@ export const Header: FC<HeaderProps> = (props) => {
 
     </div>
   );
-};
+});

@@ -1,17 +1,16 @@
-import { FC, useState } from 'react';
+import { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widjets/Navbar';
 import { ThemeSwitcher } from 'widjets/ThemeSwitcher';
 import { LangSwitcher } from 'widjets/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { useTranslation } from 'react-i18next';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = (props) => {
+export const Sidebar = memo((props: SidebarProps) => {
   const { className } = props;
 
   const [collapsed, setCollapsed] = useState(false);
@@ -19,8 +18,6 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   const toggleClickHandler = () => {
     setCollapsed(!collapsed);
   };
-
-  const { t } = useTranslation();
 
   return (
     <div
@@ -46,4 +43,4 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       </div>
     </div>
   );
-};
+});
