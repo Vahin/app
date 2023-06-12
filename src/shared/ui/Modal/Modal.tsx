@@ -1,7 +1,7 @@
 import {
-  FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
+  FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 
@@ -25,7 +25,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const timeRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   useEffect(() => {
     if (isOpen) {
@@ -65,7 +65,7 @@ export const Modal: FC<ModalProps> = (props) => {
     };
   }, [isOpen, onKeyDown]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };

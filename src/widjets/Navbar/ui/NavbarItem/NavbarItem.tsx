@@ -6,7 +6,7 @@ import cls from './NavbarItem.module.scss';
 import { NavbarItemType } from '../../model/items';
 
 interface NavbarItemProps {
-  item?: NavbarItemType;
+  item: NavbarItemType;
   collapsed: boolean
 }
 

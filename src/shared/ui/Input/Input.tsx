@@ -24,7 +24,7 @@ export const Input = memo((props: InputProps) => {
     ...otherProps
   } = props;
 
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (autofocus) {
