@@ -13,5 +13,13 @@ export default meta;
 type Story = StoryObj<typeof Sidebar>;
 
 export const Default: Story = {
-  decorators: [StoreDecorator({})],
+  decorators: [StoreDecorator({
+    user: { authData: {} },
+  })],
+};
+
+export const WithoutAuth: Story = {
+  decorators: [StoreDecorator({
+    user: { },
+  })],
 };
