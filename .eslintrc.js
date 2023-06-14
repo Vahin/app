@@ -20,6 +20,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  ignorePatterns: ['./.fttemplates/**/*'],
   rules: {
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,
