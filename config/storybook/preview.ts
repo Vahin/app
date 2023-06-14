@@ -16,7 +16,7 @@ const preview: Preview = {
       toolbar: {
         title: 'Theme',
         icon: 'circlehollow',
-        items: ['light', 'dark'],
+        items: ['light', 'dark', 'purple'],
         dynamicTitle: true,
       },
     },
@@ -27,6 +27,7 @@ const preview: Preview = {
       values: [
         { name: 'light', value: 'rgb(199 199 199)' },
         { name: 'dark', value: 'rgb(44 44 44)' },
+        { name: 'purple', value: 'rgb(248, 244, 251)' },
       ],
     },
   },
