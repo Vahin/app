@@ -39,7 +39,7 @@ module.exports = {
     'no-underscore-dangle': 0,
     'i18next/no-literal-string': [2, {
       markupOnly: true,
-      ignoreAttribute: ['to', 'data-testid'],
+      ignoreAttribute: ['to', 'data-testid', 'align'],
     }],
     'max-len': [2, {
       ignoreComments: true,
@@ -55,6 +55,7 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
   overrides: [{
     files: ['**/src/**/*.test.{ts,tsx}', '**/src/**/*.stories.{ts,tsx}'],

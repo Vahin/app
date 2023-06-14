@@ -14,6 +14,7 @@ export const buildPlugins = ({
   paths,
   isDev,
   apiUrl,
+  project,
 }: BuildOptions): WebpackPluginInstance[] => {
   const plugins = [
     new HTMLWebpackPlugin({
@@ -27,6 +28,7 @@ export const buildPlugins = ({
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
     }),
     new BundleAnalyzerPlugin({
       openAnalyzer: false,

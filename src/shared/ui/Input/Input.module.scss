@@ -7,9 +7,20 @@
   background-color: var(--invert-bg-color);
   color: var(--inverted-secondary-color);
   font: var(--font-m);
+  transition: all 0.3s ease-in;
 
   &:focus {
     border: 1px solid  var(--primary-color);
     box-shadow: 0 0 5px var(--primary-color);
+  }
+}
+
+.readOnly .input {
+  background-color: transparent;
+  color: var(--secondary-color);
+
+  &:focus {
+    border: 1px solid  transparent;
+    box-shadow: none;
   }
 }

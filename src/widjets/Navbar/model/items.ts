@@ -8,6 +8,7 @@ export interface NavbarItemType {
   path: string;
   text: string;
   Icon: VFC<SVGProps<SVGSVGElement>>
+  authOnly?: boolean
 }
 
 export const NavbarItemsList: NavbarItemType[] = [
@@ -25,5 +26,6 @@ export const NavbarItemsList: NavbarItemType[] = [
     path: RoutePath.profile,
     text: 'Профиль',
     Icon: ProfileIcon,
+    authOnly: true,
   },
 ];

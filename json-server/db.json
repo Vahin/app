@@ -1,12 +1,32 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server 1", "author": "typicode" },
-    { "id": "2", "title": "json-server 2", "author": "typicode" },
-    { "id": "3", "title": "json-server 3", "author": "typicode" },
-    { "id": "4", "title": "json-server 4", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server 1",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 2",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server 3",
+      "author": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "json-server 4",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": 1 }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
     {
@@ -15,14 +35,14 @@
       "password": "123"
     }
   ],
-  "profile": { 
+  "profile": {
     "firstname": "Данил",
     "lastname": "Вахрушев",
     "age": 31,
-    "currency": "RUB",
+    "currency": "EUR",
     "country": "Russia",
     "city": "Chelyabinsk",
     "username": "admin",
-    "avatar": "https://look.com.ua/pic/201607/2560x1440/look.com.ua-169331.jpg"
-   }
+    "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"
+  }
 }

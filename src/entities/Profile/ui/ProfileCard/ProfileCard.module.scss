@@ -1,20 +1,25 @@
 .ProfileCard {
   padding: 20px;
   border: 1px solid black;
-}
-
-.header {
+  border-radius: 20px;
   display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .editBtn {
   margin-left: auto;
 }
 
-.data {
-  margin-top: 30px;
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
 }
 
-.input {
-  margin-top: 10px;
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
 }
