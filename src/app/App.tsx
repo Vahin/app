@@ -3,12 +3,13 @@ import './styles/index.scss';
 import { Header } from 'widjets/Header';
 import { Sidebar } from 'widjets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 
 const App = () => {
   const dispatch = useDispatch();
+  const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -22,7 +23,7 @@ const App = () => {
         <div className="content-page">
           <Sidebar />
           <div className="page-wrapper">
-            <AppRouter />
+            {inited && <AppRouter />}
           </div>
         </div>
       </Suspense>
