@@ -1,0 +1,33 @@
+.Icon {
+  &.all {
+    &.primary {
+      fill: var(--primary-color);
+      stroke: var(--primary-color);
+    }
+
+    &.secondary {
+      fill: var(--secondary-color);
+      stroke: var(--secondary-color);
+    }
+  }
+
+  &.fill {
+    &.primary {
+      fill: var(--primary-color);
+    }
+
+    &.secondary {
+      fill: var(--secondary-color);
+    }
+  }
+
+  &.stroke {
+    &.primary {
+      stroke: var(--primary-color);
+    }
+
+    &.secondary {
+      stroke: var(--secondary-color);
+    }
+  }
+}

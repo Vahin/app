@@ -3,6 +3,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import HomeIcon from '../assets/icons/home.svg';
 import AboutIcon from '../assets/icons/list.svg';
 import ProfileIcon from '../assets/icons/profile.svg';
+import ArticlesIcon from '../assets/icons/articles.svg';
 
 export interface NavbarItemType {
   path: string;
@@ -26,6 +27,12 @@ export const NavbarItemsList: NavbarItemType[] = [
     path: RoutePath.profile,
     text: 'Профиль',
     Icon: ProfileIcon,
+    authOnly: true,
+  },
+  {
+    path: RoutePath.articles,
+    text: 'Статьи',
+    Icon: ArticlesIcon,
     authOnly: true,
   },
 ];

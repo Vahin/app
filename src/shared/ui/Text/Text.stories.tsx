@@ -17,23 +17,9 @@ export const Default: Story = {
   },
 };
 
-export const DefaultError: Story = {
-  args: {
-    ...Default.args,
-    theme: TextTheme.ERROR,
-  },
-};
-
 export const OnlyTitle: Story = {
   args: {
     title: 'Title',
-  },
-};
-
-export const OnlyTitleError: Story = {
-  args: {
-    ...OnlyTitle.args,
-    theme: TextTheme.ERROR,
   },
 };
 
@@ -43,9 +29,30 @@ export const OnlyText: Story = {
   },
 };
 
-export const OnlyTextError: Story = {
+export const Error: Story = {
   args: {
-    ...OnlyText.args,
+    ...Default.args,
     theme: TextTheme.ERROR,
+  },
+};
+
+export const SizeS: Story = {
+  args: {
+    ...Default.args,
+    size: 'sm',
+  },
+};
+
+export const SizeM: Story = {
+  args: {
+    ...Default.args,
+    size: 'md',
+  },
+};
+
+export const SizeL: Story = {
+  args: {
+    ...Default.args,
+    size: 'lg',
   },
 };

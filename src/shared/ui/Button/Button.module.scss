@@ -1,7 +1,12 @@
 .Button {
   cursor: pointer;
   padding: 10px 20px;
-  transition: color 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .clear,
@@ -73,6 +78,7 @@
 
 .size_s {
   font: var(--font-s);
+  padding: 5px 10px;
 }
 
 .size_m {

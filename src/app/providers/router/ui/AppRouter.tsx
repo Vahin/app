@@ -1,8 +1,6 @@
-import { getUserAuthData } from 'entities/User';
 import {
-  Suspense, memo, useCallback, useMemo,
+  Suspense, memo, useCallback,
 } from 'react';
-import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLoader } from 'widjets/PageLoader';
