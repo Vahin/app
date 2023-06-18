@@ -2,12 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleDetails } from './ArticleDetails';
 import { Article, ArticleBlockType } from '../../model/types/article';
+import Preview from '../../assets/test/preview.png';
+import Screenshot from '../../assets/test/screenshot.png';
 
 const data: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: Preview,
   views: 1022,
   createdAt: '26.02.2022',
   type: ['IT'],
@@ -39,7 +41,7 @@ const data: Article = {
     {
       id: '2',
       type: ArticleBlockType.IMAGE,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: Screenshot,
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
@@ -59,7 +61,7 @@ const data: Article = {
     {
       id: '8',
       type: ArticleBlockType.IMAGE,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: Screenshot,
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
@@ -91,6 +93,11 @@ export const Default: Story = {
 };
 
 export const Loading: Story = {
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
   decorators: [StoreDecorator({
     articleDetails: {
       isLoading: true,
