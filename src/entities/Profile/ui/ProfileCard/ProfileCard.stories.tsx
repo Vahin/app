@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Profile } from 'entities/Profile/model/types/profile';
+import Avatar from 'shared/assets/test/medoed.jpeg';
 import { ProfileCard } from './ProfileCard';
 
 const meta: Meta<typeof ProfileCard> = {
@@ -19,7 +20,7 @@ const data: Profile = {
   age: 31,
   currency: 'RUB',
   username: 'admin',
-  avatar: 'https://i.pinimg.com/originals/e3/fa/6e/e3fa6ea88825ebb99d1ee5ff37a3b8ec.jpg',
+  avatar: Avatar,
 };
 
 export const Fulfilled: Story = {
