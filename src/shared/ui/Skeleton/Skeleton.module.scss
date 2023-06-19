@@ -18,6 +18,10 @@
   }
 }
 
+*[loki-test] .Skeleton::before {
+  animation: none;
+}
+
 @keyframes load {
   from {
     left: -150px;
