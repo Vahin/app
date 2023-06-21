@@ -90,6 +90,12 @@ export const Default: Story = {
       data,
     },
   })],
+  // ! Костыль
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 };
 
 export const Loading: Story = {

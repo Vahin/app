@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof ProfileCard>;
 
 const data: Profile = {
+  id: '1',
   firstname: 'Danil',
   lastname: 'Vakrushev',
   country: 'Russia',

@@ -19,10 +19,12 @@ import { useSelector } from 'react-redux';
 import { CurrencyType } from 'entities/Currency';
 import { CountryType } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
 
 // TODO Вынести редактирование профиля в отдельную фичу editableProfile
+// TODO Выявить поведение страницы при отсутствии или некорректном id
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -36,12 +38,13 @@ const ProfilePage = () => {
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadOnly);
   const validateErrors = useSelector(getValidateProfileErrors);
+  const { id } = useParams<{ id: string}>();
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook' && id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const validateErrorTranslates = {
     [ValidateProfileError.INCORRECT_AGE]: t('Введите правильный возраст'),

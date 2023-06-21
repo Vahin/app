@@ -29,7 +29,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -110,6 +112,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test 1",
+      "id": "46AEHKF"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test 2",
+      "id": "i0QwMgd"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test 3",
+      "id": "Wv03nAJ"
     }
   ],
   "users": [
@@ -128,14 +148,28 @@
       "avatar": "https://w7.pngwing.com/pngs/791/512/png-transparent-user-profile-computer-icons-internet-bot-others-miscellaneous-monochrome-silhouette.png"
     }
   ],
-  "profile": {
-    "firstname": "Данил",
-    "lastname": "Вахрушев",
-    "age": 31,
-    "currency": "EUR",
-    "country": "Russia",
-    "city": "Chelyabinsk",
-    "username": "admin",
-    "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Данил",
+      "lastname": "Вахрушев",
+      "age": 31,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Chelyabinsk",
+      "username": "admin",
+      "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Тагил1",
+      "lastname": "Хаврушев",
+      "age": 23,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Chelyabinsk",
+      "username": "bamin",
+      "avatar": "https://pp.userapi.com/c841025/v841025781/5b236/ymkNUip4BB4.jpg"
+    }
+  ]
 }
