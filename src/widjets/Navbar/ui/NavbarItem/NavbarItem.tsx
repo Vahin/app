@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import cls from './NavbarItem.module.scss';
-import { NavbarItemType } from '../../model/items';
+import { NavbarItemType } from '../../model/types/navbar';
 
 interface NavbarItemProps {
   item: NavbarItemType;

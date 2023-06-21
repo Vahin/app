@@ -1,7 +1,8 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
+import { getNavbarItems } from 'widjets/Navbar/model/selectors/getNavbarItems';
 import cls from './Navbar.module.scss';
-import { NavbarItemsList } from '../../model/items';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 
 interface NavbarProps {
@@ -11,11 +12,12 @@ interface NavbarProps {
 
 export const Navbar = memo((props: NavbarProps) => {
   const { className, collapsed = false } = props;
+  const navbarItemsList = useSelector(getNavbarItems);
 
   return (
     <nav className={classNames(cls.Navbar, {}, [className])}>
       {
-        NavbarItemsList.map((item) => (
+        navbarItemsList.map((item) => (
           <NavbarItem
             item={item}
             collapsed={collapsed}
