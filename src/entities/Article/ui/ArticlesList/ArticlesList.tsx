@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './ArticlesList.module.scss';
@@ -29,18 +29,14 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     />
   );
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
-        {
-          new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((_, index) => (
-            // eslint-disable-next-line
-            <ArticleListItemSkeleton view={view} key={index} />
-          ))
-        }
-      </div>
-    );
-  }
+  const getSkeletons = useCallback((view: ArticleView) => (
+    <>
+      {new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((_, index) => (
+        // eslint-disable-next-line
+        <ArticleListItemSkeleton view={view} key={index} />
+      ))}
+    </>
+  ), []);
 
   return (
     <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
@@ -48,6 +44,9 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
         articles.length > 0
           ? articles.map(renderArticle)
           : null
+      }
+      {
+        isLoading && getSkeletons(view)
       }
     </div>
   );

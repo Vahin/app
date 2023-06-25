@@ -34,7 +34,7 @@ export const Header = memo((props: HeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.Header, {}, [className])}>
+    <header className={classNames(cls.Header, {}, [className])}>
       {
         authData ? (
           <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED}>
@@ -53,6 +53,6 @@ export const Header = memo((props: HeaderProps) => {
       />
       )}
 
-    </div>
+    </header>
   );
 });
