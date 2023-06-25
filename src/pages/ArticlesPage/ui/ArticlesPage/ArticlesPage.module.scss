@@ -1,3 +1,11 @@
 .ArticlesPage {
   width: 100%;
+  position: relative;
+  padding-top: 30px;
+}
+
+.viewSelector {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

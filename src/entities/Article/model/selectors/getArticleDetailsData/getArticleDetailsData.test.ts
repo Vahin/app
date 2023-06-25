@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getArticleDetailsData } from './getArticleDetailsData';
 import { Article } from '../../types/article';
-import { mockedArticle } from '../../mocks/mockedArticle';
+import { mockedArticle } from '../../../../../shared/mocks/mockedArticle';
 
 const data: Article = mockedArticle;
 

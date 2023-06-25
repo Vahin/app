@@ -1,11 +1,7 @@
 import Avatar from 'shared/assets/test/medoed.jpeg';
-import { Article, ArticleBlockType } from '../types/article';
-import Preview from '../../assets/test/preview.png';
-import Screenshot from '../../assets/test/screenshot.png';
-
-const previewPath = 'https://teknotower.com/wp-content/uploads/2020/11/js.png';
-// eslint-disable-next-line
-const screenshatPath = 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png';
+import { Article, ArticleBlockType } from '../../entities/Article/model/types/article';
+import Preview from './assets/preview.png';
+import Screenshot from './assets/screenshot.png';
 
 export const mockedArticle: Article = {
   id: '1',

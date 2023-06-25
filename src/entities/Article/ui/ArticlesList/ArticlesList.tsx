@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 
 import cls from './ArticlesList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
@@ -15,7 +14,6 @@ interface ArticlesListProps {
 }
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
-  const { t } = useTranslation();
   const {
     className,
     articles,
@@ -31,7 +29,7 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     />
   );
 
-  if (true) {
+  if (isLoading) {
     return (
       <div className={classNames(cls.ArticlesList, {}, [className, cls[view]])}>
         {
