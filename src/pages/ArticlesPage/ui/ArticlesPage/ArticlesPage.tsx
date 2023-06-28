@@ -6,13 +6,12 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
-import { getArticlePageNum } from '../../model/selectors/getArticlePageNum/getArticlePageNum';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
   getArticlePageIsLoading,
 } from '../../model/selectors/getArticlePageIsLoading/getArticlePageIsLoading';
 import { getArticlePageError } from '../../model/selectors/getArticlePageError/getArticlePageError';
 import { getArticlePageView } from '../../model/selectors/getArticlePageView/getArticlePageView';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageReducer, articlesPageActions, getArticles } from '../../model/slice/articlePageSlice';
 import cls from './ArticlesPage.module.scss';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
@@ -32,11 +31,9 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlePageIsLoading);
   const error = useSelector(getArticlePageError);
   const view = useSelector(getArticlePageView);
-  const page = useSelector(getArticlePageNum);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page }));
+    dispatch(initArticlesPage());
   }, [dispatch]);
 
   const onChangeView = useCallback((newView: ArticleView) => {
@@ -48,7 +45,7 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}

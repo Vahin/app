@@ -142,7 +142,7 @@
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         }
       ]
-    }, 
+    },
     {
       "id": "3",
       "userId": "1",
@@ -335,7 +335,7 @@
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         }
       ]
-    }, 
+    },
     {
       "id": "6",
       "userId": "1",
@@ -528,7 +528,7 @@
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         }
       ]
-    }, 
+    },
     {
       "id": "9",
       "userId": "1",
@@ -721,7 +721,7 @@
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         }
       ]
-    }, 
+    },
     {
       "id": "12",
       "userId": "1",
@@ -914,7 +914,7 @@
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         }
       ]
-    }, 
+    },
     {
       "id": "15",
       "userId": "1",
@@ -1107,7 +1107,7 @@
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         }
       ]
-    }, 
+    },
     {
       "id": "18",
       "userId": "1",
@@ -1217,6 +1217,18 @@
       "userId": "2",
       "text": "test 3",
       "id": "Wv03nAJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "вц",
+      "id": "wi-V0zW"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Всё еще все работает",
+      "id": "QFNm0-F"
     }
   ],
   "users": [
