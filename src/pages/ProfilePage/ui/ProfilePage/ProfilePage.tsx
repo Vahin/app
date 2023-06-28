@@ -20,9 +20,10 @@ import { CurrencyType } from 'entities/Currency';
 import { CountryType } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page/Page';
+
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
+import { Page } from 'widjets/Page';
 
 // TODO Вынести редактирование профиля в отдельную фичу editableProfile
 // TODO Выявить поведение страницы при отсутствии или некорректном id

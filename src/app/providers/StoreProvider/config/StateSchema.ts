@@ -9,9 +9,11 @@ import { ArticleDetailsCommentsSchema } from 'features/ArticleDetailsComments';
 import { LoginSchema } from 'features/authByUsername';
 import { addCommentFormSchema } from 'features/addCommentForm/model/types/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollSaverSchema } from 'features/scrollSaver';
 
 export interface StateSchema {
   user: UserSchema,
+  scroll: ScrollSaverSchema
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema,
