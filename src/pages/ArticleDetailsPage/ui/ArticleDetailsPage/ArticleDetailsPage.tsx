@@ -11,6 +11,7 @@ import { Button, ButtonSize } from 'shared/ui/Button/Button';
 import { Page } from 'widjets/Page';
 import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -21,11 +22,6 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-
-  const onBack = useCallback(() => {
-    navigate(-1);
-  }, [navigate]);
 
   const onSendComment = useCallback((value: string) => {
     dispatch(addCommentForArticle(value));
@@ -41,7 +37,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
   return (
     <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-      <Button onClick={onBack} size={ButtonSize.S}>{t('Назад')}</Button>
+      <ArticleDetailsHeader id={id} />
       <ArticleDetails id={id} />
       <Text
         text={t('Рекомендации')}
