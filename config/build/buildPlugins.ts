@@ -8,6 +8,7 @@ import {
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CopyPlugin from 'copy-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export const buildPlugins = ({
@@ -33,6 +34,11 @@ export const buildPlugins = ({
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
       analyzerMode: 'static',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: paths.locales, to: paths.buildLocales },
+      ],
     }),
   ];
 
