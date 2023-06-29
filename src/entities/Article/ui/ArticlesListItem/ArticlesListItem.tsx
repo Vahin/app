@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
@@ -18,6 +18,7 @@ interface ArticlesListItemProps {
   className?: string;
   article: Article;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
@@ -26,6 +27,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     className,
     article,
     view = ArticleView.SMALL,
+    target,
   } = props;
 
   const articleTypes = <Text text={article.type.join(', ')} className={cls.types} />;
@@ -54,7 +56,10 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
           )}
           <div className={cls.footer}>
-            <AppLink to={RoutePath.article_details + article.id}>
+            <AppLink
+              target={target}
+              to={RoutePath.article_details + article.id}
+            >
               {t('Читать далее...')}
             </AppLink>
             {articleViews}
@@ -76,7 +81,11 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           {articleViews}
         </div>
         <Text text={article.title} className={cls.title} />
-        <AppLink to={RoutePath.article_details + article.id} className={cls.link} />
+        <AppLink
+          target={target}
+          to={RoutePath.article_details + article.id}
+          className={cls.link}
+        />
       </Card>
     </div>
   );

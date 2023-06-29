@@ -40,7 +40,7 @@ module.exports = {
     'no-underscore-dangle': 0,
     'i18next/no-literal-string': [2, {
       markupOnly: true,
-      ignoreAttribute: ['to', 'data-testid', 'align', 'border', 'size', 'filling', 'theme'],
+      ignoreAttribute: ['to', 'data-testid', 'align', 'border', 'size', 'filling', 'theme', 'target'],
     }],
     'max-len': [2, {
       ignoreComments: true,

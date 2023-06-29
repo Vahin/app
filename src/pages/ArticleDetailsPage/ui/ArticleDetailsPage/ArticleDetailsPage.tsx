@@ -9,6 +9,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonSize } from 'shared/ui/Button/Button';
 import { Page } from 'widjets/Page';
+import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -42,7 +43,17 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
       <Button onClick={onBack} size={ButtonSize.S}>{t('Назад')}</Button>
       <ArticleDetails id={id} />
-      <Text text={t('Комментарии')} className={cls.commentTitle} />
+      <Text
+        text={t('Рекомендации')}
+        className={cls.recommendTitle}
+        size="lg"
+      />
+      <ArticleRecommendationList />
+      <Text
+        text={t('Комментарии')}
+        className={cls.commentTitle}
+        size="lg"
+      />
       <AddCommentForm onSendComment={onSendComment} />
       <ArticleDetailsComments id={id} />
     </Page>

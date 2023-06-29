@@ -24,7 +24,7 @@ export const ArticleDetailsComments = memo(({ id }: {id: string}) => {
   }, [dispatch, id]);
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <CommentList
         isLoading={isLoading}
         comments={comments}

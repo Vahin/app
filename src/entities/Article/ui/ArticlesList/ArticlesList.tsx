@@ -1,4 +1,6 @@
-import { memo, useCallback, useMemo } from 'react';
+import {
+  HTMLAttributeAnchorTarget, memo, useCallback, useMemo,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Text } from 'shared/ui/Text/Text';
@@ -13,6 +15,7 @@ interface ArticlesListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget
 }
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
@@ -21,7 +24,8 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     className,
     articles,
     isLoading,
-    view = ArticleView.BIG,
+    view = ArticleView.SMALL,
+    target,
   } = props;
 
   const renderArticle = (article: Article) => (
@@ -29,6 +33,7 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
       article={article}
       view={view}
       key={article.id}
+      target={target}
     />
   );
 
