@@ -5,21 +5,21 @@ import {
 } from 'react';
 import cls from './Select.module.scss';
 
-interface SelectOptions {
-  value: string
+export interface SelectOptions<T extends string> {
+  value: T
   content: string
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string;
   label?: string
-  options: SelectOptions[]
-  value?: string
+  options: SelectOptions<T>[]
+  value?: T
   disabled?: boolean
-  onChange?: (value: string) => void
+  onChange?: (value: T) => void
 }
 
-export const Select = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const {
     className,
     label,
@@ -36,7 +36,7 @@ export const Select = memo((props: SelectProps) => {
   )), [options]);
 
   const onChangeHandler = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(event.target.value);
+    onChange?.(event.target.value as T);
   }, [onChange]);
 
   return (
@@ -52,4 +52,4 @@ export const Select = memo((props: SelectProps) => {
       </select>
     </div>
   );
-});
+};

@@ -28,9 +28,15 @@ export interface ArticleTextBlock extends ArticleBlockBase {
   paragraphs: string[]
 }
 
+export enum ArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt'
+}
+
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
-export type ArticleType = 'IT' | 'SCIENCE' | 'ECONOMICS' | 'POLITICS'
+export type ArticleType = 'ALL' | 'IT' | 'SCIENCE' | 'ECONOMICS' | 'POLITICS'
 
 export interface Article {
   id: string;
