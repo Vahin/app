@@ -19,7 +19,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'vakhr-plugin'],
   ignorePatterns: ['./.fttemplates/**/*'],
   rules: {
     'react/function-component-definition': 0,
@@ -52,6 +57,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 2,
     'no-param-reassign': 0,
     'no-undef': 0,
+    'vakhr-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,
