@@ -2,8 +2,7 @@ import { memo, useMemo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import { getNavbarItems } from 'widjets/Navbar/model/selectors/getNavbarItems';
-import { NavbarItemType } from 'widjets/Navbar/model/types/navbar';
-import cls from './Navbar.module.scss';
+import { VStack } from 'shared/ui/Stack';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 
 interface NavbarProps {
@@ -24,8 +23,10 @@ export const Navbar = memo((props: NavbarProps) => {
   )), [collapsed, navbarItemsList]);
 
   return (
-    <nav className={classNames(cls.Navbar, {}, [className])}>
-      {itemsList}
+    <nav className={classNames('', {}, [className])}>
+      <VStack gap="16">
+        {itemsList}
+      </VStack>
     </nav>
   );
 });

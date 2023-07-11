@@ -18,8 +18,13 @@
   }
 }
 
+*[loki-test] .Skeleton {
+  box-shadow: none;
+}
+
 *[loki-test] .Skeleton::before {
   animation: none;
+  opacity: 0;
 }
 
 @keyframes load {

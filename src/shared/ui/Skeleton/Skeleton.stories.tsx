@@ -16,12 +16,6 @@ export const Default: Story = {
     height: 200,
     border: '10px',
   },
-  // ! Костыль
-  parameters: {
-    loki: {
-      skip: true,
-    },
-  },
 };
 
 export const Circle: Story = {
@@ -29,11 +23,5 @@ export const Circle: Story = {
     width: 100,
     height: 100,
     border: '50%',
-  },
-  // ! Костыль
-  parameters: {
-    loki: {
-      skip: true,
-    },
   },
 };
