@@ -1,0 +1,55 @@
+.menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.button {
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.items {
+  background: var(--listbox-bg);
+  z-index: 10;
+  position: absolute;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.bottomLeft {
+  top: 110%;
+  right: 0;
+}
+
+.bottomRight {
+  top: 110%;
+  left: 0;
+}
+
+.topLeft {
+  bottom: 110%;
+  right: 0;
+}
+
+.topRight {
+  bottom: 110%;
+  left: 0;
+}
+
+.item {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.item.active {
+  color: var(--primary-color);
+}

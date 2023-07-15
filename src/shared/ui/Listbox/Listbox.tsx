@@ -1,6 +1,7 @@
 import { Fragment, ReactNode, useState } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { DropdownDirection } from 'shared/types/ui/ui';
 import cls from './Listbox.module.scss';
 import { Button, ButtonSize } from '../Button/Button';
 
@@ -8,8 +9,6 @@ export interface ListboxItem {
   value: string
   content: ReactNode
 }
-
-type DropdownDirection = 'top' | 'bottom'
 
 export interface ListboxProps {
   items: ListboxItem[]
@@ -21,6 +20,13 @@ export interface ListboxProps {
   direction?: DropdownDirection
 }
 
+const mapDirectionClass: Record<DropdownDirection, string> = {
+  'bottom left': cls.bottomLeft,
+  'bottom right': cls.bottomRight,
+  'top left': cls.topLeft,
+  'top right': cls.topRight,
+};
+
 export const Listbox = (props: ListboxProps) => {
   const {
     className,
@@ -29,7 +35,7 @@ export const Listbox = (props: ListboxProps) => {
     defaultValue,
     onChange,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom right',
   } = props;
 
   return (
@@ -47,7 +53,7 @@ export const Listbox = (props: ListboxProps) => {
           {value || defaultValue}
         </Button>
       </HListbox.Button>
-      <HListbox.Options className={classNames(cls.options, {}, [cls[direction]])}>
+      <HListbox.Options className={classNames(cls.options, {}, [mapDirectionClass[direction]])}>
         {items.map((item) => (
           <HListbox.Option
             key={item.value}

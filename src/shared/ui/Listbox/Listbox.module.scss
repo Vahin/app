@@ -17,13 +17,23 @@
   z-index: 10;
 }
 
-.bottom {
-  top: 100%;
+.bottomLeft {
+  top: 110%;
+  right: 0;
+}
+
+.bottomRight {
+  top: 110%;
   left: 0;
 }
 
-.top {
-  bottom: 100%;
+.topLeft {
+  bottom: 110%;
+  right: 0;
+}
+
+.topRight {
+  bottom: 110%;
   left: 0;
 }
 
