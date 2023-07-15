@@ -12,6 +12,14 @@ type TextAlign = 'center' | 'left' | 'right';
 
 type TextSize = 'sm' | 'md' | 'lg';
 
+type HeaderTagType = 'h1' | 'h2' | 'h3'
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  sm: 'h3',
+  md: 'h2',
+  lg: 'h1',
+};
+
 interface TextProps {
   className?: string;
   title?: string;
@@ -31,11 +39,13 @@ export const Text = memo((props: TextProps) => {
     size = 'md',
   } = props;
 
+  const HeaderTag = mapSizeToHeaderTag[size];
+
   const additional = [className, cls[theme], cls[align], cls[size]];
 
   return (
     <div className={classNames(cls.Text, {}, additional)}>
-      {title && <p className={cls.title}>{title}</p>}
+      {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );

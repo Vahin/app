@@ -24,7 +24,7 @@ export const Navbar = memo((props: NavbarProps) => {
 
   return (
     <nav className={classNames('', {}, [className])}>
-      <VStack gap="16">
+      <VStack gap="16" role="navigation">
         {itemsList}
       </VStack>
     </nav>

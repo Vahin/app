@@ -7,6 +7,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { CurrencySelect, CurrencyType } from 'entities/Currency';
 import { CountrySelect, CountryType } from 'entities/Country';
+import { HStack } from 'shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -118,16 +119,18 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         onChange={onChangeAvatar}
         readOnly={readonly}
       />
-      <CurrencySelect
-        value={data?.currency}
-        onChange={onChangeCurrency}
-        readonly={readonly}
-      />
-      <CountrySelect
-        value={data?.country}
-        onChange={onChangeCountry}
-        readonly={readonly}
-      />
+      <HStack gap="8">
+        <CurrencySelect
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          readonly={readonly}
+        />
+        <CountrySelect
+          value={data?.country}
+          onChange={onChangeCountry}
+          readonly={readonly}
+        />
+      </HStack>
     </div>
   );
 });

@@ -1,0 +1,41 @@
+.listbox {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  background: none;
+  border: none;
+}
+
+.options {
+  background: var(--listbox-bg);
+  position: absolute;
+  padding: 6px;
+  min-width: 100%;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.bottom {
+  top: 100%;
+  left: 0;
+}
+
+.top {
+  bottom: 100%;
+  left: 0;
+}
+
+.item {
+  list-style: none;
+  cursor: pointer;
+}
+
+.item.active {
+  color: var(--secondary-color);
+}
+
+.item.selected {
+  color: var(--secondary-color);
+}
