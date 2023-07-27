@@ -83,6 +83,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeFirstname}
         readOnly={readonly}
+        data-testid="ProfileCard.Firstname"
       />
       <Input
         value={data?.lastname}
@@ -90,6 +91,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeLastname}
         readOnly={readonly}
+        data-testid="ProfileCard.Lastname"
       />
       <Input
         value={data?.age}
@@ -97,6 +99,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeAge}
         readOnly={readonly}
+        data-testid="ProfileCard.Age"
       />
       <Input
         value={data?.city}
@@ -104,6 +107,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeCity}
         readOnly={readonly}
+        data-testid="ProfileCard.City"
       />
       <Input
         value={data?.username}
@@ -111,6 +115,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeUsername}
         readOnly={readonly}
+        data-testid="ProfileCard.Username"
       />
       <Input
         value={data?.avatar}
@@ -118,6 +123,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeAvatar}
         readOnly={readonly}
+        data-testid="ProfileCard.Avatar"
       />
       <HStack gap="8">
         <CurrencySelect
