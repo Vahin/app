@@ -57,6 +57,7 @@ module.exports = {
         'direction',
         'role',
         'as',
+        'justify',
       ],
     }],
     'max-len': [2, {

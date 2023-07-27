@@ -3,18 +3,20 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ProfileSchema } from 'entities/Profile';
+
 import { UserSchema } from 'entities/User';
 import { ArticleDetailsCommentsSchema } from 'features/ArticleDetailsComments';
 import { LoginSchema } from 'features/authByUsername';
-import { addCommentFormSchema } from 'features/addCommentForm/model/types/addCommentForm';
+import { addCommentFormSchema } from 'entities/addCommentForm/model/types/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaverSchema } from 'features/scrollSaver';
-import { articleRecommendationSchema } from 'features/ArticleRecommendationList';
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchema {
   user: UserSchema,
   scroll: ScrollSaverSchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema,
@@ -23,7 +25,6 @@ export interface StateSchema {
   articleDetailsComments?: ArticleDetailsCommentsSchema,
   addCommentForm?: addCommentFormSchema
   articlePage?: ArticlesPageSchema
-  articleRecommendation?: articleRecommendationSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -10,11 +10,12 @@ const directionClasses: Record<FlexDirection, string> = {
   rowReverse: cls.rowReverse,
 };
 
-type FlexAlign = 'start' | 'center' | 'end';
+type FlexAlign = 'start' | 'center' | 'end' | 'stretch';
 const alignClasses: Record<FlexAlign, string> = {
   start: cls.alignStart,
   center: cls.alignCenter,
   end: cls.alignEnd,
+  stretch: cls.alignStretch,
 };
 
 type FlexJustify = 'flexStart' | 'spaceBetween' | 'flexEnd' | 'center';

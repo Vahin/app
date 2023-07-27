@@ -1517,6 +1517,24 @@
       "userId": "1",
       "text": "dw",
       "id": "SLsecIh"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "hey hey",
+      "id": "fmj3raP"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "123",
+      "id": "ZPsd5z1"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "32",
+      "id": "PNZFSg4"
     }
   ],
   "users": [
@@ -1541,8 +1559,8 @@
       "firstname": "Данил",
       "lastname": "Вахрушев",
       "age": 31,
-      "currency": "EUR",
-      "country": "Armenia",
+      "currency": "USD",
+      "country": "Belarus",
       "city": "Chelyabinsk",
       "username": "admin",
       "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"

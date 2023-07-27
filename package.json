@@ -23,7 +23,7 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
     "prepare": "husky install",
-    "create": "node ./scripts/createSlice"
+    "create:slice": "node ./scripts/createSlice"
   },
   "author": "Danil Vakhrushev <danil.e.vakhrushev@gmail.com>",
   "license": "ISC",
