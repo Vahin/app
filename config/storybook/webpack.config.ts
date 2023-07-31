@@ -11,15 +11,17 @@ export default ({ config }: { config: Configuration}) => {
     build: '',
     html: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
+    locales: '',
+    buildLocales: '',
   };
 
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
 
   if (config.module?.rules) {
-    // eslint-disable-next-line
-    config.module.rules = config.module?.rules?.map((rule: RuleSetRule | '...') => {
-      if (rule !== '...' && /svg/.test(rule.test as string)) {
+    // @ts-ignore
+    config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
+      if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
       }
 
@@ -37,7 +39,7 @@ export default ({ config }: { config: Configuration}) => {
   config.plugins?.push(
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
-      __API__: JSON.stringify(''),
+      __API__: JSON.stringify('https://testapi.ru'),
       __PROJECT__: JSON.stringify('storybook'),
     }),
   );

@@ -1535,6 +1535,12 @@
       "userId": "1",
       "text": "32",
       "id": "PNZFSg4"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "уц",
+      "id": "VL4N4lL"
     }
   ],
   "users": [
@@ -1542,21 +1548,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://w7.pngwing.com/pngs/791/512/png-transparent-user-profile-computer-icons-internet-bot-others-miscellaneous-monochrome-silhouette.png"
     },
     {
       "id": "3",
       "username": "Manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://www.simplilearn.com/ice9/free_resources_article_thumb/How_to_become_a_marketing_manager.jpg"
     }
   ],

@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
@@ -8,6 +9,7 @@ const preview: Preview = {
     StyleDecorator,
     ThemeDecorator(),
     RouterDecorator,
+    SuspenseDecorator,
   ],
   globalTypes: {
     theme: {

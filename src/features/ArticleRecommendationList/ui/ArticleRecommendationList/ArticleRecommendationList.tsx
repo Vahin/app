@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ArticlesList } from 'entities/Article';
 import { Text } from 'shared/ui/Text/Text';
 import { VStack } from 'shared/ui/Stack';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { useArticleRecomendationsList } from '../../api/articlesRecommendationsApi';
 import cls from './ArticleRecommendationList.module.scss';
 
@@ -16,9 +17,25 @@ export const ArticleRecommendationList = memo((props: ArticleRecommendationListP
   const { className } = props;
   const { data, isLoading, error } = useArticleRecomendationsList(4);
 
-  if (isLoading || error || !data) {
+  if (isLoading) {
     // ! Обработать состояния загрузки и ошибки
-    return null;
+    return (
+      <Loader />
+    );
+  }
+
+  if (error) {
+    return (
+      // eslint-disable-next-line
+      <div>Error</div>
+    );
+  }
+
+  if (!data) {
+    return (
+      // eslint-disable-next-line
+      <div>No data</div>
+    );
   }
 
   return (
