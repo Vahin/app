@@ -2,11 +2,13 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  flex: 1 1 25px;
+  justify-content: center;
 }
 
 .icon {
   fill: var(--inverted-primary-color);
-  flex-shrink: 0;
+  flex: 0 0 25px;
   width: 25px;
   height: 25px;
 }
@@ -14,14 +16,15 @@
 .linkText {
   opacity: 1;
   transition: all 0.2s;
-  transition-delay: 0.1s;
-  transform-origin: 0;
-  line-height: 1;
   white-space: nowrap;
+  line-height: 1;
+  flex: 1 1 0;
+  max-width: var(--sidebar-width-collapsed);
+  transform-origin: 0;
 }
 
 .collapsed .linkText {
-  transform: scaleX(0);
-  transition-delay: 0;
+  max-width: 0;
   opacity: 0;
+  transition-delay: 0;
 }
