@@ -2,4 +2,4 @@ export { getScrollRecord } from './model/selectors/getScrollRecord/getScrollReco
 
 export { scrollSaverReducer, scrollSaverActions } from './model/slice/scrollSaverSlice';
 
-export { ScrollSaverSchema } from './model/types/ScrollSaverSchema';
+export type { ScrollSaverSchema } from './model/types/ScrollSaverSchema';

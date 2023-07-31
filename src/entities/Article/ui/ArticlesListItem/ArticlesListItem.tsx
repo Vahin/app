@@ -7,9 +7,10 @@ import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import cls from './ArticlesListItem.module.scss';
 import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+  Article, ArticleTextBlock,
 } from '../../model/types/article';
 import EyeIcon from '../../assets/icons/eye.svg';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

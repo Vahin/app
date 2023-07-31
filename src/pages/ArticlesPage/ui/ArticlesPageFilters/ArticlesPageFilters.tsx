@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
-  ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector,
+  ArticleSortSelector, ArticleViewSelector,
 } from 'entities/Article';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -12,6 +12,7 @@ import { SortOrder } from 'shared/types/SortOrder/SortOrder';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import { ArticleType } from 'entities/Article/model/types/article';
+import { ArticleSortField, ArticleView } from 'entities/Article/model/consts/consts';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { getArticlesPageSearch } from '../../model/selectors/getArticlesPageSearch/getArticlesPageSearch';
 import cls from './ArticlesPageFilters.module.scss';

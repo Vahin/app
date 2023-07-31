@@ -2,10 +2,11 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleView } from '../../model/types/article';
+
 import ViewIconSmall from '../../assets/icons/tails.svg';
 import ViewIconBig from '../../assets/icons/list.svg';
 import cls from './ArticleViewSelector.module.scss';
+import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleViewSelectorProps {
   className?: string;

@@ -5,8 +5,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { ArticleView } from '../../model/consts/consts';
 import cls from './ArticlesList.module.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { ArticlesListItem } from '../ArticlesListItem/ArticlesListItem';
 import { ArticleListItemSkeleton } from '../ArticlesListItem/ArticleListItemSkeleton';
 

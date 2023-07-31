@@ -1,5 +1,5 @@
 import Avatar from 'shared/assets/test/medoed.jpeg';
-import { Article, ArticleBlockType } from '../../entities/Article/model/types/article';
+import { Article, ArticleBlockType } from 'entities/Article';
 import Preview from './assets/preview.png';
 import Screenshot from './assets/screenshot.png';
 
