@@ -5,11 +5,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/authByUsername';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getIsUserAdmin, getIsUserManager, getUserAuthData, userActions,
+} from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Header.module.scss';
@@ -21,10 +23,15 @@ interface HeaderProps {
 export const Header = memo((props: HeaderProps) => {
   const { className } = props;
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(getIsUserAdmin);
+  const isManager = useSelector(getIsUserManager);
 
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
-  const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
+
+  const isAdminPanelAvalible = isAdmin || isManager;
 
   const onCloseModal = useCallback(() => {
     setIsOpenAuthModal(false);
@@ -56,12 +63,16 @@ export const Header = memo((props: HeaderProps) => {
           <Dropdown
             items={[
               {
-                content: t('Выйти'),
-                onClick: onLogout,
-              },
-              {
                 content: t('Профиль'),
                 href: `${RoutePath.profile}${authData.id}`,
+              },
+              ...(isAdminPanelAvalible ? [{
+                content: t('Админка'),
+                href: `${RoutePath.admin_panel}`,
+              }] : []),
+              {
+                content: t('Выйти'),
+                onClick: onLogout,
               },
             ]}
             trigger={(

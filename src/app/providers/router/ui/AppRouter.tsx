@@ -14,11 +14,13 @@ export const AppRouter = memo(() => {
       </Suspense>
     );
 
+    const { roles } = route;
+
     return (
       <Route
         key={route.path}
         path={route.path}
-        element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+        element={route.authOnly ? <RequireAuth roles={roles}>{element}</RequireAuth> : element}
       />
     );
   }, []);
