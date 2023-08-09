@@ -6,6 +6,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { NotificationsList } from 'entities/Notification';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { BrowserView, MobileView } from 'react-device-detect';
+import { useDeviceDetect } from 'shared/lib/hooks/useDeviceDetect/useDeviceDetect';
 import cls from './NotificationButton.module.scss';
 import Notify from '../assets/icons/Notify.svg';
 
@@ -16,6 +17,7 @@ interface NotificationButtonProps {
 export const NotificationButton = memo((props: NotificationButtonProps) => {
   const { className } = props;
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const isMobile = useDeviceDetect();
 
   const onOpenDrawer = useCallback(() => {
     setDrawerIsOpen(true);
@@ -31,23 +33,20 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     </Button>
   );
 
-  return (
-    <div>
-      <BrowserView>
-        <Popover
-          className={classNames('', {}, [className])}
-          trigger={trigger}
-          direction="bottom left"
-        >
-          <NotificationsList className={cls.notifications} />
-        </Popover>
-      </BrowserView>
-      <MobileView>
-        {trigger}
-        <Drawer isOpen={drawerIsOpen} onClose={onCloseDrawer}>
-          <NotificationsList />
-        </Drawer>
-      </MobileView>
-    </div>
+  return isMobile ? (
+    <>
+      {trigger}
+      <Drawer isOpen={drawerIsOpen} onClose={onCloseDrawer}>
+        <NotificationsList />
+      </Drawer>
+    </>
+  ) : (
+    <Popover
+      className={classNames('', {}, [className])}
+      trigger={trigger}
+      direction="bottom left"
+    >
+      <NotificationsList className={cls.notifications} />
+    </Popover>
   );
 });
