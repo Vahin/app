@@ -32,6 +32,7 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
     <VStack
       gap="4"
       max
+      align="stretch"
       className={classNames('', {}, [className])}
     >
       {

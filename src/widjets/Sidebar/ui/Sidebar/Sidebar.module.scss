@@ -31,11 +31,11 @@
   position: absolute;
   right: -32px;
   bottom: 32px;
-  z-index: 100000;
+  z-index: 998;
 }
 
 .Navbar {
-  flex: 1 1 var(--sidebar-width-collapsed);
+  flex: 1 1 var(--z-index-sidebar-button);
   margin-left: 25px;
   margin-top: 25px;
 }
