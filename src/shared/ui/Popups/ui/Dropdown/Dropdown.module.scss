@@ -3,14 +3,6 @@
   cursor: pointer;
 }
 
-.button {
-  background: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
 .items {
   background: var(--listbox-bg);
   z-index: 10;
@@ -20,26 +12,6 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-}
-
-.bottomLeft {
-  top: 110%;
-  right: 0;
-}
-
-.bottomRight {
-  top: 110%;
-  left: 0;
-}
-
-.topLeft {
-  bottom: 110%;
-  right: 0;
-}
-
-.topRight {
-  bottom: 110%;
-  left: 0;
 }
 
 .item {

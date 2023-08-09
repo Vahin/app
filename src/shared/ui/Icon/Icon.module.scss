@@ -5,9 +5,19 @@
       stroke: var(--primary-color);
     }
 
+    &.primary-inverted {
+      fill: var(--inverted-primary-color);
+      stroke: var(--inverted-primary-color);
+    }
+
     &.secondary {
       fill: var(--secondary-color);
       stroke: var(--secondary-color);
+    }
+
+    &.secondary-inverted {
+      fill: var(--inverted-secondary-color);
+      stroke: var(--inverted-secondary-color);
     }
   }
 
@@ -19,6 +29,14 @@
     &.secondary {
       fill: var(--secondary-color);
     }
+
+    &.primary-inverted {
+      fill: var(--inverted-primary-color);
+    }
+
+    &.secondary-inverted {
+      fill: var(--inverted-secondary-color);
+    }
   }
 
   &.stroke {
@@ -28,6 +46,14 @@
 
     &.secondary {
       stroke: var(--secondary-color);
+    }
+
+    &.primary-inverted {
+      stroke: var(--inverted-primary-color);
+    }
+
+    &.secondary-inverted {
+      stroke: var(--inverted-secondary-color);
     }
   }
 }

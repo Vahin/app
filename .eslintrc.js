@@ -58,6 +58,7 @@ module.exports = {
         'role',
         'as',
         'justify',
+        'variant',
       ],
     }],
     'max-len': [2, {

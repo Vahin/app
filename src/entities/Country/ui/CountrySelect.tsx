@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Listbox } from 'shared/ui/Listbox/Listbox';
+import { Listbox } from 'shared/ui/Popups/ui/Listbox/Listbox';
 import { CountryType } from '../model/types/country';
 
 type CountryOptionType = {

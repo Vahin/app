@@ -17,35 +17,7 @@
   z-index: 10;
 }
 
-.bottomLeft {
-  top: 110%;
-  right: 0;
-}
-
-.bottomRight {
-  top: 110%;
-  left: 0;
-}
-
-.topLeft {
-  bottom: 110%;
-  right: 0;
-}
-
-.topRight {
-  bottom: 110%;
-  left: 0;
-}
-
 .item {
   list-style: none;
   cursor: pointer;
-}
-
-.item.active {
-  color: var(--secondary-color);
-}
-
-.item.selected {
-  color: var(--secondary-color);
 }
