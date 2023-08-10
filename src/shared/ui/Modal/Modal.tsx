@@ -1,6 +1,4 @@
-import {
-  FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
+import { ReactNode } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import cls from './Modal.module.scss';
@@ -16,7 +14,7 @@ interface ModalProps {
 }
 const ANIMATION_DELAY: number = 300;
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Modal = (props: ModalProps) => {
   const {
     className,
     children,

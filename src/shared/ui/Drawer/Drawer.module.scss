@@ -2,43 +2,21 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
-  opacity: 0;
-  pointer-events: none;
-  z-index: -1;
+  left: 0;
+  z-index: var(--z-index-modal);
   display: flex;
   align-items: flex-end;
 }
 
-.content {
-  height: 70%;
-  background: var(--bg-color);
-  bottom: 0;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  position: relative;
-  width: 100%;
-  min-height: 100px;
-  padding: 20px;
-  transition: 0.3s transform;
-  transform: translateY(100%);
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.opened {
-  pointer-events: auto;
-  opacity: 1;
+.sheet {
   z-index: var(--z-index-modal);
-
-  .content {
-    transform: translateY(0);
-  }
-}
-
-.isClosing {
-  & .content {
-    transform: translateY(100%);
-  }
+  position: fixed;
+  left: 2vw;
+  height: calc(100vh + 100px);
+  width: 96vw;
+  border-radius: 12px 12px 0;
+  background: var(--bg-color);
+  touch-action: none;
+  padding: 15px;
 }
