@@ -1,10 +1,10 @@
 import './styles/index.scss';
 
-import { Header } from 'widjets/Header';
-import { Sidebar } from 'widjets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserInited, userActions } from 'entities/User';
+import { Header } from '@/widjets/Header';
+import { Sidebar } from '@/widjets/Sidebar';
+import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
 
 const App = () => {

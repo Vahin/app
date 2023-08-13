@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widjets/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widjets/Page';
 
 interface AdminPanelPageProps {
   className?: string;

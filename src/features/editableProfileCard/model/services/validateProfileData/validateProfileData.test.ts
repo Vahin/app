@@ -1,4 +1,4 @@
-import { Profile } from 'entities/Profile';
+import { Profile } from '@/entities/Profile';
 import { validateProfileData } from './validateProfileData';
 import { ValidateProfileError } from '../../types/EditableProfileCardSchema';
 

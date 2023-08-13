@@ -1,8 +1,8 @@
 import { memo, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
-import { getNavbarItems } from 'widjets/Navbar/model/selectors/getNavbarItems';
-import { VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { getNavbarItems } from '@/widjets/Navbar/model/selectors/getNavbarItems';
+import { VStack } from '@/shared/ui/Stack';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 
 interface NavbarProps {

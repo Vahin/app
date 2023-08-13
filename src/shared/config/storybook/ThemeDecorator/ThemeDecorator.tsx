@@ -1,7 +1,7 @@
 import { StoryContext, StoryFn } from '@storybook/react';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import './decorator.scss';
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
 export const ThemeDecorator = (invetred?: boolean) => (Story: StoryFn, context: StoryContext) => {
   const { globals } = context;

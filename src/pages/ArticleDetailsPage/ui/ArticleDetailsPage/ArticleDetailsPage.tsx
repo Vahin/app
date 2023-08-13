@@ -1,12 +1,12 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
-import { Text } from 'shared/ui/Text/Text';
-import { ArticleDetailsComments } from 'features/ArticleDetailsComments';
-import { Page } from 'widjets/Page';
-import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleDetails } from '@/entities/Article';
+import { Text } from '@/shared/ui/Text/Text';
+import { ArticleDetailsComments } from '@/features/ArticleDetailsComments';
+import { Page } from '@/widjets/Page';
+import { ArticleRecommendationList } from '@/features/ArticleRecommendationList';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 

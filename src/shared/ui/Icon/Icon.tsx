@@ -1,5 +1,5 @@
 import { SVGProps, VFC, memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Icon.module.scss';
 
 type IconVariant = 'primary' | 'secondary' | 'primary-inverted' | 'secondary-inverted';

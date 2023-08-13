@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArticlesList } from 'entities/Article';
 import { useSelector } from 'react-redux';
+import { ArticlesList } from '@/entities/Article';
 import { getArticles } from '../../model/slice/articlePageSlice';
 import { getArticlePageIsLoading } from '../../model/selectors/getArticlePageIsLoading/getArticlePageIsLoading';
 import { getArticlePageError } from '../../model/selectors/getArticlePageError/getArticlePageError';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import Avatar from 'shared/assets/test/medoed.jpeg';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import Avatar from '@/shared/assets/test/medoed.jpeg';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 const meta: Meta<typeof ArticleDetailsComments> = {

@@ -1,9 +1,9 @@
-import { ComponentRender } from 'shared/lib/tests/ComponentRender/ComponentRender';
-import Avatar from 'shared/assets/test/medoed.jpeg';
-import { Profile } from 'entities/Profile';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { $api } from 'shared/api/api';
+import { ComponentRender } from '@/shared/lib/tests/ComponentRender/ComponentRender';
+import Avatar from '@/shared/assets/test/medoed.jpeg';
+import { Profile } from '@/entities/Profile';
+import { $api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
 

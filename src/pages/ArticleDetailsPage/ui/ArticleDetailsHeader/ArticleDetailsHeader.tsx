@@ -1,10 +1,10 @@
 import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonSize } from 'shared/ui/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Button, ButtonSize } from '@/shared/ui/Button/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppRoutes, RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { getArticleDetailsEditability } from '../../model/selectors/getArticleDetailsEditability';
 import cls from './ArticleDetailsHeader.module.scss';
 

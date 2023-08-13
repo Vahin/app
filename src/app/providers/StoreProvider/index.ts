@@ -1,4 +1,4 @@
-export type { AppDispatch } from 'app/providers/StoreProvider/consts/consts';
+export type { AppDispatch } from '@/app/providers/StoreProvider/consts/consts';
 export type {
   StateSchema,
   ReduxStoreWithManager,
