@@ -1,0 +1,7 @@
+.StarRating {
+  cursor: pointer;
+
+  &.selected {
+    cursor: auto;
+  }
+}

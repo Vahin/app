@@ -1,59 +1,41 @@
 .Icon {
-  &.all {
-    &.primary {
-      fill: var(--primary-color);
-      stroke: var(--primary-color);
-    }
-
-    &.primary-inverted {
-      fill: var(--inverted-primary-color);
-      stroke: var(--inverted-primary-color);
-    }
-
-    &.secondary {
-      fill: var(--secondary-color);
-      stroke: var(--secondary-color);
-    }
-
-    &.secondary-inverted {
-      fill: var(--inverted-secondary-color);
-      stroke: var(--inverted-secondary-color);
-    }
+  &.fill-primary {
+    fill: var(--primary-color);
   }
 
-  &.fill {
-    &.primary {
-      fill: var(--primary-color);
-    }
-
-    &.secondary {
-      fill: var(--secondary-color);
-    }
-
-    &.primary-inverted {
-      fill: var(--inverted-primary-color);
-    }
-
-    &.secondary-inverted {
-      fill: var(--inverted-secondary-color);
-    }
+  &.fill-secondary {
+    fill: var(--secondary-color);
   }
 
-  &.stroke {
-    &.primary {
-      stroke: var(--primary-color);
-    }
+  &.fill-primary-inverted {
+    fill: var(--inverted-primary-color);
+  }
 
-    &.secondary {
-      stroke: var(--secondary-color);
-    }
+  &.fill-secondary-inverted {
+    fill: var(--inverted-secondary-color);
+  }
 
-    &.primary-inverted {
-      stroke: var(--inverted-primary-color);
-    }
+  &.fill-none {
+    fill: none;
+  }
 
-    &.secondary-inverted {
-      stroke: var(--inverted-secondary-color);
-    }
+  &.stroke-primary {
+    stroke: var(--primary-color);
+  }
+
+  &.stroke-secondary {
+    stroke: var(--secondary-color);
+  }
+
+  &.stroke-primary-inverted {
+    stroke: var(--inverted-primary-color);
+  }
+
+  &.stroke-secondary-inverted {
+    stroke: var(--inverted-secondary-color);
+  }
+
+  &.stroke-none {
+    stroke: none;
   }
 }

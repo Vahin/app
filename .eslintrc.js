@@ -59,6 +59,8 @@ module.exports = {
         'as',
         'justify',
         'variant',
+        'strokeVariant',
+        'fillVariant',
       ],
     }],
     'max-len': [2, {

@@ -1,27 +1,51 @@
-import { SVGProps, VFC, memo } from 'react';
+import { SVGProps, FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Icon.module.scss';
 
-type IconVariant = 'primary' | 'secondary' | 'primary-inverted' | 'secondary-inverted';
+type IconVariant = 'primary' | 'secondary' | 'primary-inverted' | 'secondary-inverted' | 'none';
 
-type IconFilling = 'all' | 'fill' | 'stroke';
+const mapFillClass: Record<IconVariant, string> = {
+  primary: 'fill-primary',
+  secondary: 'fill-secondary',
+  'primary-inverted': 'fill-primary-inverted',
+  'secondary-inverted': 'fill-secondary-inverted',
+  none: 'fill-none',
+};
 
-interface IconProps {
+const mapStrokeClass: Record<IconVariant, string> = {
+  primary: 'stroke-primary',
+  secondary: 'stroke-secondary',
+  'primary-inverted': 'stroke-primary-inverted',
+  'secondary-inverted': 'stroke-secondary-inverted',
+  none: 'stroke-none',
+};
+
+interface IconProps extends SVGProps<SVGSVGElement> {
   className?: string;
-  Svg: VFC<SVGProps<SVGSVGElement>>
-  variant?: IconVariant
-  filling?: IconFilling
+  Svg: FC<SVGProps<SVGSVGElement>>
+  fillVariant?: IconVariant
+  strokeVariant?: IconVariant
 }
 
 export const Icon = memo((props: IconProps) => {
   const {
     Svg,
     className,
-    variant = 'primary',
-    filling = 'fill',
+    fillVariant = 'primary',
+    strokeVariant = 'none',
+    ...otherProps
   } = props;
 
+  const additionals = [
+    className,
+    cls[mapFillClass[fillVariant]],
+    cls[mapStrokeClass[strokeVariant]],
+  ];
+
   return (
-    <Svg className={classNames(cls.Icon, {}, [className, cls[variant], cls[filling]])} />
+    <Svg
+      className={classNames(cls.Icon, {}, additionals)}
+      {...otherProps}
+    />
   );
 });

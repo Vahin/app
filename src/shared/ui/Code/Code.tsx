@@ -20,7 +20,7 @@ export const Code = memo((props: CodeProps) => {
   return (
     <pre className={classNames(cls.Code, {}, [className])}>
       <Button onClick={onCopy} className={cls.copyBtn} size={ButtonSize.S} theme={ButtonTheme.CLEAR}>
-        <Icon Svg={CopyIcon} filling="stroke" />
+        <Icon Svg={CopyIcon} strokeVariant="primary" fillVariant="none" />
       </Button>
       <code>{text}</code>
     </pre>
