@@ -1578,8 +1578,8 @@
       "firstname": "Данил",
       "lastname": "Вахрушев",
       "age": 31,
-      "currency": "USD",
-      "country": "Belarus",
+      "currency": "EUR",
+      "country": "Kazakhstan",
       "city": "Chelyabinsk",
       "username": "admin",
       "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"
@@ -1622,6 +1622,45 @@
       "title": "Уведомление 4",
       "description": "Произошло какое-то событие!",
       "userId": "1"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 4,
+      "feedback": "",
+      "id": "8VOmx2X"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая человек",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Хорошая человек",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

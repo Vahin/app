@@ -9,6 +9,8 @@ import { Page } from '@/widjets/Page';
 import { ArticleRecommendationList } from '@/features/ArticleRecommendationList';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
+import { ArticleRating } from '@/features/articleRating';
+import { VStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -29,10 +31,13 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
   return (
     <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-      <ArticleDetailsHeader id={id} />
-      <ArticleDetails id={id} />
-      <ArticleRecommendationList />
-      <ArticleDetailsComments id={id} />
+      <VStack gap="32">
+        <ArticleDetailsHeader id={id} />
+        <ArticleDetails id={id} />
+        <ArticleRating articleId={id} className={cls.rating} />
+        <ArticleRecommendationList />
+        <ArticleDetailsComments id={id} />
+      </VStack>
     </Page>
   );
 });

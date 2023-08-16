@@ -16,6 +16,7 @@ interface RatingCardProps {
   title?: string
   feedbackTitle?: string
   hasFeedback?: boolean
+  rate?: number
   onCancel?: (starsCount: number) => void
   onAccept?: (starsCount: number, feedback?: string) => void
 }
@@ -27,11 +28,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
     title,
     feedbackTitle,
     hasFeedback,
+    rate = 0,
     onCancel,
     onAccept,
   } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
   const isMobile = useDeviceDetect();
 
@@ -58,15 +60,18 @@ export const RatingCard = memo((props: RatingCardProps) => {
     <VStack max gap="32">
       <Text title={feedbackTitle} />
       <Input placeholder={t('Ваш отзыв')} onChange={setFeedback} />
-
     </VStack>
   );
 
   return (
     <Card className={classNames('', {}, [className])}>
       <VStack gap="8" align="center">
-        <Text title={title} />
-        <StarRating size={40} onSelect={onSelect} />
+        <Text title={starsCount ? 'Спасибо за оценку!' : title} />
+        <StarRating
+          size={40}
+          onSelect={onSelect}
+          selectedStars={starsCount}
+        />
       </VStack>
       {
         isMobile ? (
