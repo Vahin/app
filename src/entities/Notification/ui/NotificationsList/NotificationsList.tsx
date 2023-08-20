@@ -17,8 +17,9 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
   if (isLoading) {
     return (
       <VStack
-        gap="8"
+        gap="4"
         max
+        align="stretch"
         className={classNames('', {}, [className])}
       >
         <NotificationItem isLoading={isLoading} />
