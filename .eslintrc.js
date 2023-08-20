@@ -73,7 +73,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 2,
     'no-param-reassign': 0,
     'no-undef': 0,
-    'vakhr-plugin/path-checker': 'error',
+    'vakhr-plugin/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
