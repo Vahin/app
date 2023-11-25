@@ -1,12 +1,12 @@
 import { StoryFn } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from '@/entities/Article';
 import {
   articleDetailsCommentsReducer,
-} from '@/features/ArticleDetailsComments/model/slice/articleDetailsCommentsSlice';
-import { addCommentFormReducer } from '@/entities/addCommentForm/model/slice/addCommentFormSlice';
-import { loginReducer } from '@/features/authByUsername/model/slice/loginSlice';
-import { articlesPageReducer } from '@/pages/ArticlesPage/model/slice/articlePageSlice';
+} from '@/features/ArticleDetailsComments';
+import { addCommentFormReducer } from '@/entities/addCommentForm';
+import { loginReducer } from '@/features/authByUsername';
+import { articlesPageReducer } from '@/pages/ArticlesPage';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { profileReducer } from '@/features/editableProfileCard';
 

@@ -74,6 +74,13 @@ module.exports = {
     'no-param-reassign': 0,
     'no-undef': 0,
     'vakhr-plugin/path-checker': ['error', { alias: '@' }],
+    'vakhr-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFiles: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

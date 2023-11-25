@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Button, ButtonSize } from '@/shared/ui/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppRoutes, RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/config/routeConfig/RoutePath';
 import { getArticleDetailsEditability } from '../../model/selectors/getArticleDetailsEditability';
 import cls from './ArticleDetailsHeader.module.scss';
 
