@@ -1,5 +1,5 @@
 export { getArticleDetailsData } from './model/selectors/getArticleDetailsData/getArticleDetailsData';
-// export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
 export { ArticleBlockType, ArticleView, ArticleSortField } from './model/consts/consts';
 export { getArticleDetailsUserId } from './model/selectors/getArticleDetailsUserId/getArticleDetailsUserId';
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
