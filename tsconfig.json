@@ -23,7 +23,7 @@
   },
   "include": [
     "./config/jest/setupTests.ts",
-    "./scripts/updateImports.ts",
+    "scripts/refactoring/updateImports.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
   ]

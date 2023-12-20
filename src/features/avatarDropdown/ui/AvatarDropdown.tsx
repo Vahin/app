@@ -7,7 +7,7 @@ import {
   User, getIsUserAdmin, getIsUserManager, userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import cls from './AvatarDropdown.module.scss';
 import { RoutePath } from '@/shared/const/router';
 

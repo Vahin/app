@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Button, ButtonSize } from '@/shared/ui/Button/Button';
+import { Button, ButtonSize } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getArticleDetailsEditability } from '../../model/selectors/getArticleDetailsEditability';
 import cls from './ArticleDetailsHeader.module.scss';
