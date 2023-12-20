@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Button, ButtonSize } from '@/shared/ui/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { RoutePath } from '@/app/providers/router/config/RoutePath';
 import { getArticleDetailsEditability } from '../../model/selectors/getArticleDetailsEditability';
 import cls from './ArticleDetailsHeader.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface ArticleDetailsHeaderProps {
   className?: string;

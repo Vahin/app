@@ -1,11 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import { RoutePath } from '@/app/providers/router/config/RoutePath';
 import HomeIcon from '../../assets/icons/home.svg';
 import AboutIcon from '../../assets/icons/list.svg';
 import ProfileIcon from '../../assets/icons/profile.svg';
 import ArticlesIcon from '../../assets/icons/articles.svg';
 import { NavbarItemType } from '../types/navbar';
+import { RoutePath } from '@/shared/const/router';
 
 export const getNavbarItems = createSelector(
   getUserAuthData,

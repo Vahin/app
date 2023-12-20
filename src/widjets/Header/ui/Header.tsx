@@ -9,11 +9,11 @@ import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
-import { RoutePath } from '@/app/providers/router/config/RoutePath';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Header.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface HeaderProps {
   className?: string;
