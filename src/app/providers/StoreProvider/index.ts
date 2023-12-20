@@ -1,3 +1,4 @@
+export type { StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 export type { AppDispatch } from '@/app/providers/StoreProvider/consts/consts';
 export type {
   StateSchema,

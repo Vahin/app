@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { mockedArticle } from '@/shared/mocks/mockedArticle';
-import { ArticleView } from '@/entities/Article/testing';
+import { mockedArticle, ArticleView } from '@/entities/Article/testing';
 import ArticlesPage from './ArticlesPage';
 
 const meta: Meta<typeof ArticlesPage> = {

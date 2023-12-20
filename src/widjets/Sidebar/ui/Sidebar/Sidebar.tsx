@@ -1,8 +1,8 @@
 import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Navbar } from '@/widjets/Navbar';
-import { ThemeSwitcher } from '@/widjets/ThemeSwitcher';
-import { LangSwitcher } from '@/widjets/LangSwitcher';
+import { Navbar } from '@/features/Navbar';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import cls from './Sidebar.module.scss';
 

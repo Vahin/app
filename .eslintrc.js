@@ -87,6 +87,10 @@ module.exports = {
         '**/*.test.*', '**/*.stories.*', '**/StoreDecorator.ts*',
       ],
     }],
+    'fsd-vakhr/layers-imports': ['error', {
+      alias: '@',
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+    }],
   },
   globals: {
     __IS_DEV__: true,

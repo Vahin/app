@@ -1,7 +1,9 @@
 import Avatar from '@/shared/assets/test/medoed.jpeg';
-import { Article, ArticleBlockType } from '@/entities/Article';
-import Preview from './assets/preview.png';
-import Screenshot from './assets/screenshot.png';
+
+import Preview from '../assets/icons/preview.png';
+import Screenshot from '../assets/icons/screenshot.png';
+import { Article } from '../model/types/article';
+import { ArticleBlockType } from '../model/consts/consts';
 
 export const mockedArticle: Article = {
   id: '1',

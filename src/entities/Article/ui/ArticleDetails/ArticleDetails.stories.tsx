@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { mockedArticle } from '@/shared/mocks/mockedArticle';
 import { ArticleDetails } from './ArticleDetails';
+import { mockedArticle } from '../../mocks/mockedArticle';
 
 const data = mockedArticle;
 
