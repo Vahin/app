@@ -25,6 +25,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'fsd-vakhr',
+    'unused-imports',
   ],
   ignorePatterns: ['./.fttemplates/**/*'],
   rules: {
@@ -91,6 +92,7 @@ module.exports = {
       alias: '@',
       ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
     }],
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __IS_DEV__: true,
