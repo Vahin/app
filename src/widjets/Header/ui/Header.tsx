@@ -13,7 +13,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Header.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface HeaderProps {
   className?: string;
@@ -43,7 +43,7 @@ export const Header = memo((props: HeaderProps) => {
         theme={TextTheme.INVERTED}
       />
       <AppLink
-        to={RoutePath.article_create}
+        to={getRouteArticleCreate()}
         theme={AppLinkTheme.INVERTED}
       >
         {t('Новая статья')}

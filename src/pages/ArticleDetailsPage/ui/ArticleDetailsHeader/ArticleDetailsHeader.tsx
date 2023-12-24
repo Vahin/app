@@ -6,7 +6,7 @@ import { Button, ButtonSize } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getArticleDetailsEditability } from '../../model/selectors/getArticleDetailsEditability';
 import cls from './ArticleDetailsHeader.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface ArticleDetailsHeaderProps {
   className?: string;
@@ -24,7 +24,7 @@ export const ArticleDetailsHeader = memo((props: ArticleDetailsHeaderProps) => {
   }, [navigate]);
 
   const onEdit = useCallback(() => {
-    navigate(`${RoutePath.article_details}${id}/edit`);
+    navigate(getRouteArticleDetails(id));
   }, [navigate, id]);
 
   return (

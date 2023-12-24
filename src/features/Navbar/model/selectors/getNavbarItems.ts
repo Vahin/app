@@ -5,19 +5,21 @@ import AboutIcon from '../../assets/icons/list.svg';
 import ProfileIcon from '../../assets/icons/profile.svg';
 import ArticlesIcon from '../../assets/icons/articles.svg';
 import { NavbarItemType } from '../types/navbar';
-import { RoutePath } from '@/shared/const/router';
+import {
+  getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
+} from '@/shared/const/router';
 
 export const getNavbarItems = createSelector(
   getUserAuthData,
   (authData) => {
     const navbarItemsList: NavbarItemType[] = [
       {
-        path: RoutePath.main,
+        path: getRouteMain(),
         text: 'Главная',
         Icon: HomeIcon,
       },
       {
-        path: RoutePath.about,
+        path: getRouteAbout(),
         text: 'О сайте',
         Icon: AboutIcon,
       },
@@ -27,13 +29,13 @@ export const getNavbarItems = createSelector(
     if (authData) {
       navbarItemsList.push(
         {
-          path: RoutePath.profile + authData.id,
+          path: getRouteProfile(authData.id),
           text: 'Профиль',
           Icon: ProfileIcon,
           authOnly: true,
         },
         {
-          path: RoutePath.articles,
+          path: getRouteArticles(),
           text: 'Статьи',
           Icon: ArticlesIcon,
           authOnly: true,

@@ -13,7 +13,7 @@ import {
 } from '../../model/types/article';
 import EyeIcon from '../../assets/icons/eye.svg';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface ArticlesListItemProps {
   className?: string;
@@ -59,7 +59,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           <div className={cls.footer}>
             <AppLink
               target={target}
-              to={RoutePath.article_details + article.id}
+              to={getRouteArticleDetails(article.id)}
             >
               {t('Читать далее')}
             </AppLink>
@@ -84,7 +84,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
         <Text text={article.title} className={cls.title} />
         <AppLink
           target={target}
-          to={RoutePath.article_details + article.id}
+          to={getRouteArticleDetails(article.id)}
           className={cls.link}
         />
       </Card>
