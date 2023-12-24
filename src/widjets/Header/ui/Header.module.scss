@@ -1,0 +1,24 @@
+.Header {
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--invert-bg-color);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+}
+
+.logo {
+  width: var(--sidebar-width);
+  margin-right: -20px;
+}
+
+.btn {
+  margin-left: auto;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}

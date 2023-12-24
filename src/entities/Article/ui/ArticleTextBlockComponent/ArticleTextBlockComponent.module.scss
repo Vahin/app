@@ -1,0 +1,16 @@
+.ArticleTextBlockComponent {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.paragraph {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
