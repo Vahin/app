@@ -6,3 +6,12 @@
   flex-direction: column;
   gap: 20px;
 }
+
+*[loki-test] .ArticlesPage {
+  box-shadow: none;
+}
+
+*[loki-test] .ArticlesPage::before {
+  animation: none;
+  opacity: 0;
+}

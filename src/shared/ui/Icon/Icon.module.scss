@@ -1,22 +1,27 @@
 .Icon {
   &.fill-primary {
     fill: var(--primary-color);
+    color: var(--primary-color);
   }
 
   &.fill-secondary {
     fill: var(--secondary-color);
+    color: var(--secondary-color);
   }
 
   &.fill-primary-inverted {
     fill: var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
   }
 
   &.fill-secondary-inverted {
     fill: var(--inverted-secondary-color);
+    color: var(--inverted-secondary-color);
   }
 
   &.fill-none {
     fill: none;
+    color: none;
   }
 
   &.stroke-primary {
