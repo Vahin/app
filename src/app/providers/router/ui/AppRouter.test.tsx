@@ -32,7 +32,7 @@ describe('app/touter/AppRouter', () => {
     expect(page).toBeInTheDocument();
   });
 
-  test('Доступ к закрытой страинцы для авторизованного пользователя', async () => {
+  test('Доступ к закрытой страницы для авторизованного пользователя', async () => {
     ComponentRender(<AppRouter />, {
       route: getRouteProfile('1'),
       initialState: {

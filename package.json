@@ -28,6 +28,9 @@
     "create:slice": "node ./scripts/createSlice",
     "postinstall": "node scripts/clear-cache.js"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
+  },
   "author": "Danil Vakhrushev <danil.e.vakhrushev@gmail.com>",
   "license": "ISC",
   "devDependencies": {
@@ -86,6 +89,7 @@
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.1.4",
     "json-server": "^0.17.0",
+    "lint-staged": "^15.2.0",
     "loki": "^0.32.0",
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.12.0",
