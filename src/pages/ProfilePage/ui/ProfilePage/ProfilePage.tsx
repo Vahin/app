@@ -9,7 +9,7 @@ const ProfilePage = () => {
   if (!id) return null;
 
   return (
-    <Page>
+    <Page data-testid="ProfilePage">
       <VStack gap="16" max align="stretch">
         <EditableProfileCard id={id} />
       </VStack>
