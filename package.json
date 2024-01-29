@@ -73,7 +73,7 @@
     "deelay": "^2.0.0",
     "eslint": "^8.55.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-fsd-vakhr": "^0.0.7",
+    "eslint-plugin-fsd-vakhr": "^0.0.8",
     "eslint-plugin-i18next": "^5.1.2",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
