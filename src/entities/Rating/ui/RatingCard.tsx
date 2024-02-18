@@ -59,12 +59,19 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const modalContent = (
     <VStack max gap="32">
       <Text title={feedbackTitle} />
-      <Input placeholder={t('Ваш отзыв')} onChange={setFeedback} />
+      <Input
+        data-testid="RatingCard.Input"
+        placeholder={t('Ваш отзыв')}
+        onChange={setFeedback}
+      />
     </VStack>
   );
 
   return (
-    <Card className={classNames('', {}, [className])}>
+    <Card
+      data-testid="RatingCard"
+      className={classNames('', {}, [className])}
+    >
       <VStack gap="8" align="center">
         <Text title={starsCount ? 'Спасибо за оценку!' : title} />
         <StarRating
@@ -78,7 +85,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
           <Drawer isOpen={isModalOpen} onClose={cancelHandle}>
             <VStack gap="8" align="stretch">
               {modalContent}
-              <Button onClick={acceptHandle}>{t('Отправить')}</Button>
+              <Button
+                data-testid="RatingCard.Send"
+                onClick={acceptHandle}
+              >
+                {t('Отправить')}
+              </Button>
             </VStack>
           </Drawer>
         ) : (
@@ -87,8 +99,19 @@ export const RatingCard = memo((props: RatingCardProps) => {
               {modalContent}
 
               <HStack max justify="spaceBetween">
-                <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>{t('Закрыть')}</Button>
-                <Button onClick={acceptHandle}>{t('Отправить')}</Button>
+                <Button
+                  data-testid="RatingCard.Close"
+                  onClick={cancelHandle}
+                  theme={ButtonTheme.OUTLINE_RED}
+                >
+                  {t('Закрыть')}
+                </Button>
+                <Button
+                  data-testid="RatingCard.Send"
+                  onClick={acceptHandle}
+                >
+                  {t('Отправить')}
+                </Button>
               </HStack>
             </VStack>
           </Modal>
