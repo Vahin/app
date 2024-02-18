@@ -9,4 +9,10 @@ describe('Пользователь заходит на страницу со с�
     cy.getByTestId('ArticlesList').should('exist');
     cy.getByTestId('ArticlesListItem').should('have.length.greaterThan', 3);
   });
+
+  it('На стабах (фикстурах)', () => {
+    cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' });
+    cy.getByTestId('ArticlesList').should('exist');
+    cy.getByTestId('ArticlesListItem').should('have.length.greaterThan', 3);
+  });
 });

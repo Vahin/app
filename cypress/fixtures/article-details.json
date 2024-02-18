@@ -1,0 +1,81 @@
+{
+  "id": "11",
+  "userId": "1",
+  "title": "Global Economic Challenges",
+  "subtitle": "Challenges faced by the global economy in the current scenario",
+  "img": "data:image/jpeg;base64,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",
+  "views": 543,
+  "createdAt": "01.08.2022",
+  "type": [
+      "ECONOMICS"
+  ],
+  "blocks": [
+      {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+              "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+              "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+              "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+          ]
+      },
+      {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
+      },
+      {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+              "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+              "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+          ]
+      },
+      {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+          "title": "Рисунок 1 - скриншот сайта"
+      },
+      {
+          "id": "3",
+          "type": "CODE",
+          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+      },
+      {
+          "id": "7",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+              "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+              "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+          ]
+      },
+      {
+          "id": "8",
+          "type": "IMAGE",
+          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+          "title": "Рисунок 1 - скриншот сайта"
+      },
+      {
+          "id": "9",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+              "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
+          ]
+      }
+  ],
+  "user": {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "roles": [
+          "ADMIN"
+      ],
+      "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"
+  }
+}
