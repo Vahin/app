@@ -12,9 +12,7 @@ export default meta;
 type Story = StoryObj<typeof NotificationsList>;
 
 export const Default: Story = {
-  decorators: [StoreDecorator({
-
-  })],
+  decorators: [StoreDecorator({})],
   parameters: {
     mockData: [
       {
@@ -49,9 +47,7 @@ export const Default: Story = {
 };
 
 export const Loading: Story = {
-  decorators: [StoreDecorator({
-
-  })],
+  decorators: [StoreDecorator({})],
   parameters: {
     mockData: [
       {

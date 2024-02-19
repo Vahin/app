@@ -9,13 +9,14 @@ export const scrollSaverSlice = createSlice({
   name: 'scroll',
   initialState,
   reducers: {
-    setScrollPosition: (state, { payload }: PayloadAction<{ path: string, position: number }>) => {
+    setScrollPosition: (
+      state,
+      { payload }: PayloadAction<{ path: string; position: number }>,
+    ) => {
       state.records[payload.path] = payload.position;
     },
   },
 });
 
-export const {
-  actions: scrollSaverActions,
-  reducer: scrollSaverReducer,
-} = scrollSaverSlice;
+export const { actions: scrollSaverActions, reducer: scrollSaverReducer } =
+  scrollSaverSlice;

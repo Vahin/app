@@ -21,21 +21,21 @@ export const Sidebar = memo((props: SidebarProps) => {
 
   return (
     <aside
-      data-testid="sidebar"
+      data-testid='sidebar'
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
     >
       <Navbar className={cls.Navbar} collapsed={collapsed} />
       <Button
-        data-testid="sidebar-toggle"
+        data-testid='sidebar-toggle'
         onClick={toggleClickHandler}
         className={cls.collapseBtn}
         theme={ButtonTheme.BACKGROUND_INVERTED}
         size={ButtonSize.L}
         square
       >
-        { collapsed ? '>' : '<' }
+        {collapsed ? '>' : '<'}
       </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />

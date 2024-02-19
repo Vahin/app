@@ -8,25 +8,23 @@ import UserAvatar from './assets/avatar.svg';
 
 interface AvatarProps {
   className?: string;
-  src?: string
-  alt?: string
-  size?: number
+  src?: string;
+  alt?: string;
+  size?: number;
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const {
-    className,
-    src,
-    alt,
-    size = 100,
-  } = props;
+  const { className, src, alt, size = 100 } = props;
 
-  const styles: CSSProperties = useMemo(() => ({
-    width: size,
-    height: size,
-  }), [size]);
+  const styles: CSSProperties = useMemo(
+    () => ({
+      width: size,
+      height: size,
+    }),
+    [size],
+  );
 
-  const fallback = <Skeleton width={size} height={size} border="50%" />;
+  const fallback = <Skeleton width={size} height={size} border='50%' />;
   const errorFallback = <Icon width={size} height={size} Svg={UserAvatar} />;
 
   return (

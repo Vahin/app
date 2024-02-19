@@ -17,11 +17,7 @@ export const mockedArticle: Article = {
   img: Preview,
   views: 1022,
   createdAt: '26.02.2022',
-  type: [
-    'IT',
-    'SCIENCE',
-    'POLITICS',
-  ],
+  type: ['IT', 'SCIENCE', 'POLITICS'],
   blocks: [
     {
       id: '1',

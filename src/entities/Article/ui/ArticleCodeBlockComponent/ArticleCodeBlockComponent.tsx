@@ -5,15 +5,17 @@ import { ArticleCodeBlock } from '../../model/types/article';
 
 interface ArticleCodeBlockComponentProps {
   className?: string;
-  block: ArticleCodeBlock
+  block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
-  const { className, block } = props;
+export const ArticleCodeBlockComponent = memo(
+  (props: ArticleCodeBlockComponentProps) => {
+    const { className, block } = props;
 
-  return (
-    <pre className={classNames('', {}, [className])}>
-      <Code text={block.code} />
-    </pre>
-  );
-});
+    return (
+      <pre className={classNames('', {}, [className])}>
+        <Code text={block.code} />
+      </pre>
+    );
+  },
+);

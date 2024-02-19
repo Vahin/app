@@ -1,6 +1,4 @@
-import {
-  Component, ErrorInfo, ReactNode, Suspense,
-} from 'react';
+import { Component, ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from '@/widjets/PageError';
 
 interface ErrorBoundaryProps {
@@ -8,10 +6,13 @@ interface ErrorBoundaryProps {
 }
 
 interface ErrorBoundaryState {
-  hasError: boolean
+  hasError: boolean;
 }
 
-export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export class ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
@@ -30,7 +31,11 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     const { children } = this.props;
 
     if (hasError) {
-      return <Suspense fallback=""><PageError /></Suspense>;
+      return (
+        <Suspense fallback=''>
+          <PageError />
+        </Suspense>
+      );
     }
 
     return children;

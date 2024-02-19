@@ -20,12 +20,15 @@ export interface ArticleImageBlock extends ArticleBlockBase {
 export interface ArticleTextBlock extends ArticleBlockBase {
   type: ArticleBlockType.TEXT;
   title?: string;
-  paragraphs: string[]
+  paragraphs: string[];
 }
 
-export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
+export type ArticleBlock =
+  | ArticleCodeBlock
+  | ArticleImageBlock
+  | ArticleTextBlock;
 
-export type ArticleType = 'ALL' | 'IT' | 'SCIENCE' | 'ECONOMICS' | 'POLITICS'
+export type ArticleType = 'ALL' | 'IT' | 'SCIENCE' | 'ECONOMICS' | 'POLITICS';
 
 export interface Article {
   id: string;

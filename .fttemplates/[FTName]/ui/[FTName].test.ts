@@ -1,6 +1,5 @@
 describe('[FTName]', () => {
   test('', () => {
-    
-    expect().toEqual()
-  })
-})
+    expect().toEqual();
+  });
+});

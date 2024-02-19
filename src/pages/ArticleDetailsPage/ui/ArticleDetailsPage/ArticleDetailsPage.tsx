@@ -31,7 +31,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
   return (
     <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-      <VStack gap="32">
+      <VStack gap='32'>
         <ArticleDetailsHeader id={id} />
         <ArticleDetails id={id} />
         <ArticleRating articleId={id} className={cls.rating} />

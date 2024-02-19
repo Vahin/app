@@ -15,13 +15,15 @@ export const Default: Story = {
   args: {
     articleId: '1',
   },
-  decorators: [StoreDecorator({
-    user: {
-      authData: {
-        id: '1',
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+        },
       },
-    },
-  })],
+    }),
+  ],
   parameters: {
     mockData: [
       {
@@ -42,13 +44,15 @@ export const WithoutRate: Story = {
   args: {
     articleId: '1',
   },
-  decorators: [StoreDecorator({
-    user: {
-      authData: {
-        id: '1',
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+        },
       },
-    },
-  })],
+    }),
+  ],
   parameters: {
     mockData: [
       {

@@ -15,30 +15,26 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
-  const {
-    className,
-    comment,
-    isLoading,
-  } = props;
+  const { className, comment, isLoading } = props;
 
   if (isLoading || !comment) {
     return (
       <div
-        data-testid="CommentCard.Loading"
+        data-testid='CommentCard.Loading'
         className={classNames(cls.CommentCard, {}, [className])}
       >
         <div className={cls.header}>
-          <Skeleton width={30} height={30} border="50%" />
+          <Skeleton width={30} height={30} border='50%' />
           <Skeleton width={100} height={16} />
         </div>
-        <Skeleton width="100%" height={50} />
+        <Skeleton width='100%' height={50} />
       </div>
     );
   }
 
   return (
     <div
-      data-testid="CommentCard.Content"
+      data-testid='CommentCard.Content'
       className={classNames(cls.CommentCard, {}, [className])}
     >
       <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>

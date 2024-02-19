@@ -9,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -67,7 +68,7 @@ module.exports = {
     }],
     'max-len': [2, {
       ignoreComments: true,
-      code: 120,
+      code: 125,
     }],
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
@@ -93,6 +94,11 @@ module.exports = {
       ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
     }],
     'unused-imports/no-unused-imports': 'error',
+    'react/jsx-first-prop-new-line': [2, 'multiline'],
+    'react/jsx-max-props-per-line': [
+      2,
+      { maximum: 1, when: 'multiline' },
+    ],
   },
   globals: {
     __IS_DEV__: true,

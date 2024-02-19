@@ -10,7 +10,7 @@ import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface ArticleDetailsHeaderProps {
   className?: string;
-  id: string
+  id: string;
 }
 
 export const ArticleDetailsHeader = memo((props: ArticleDetailsHeaderProps) => {
@@ -29,27 +29,14 @@ export const ArticleDetailsHeader = memo((props: ArticleDetailsHeaderProps) => {
 
   return (
     <div className={classNames(cls.ArticleDetailsHeader, {}, [className])}>
-      <Button
-        onClick={onBack}
-        size={ButtonSize.S}
-        className={cls.backBtn}
-      >
+      <Button onClick={onBack} size={ButtonSize.S} className={cls.backBtn}>
         {t('Назад')}
-
       </Button>
-      {
-        editability && (
-        <Button
-          onClick={onEdit}
-          size={ButtonSize.S}
-          className={cls.editBtn}
-        >
+      {editability && (
+        <Button onClick={onEdit} size={ButtonSize.S} className={cls.editBtn}>
           {t('Редактировать')}
-
         </Button>
-        )
-      }
-
+      )}
     </div>
   );
 });

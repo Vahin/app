@@ -8,18 +8,18 @@ import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 
 export interface ListboxItem {
-  value: string
-  content: ReactNode
+  value: string;
+  content: ReactNode;
 }
 
 export interface ListboxProps {
-  items: ListboxItem[]
-  className?: string
-  value?: string
-  defaultValue?: string
-  onChange: (value: string) => void
-  readonly?: boolean
-  direction?: DropdownDirection
+  items: ListboxItem[];
+  className?: string;
+  value?: string;
+  defaultValue?: string;
+  onChange: (value: string) => void;
+  readonly?: boolean;
+  direction?: DropdownDirection;
 }
 
 export const Listbox = (props: ListboxProps) => {
@@ -35,26 +35,28 @@ export const Listbox = (props: ListboxProps) => {
 
   return (
     <HListbox
-      as="div"
-      className={classNames(cls.listbox, {
-        [cls.disabled]: readonly,
-      }, [className, popupCls.popup])}
+      as='div'
+      className={classNames(
+        cls.listbox,
+        {
+          [cls.disabled]: readonly,
+        },
+        [className, popupCls.popup],
+      )}
       value={value}
       onChange={onChange}
       disabled={readonly}
     >
-      <HListbox.Button as="div" className={cls.trigger}>
+      <HListbox.Button as='div' className={cls.trigger}>
         <Button size={ButtonSize.S} disabled={readonly}>
           {value || defaultValue}
         </Button>
       </HListbox.Button>
-      <HListbox.Options className={classNames(cls.options, {}, [mapDirectionClass[direction]])}>
+      <HListbox.Options
+        className={classNames(cls.options, {}, [mapDirectionClass[direction]])}
+      >
         {items.map((item) => (
-          <HListbox.Option
-            key={item.value}
-            value={item.value}
-            as={Fragment}
-          >
+          <HListbox.Option key={item.value} value={item.value} as={Fragment}>
             {({ active, selected }) => (
               <li
                 className={classNames(cls.item, {

@@ -17,9 +17,5 @@ export const BugButton: FC = () => {
     }
   });
 
-  return (
-    <Button onClick={toggleError}>
-      {t('СЛОМАТЬ ВСЁ')}
-    </Button>
-  );
+  return <Button onClick={toggleError}>{t('СЛОМАТЬ ВСЁ')}</Button>;
 };

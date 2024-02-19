@@ -12,30 +12,36 @@ export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Fulfilled: Story = {
-  decorators: [StoreDecorator({
-    loginForm: {
-      username: 'Username',
-      password: '123',
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: 'Username',
+        password: '123',
+      },
+    }),
+  ],
 };
 
 export const Error: Story = {
-  decorators: [StoreDecorator({
-    loginForm: {
-      username: 'Username',
-      password: '123',
-      error: 'Вы ввели неверный логин или пароль',
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: 'Username',
+        password: '123',
+        error: 'Вы ввели неверный логин или пароль',
+      },
+    }),
+  ],
 };
 
 export const Loading: Story = {
-  decorators: [StoreDecorator({
-    loginForm: {
-      username: 'Username',
-      password: '123',
-      isLoading: true,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: 'Username',
+        password: '123',
+        isLoading: true,
+      },
+    }),
+  ],
 };

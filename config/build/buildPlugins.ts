@@ -48,22 +48,26 @@ export const buildPlugins = ({
   if (isDev) {
     plugins.push(new HotModuleReplacementPlugin());
     plugins.push(new ReactRefreshWebpackPlugin());
-    plugins.push(new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      failOnError: true,
-    }));
+    plugins.push(
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true,
+      }),
+    );
   }
 
   if (isProd) {
-    plugins.push(new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }));
-    plugins.push(new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales },
-      ],
-    }));
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+    );
+    plugins.push(
+      new CopyPlugin({
+        patterns: [{ from: paths.locales, to: paths.buildLocales }],
+      }),
+    );
   }
 
   return plugins;

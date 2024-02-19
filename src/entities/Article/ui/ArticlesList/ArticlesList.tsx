@@ -1,6 +1,4 @@
-import {
-  HTMLAttributeAnchorTarget, memo, useCallback,
-} from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
@@ -16,7 +14,7 @@ interface ArticlesListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
-  target?: HTMLAttributeAnchorTarget
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
@@ -38,14 +36,22 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     />
   );
 
-  const getSkeletons = useCallback((view: ArticleView) => (
-    <>
-      {new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((_, index) => (
-        // eslint-disable-next-line
-        <ArticleListItemSkeleton view={view} key={index} />
-      ))}
-    </>
-  ), []);
+  const getSkeletons = useCallback(
+    (view: ArticleView) => (
+      <>
+        {new Array(view === ArticleView.SMALL ? 9 : 3)
+          .fill(0)
+          .map((_, index) => (
+            <ArticleListItemSkeleton
+              view={view}
+              // eslint-disable-next-line
+              key={index}
+            />
+          ))}
+      </>
+    ),
+    [],
+  );
 
   if (!isLoading && !articles.length) {
     return (
@@ -58,16 +64,10 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
   return (
     <div
       className={classNames(cls.ArticlesList, {}, [className, cls[view]])}
-      data-testid="ArticlesList"
+      data-testid='ArticlesList'
     >
-      {
-        articles.length > 0
-          ? articles.map(renderArticle)
-          : null
-      }
-      {
-        isLoading && getSkeletons(view)
-      }
+      {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });

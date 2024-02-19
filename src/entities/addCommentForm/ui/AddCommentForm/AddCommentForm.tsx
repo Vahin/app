@@ -5,10 +5,16 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input';
 import { Button, ButtonSize } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 // ! import { getCommentFormError } from '../../model/selectors/getCommentFormError/getCommentFormError';
 import { getCommentFormText } from '../../model/selectors/getCommentFormText/getCommentFormText';
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
+import {
+  addCommentFormActions,
+  addCommentFormReducer,
+} from '../../model/slice/addCommentFormSlice';
 import cls from './AddCommentForm.module.scss';
 
 interface AddCommentFormProps {
@@ -24,9 +30,12 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
   // ! const error = useSelector(getCommentFormError);
   const dispatch = useAppDispatch();
 
-  const onCommentTextChange = useCallback((value: string) => {
-    dispatch(addCommentFormActions.setText(value));
-  }, [dispatch]);
+  const onCommentTextChange = useCallback(
+    (value: string) => {
+      dispatch(addCommentFormActions.setText(value));
+    },
+    [dispatch],
+  );
 
   const onSendHandler = useCallback(() => {
     onSendComment(text || '');
@@ -40,27 +49,25 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <div
-        data-testid="AddCommentForm"
+        data-testid='AddCommentForm'
         className={classNames(cls.AddCommentForm, {}, [className])}
       >
         <Input
-          data-testid="AddCommentForm.Input"
+          data-testid='AddCommentForm.Input'
           placeholder={t('Что скажете?')}
           value={text}
           onChange={onCommentTextChange}
           className={cls.input}
         />
         <Button
-          data-testid="AddCommentForm.Button"
+          data-testid='AddCommentForm.Button'
           className={cls.button}
           size={ButtonSize.S}
           onClick={onSendHandler}
         >
           {t('Отправить')}
-
         </Button>
       </div>
     </DynamicModuleLoader>
-
   );
 });

@@ -26,10 +26,12 @@ const data: Profile = {
 type Story = StoryObj<typeof ProfilePage>;
 
 export const Default: Story = {
-  decorators: [StoreDecorator({
-    profile: {
-      form: data,
-      data,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      profile: {
+        form: data,
+        data,
+      },
+    }),
+  ],
 };

@@ -16,20 +16,21 @@ interface ProfileCardProps {
   data?: Profile;
   isLoading?: boolean;
   error?: string;
-  readonly?: boolean
-  onChangeFirstname?: (value: string) => void
-  onChangeLastname?: (value: string) => void
-  onChangeCity?: (value: string) => void
-  onChangeAge?: (value: string) => void
-  onChangeAvatar?: (value: string) => void
-  onChangeUsername?: (value: string) => void
-  onChangeCurrency?: (currency: CurrencyType) => void
-  onChangeCountry?: (country: CountryType) => void
+  readonly?: boolean;
+  onChangeFirstname?: (value: string) => void;
+  onChangeLastname?: (value: string) => void;
+  onChangeCity?: (value: string) => void;
+  onChangeAge?: (value: string) => void;
+  onChangeAvatar?: (value: string) => void;
+  onChangeUsername?: (value: string) => void;
+  onChangeCurrency?: (currency: CurrencyType) => void;
+  onChangeCountry?: (country: CountryType) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
   const {
-    className, data,
+    className,
+    data,
     isLoading,
     error,
     readonly,
@@ -46,10 +47,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+      <div
+        className={classNames(cls.ProfileCard, {}, [className, cls.loading])}
+      >
         <Loader />
       </div>
-
     );
   }
 
@@ -60,22 +62,19 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           title={t('Ошибка при загрузке')}
           text={t('Попробуйте обновить страницу')}
           theme={TextTheme.ERROR}
-          align="center"
+          align='center'
         />
       </div>
-
     );
   }
 
   return (
     <div className={classNames(cls.ProfileCard, {}, [className])}>
-      {
-        data?.avatar && (
-          <div className={cls.avatarWrapper}>
-            <Avatar src={data?.avatar} alt={t('Аватар пользователя')} />
-          </div>
-        )
-      }
+      {data?.avatar && (
+        <div className={cls.avatarWrapper}>
+          <Avatar src={data?.avatar} alt={t('Аватар пользователя')} />
+        </div>
+      )}
 
       <Input
         value={data?.firstname}
@@ -83,7 +82,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeFirstname}
         readOnly={readonly}
-        data-testid="ProfileCard.Firstname"
+        data-testid='ProfileCard.Firstname'
       />
       <Input
         value={data?.lastname}
@@ -91,7 +90,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeLastname}
         readOnly={readonly}
-        data-testid="ProfileCard.Lastname"
+        data-testid='ProfileCard.Lastname'
       />
       <Input
         value={data?.age}
@@ -99,7 +98,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeAge}
         readOnly={readonly}
-        data-testid="ProfileCard.Age"
+        data-testid='ProfileCard.Age'
       />
       <Input
         value={data?.city}
@@ -107,7 +106,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeCity}
         readOnly={readonly}
-        data-testid="ProfileCard.City"
+        data-testid='ProfileCard.City'
       />
       <Input
         value={data?.username}
@@ -115,7 +114,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeUsername}
         readOnly={readonly}
-        data-testid="ProfileCard.Username"
+        data-testid='ProfileCard.Username'
       />
       <Input
         value={data?.avatar}
@@ -123,9 +122,9 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         className={cls.input}
         onChange={onChangeAvatar}
         readOnly={readonly}
-        data-testid="ProfileCard.Avatar"
+        data-testid='ProfileCard.Avatar'
       />
-      <HStack gap="8">
+      <HStack gap='8'>
         <CurrencySelect
           value={data?.currency}
           onChange={onChangeCurrency}

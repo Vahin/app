@@ -12,34 +12,30 @@ import { Theme } from '@/shared/types/theme';
 import '@/app/styles/index.scss';
 
 export interface ComponentRenderOptions {
-  route?: string,
-  initialState?: DeepPartial<StateSchema>,
-  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
-  theme?: Theme
+  route?: string;
+  initialState?: DeepPartial<StateSchema>;
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
+  theme?: Theme;
 }
 
 export interface TestProviderProps {
-  children: ReactNode,
-  options?: ComponentRenderOptions
+  children: ReactNode;
+  options?: ComponentRenderOptions;
 }
 
 export const TestProvider = (props: TestProviderProps) => {
   const { children, options = {} } = props;
-  const {
-    route = '/',
-    initialState,
-    asyncReducers,
-    theme = 'light',
-  } = options;
+  const { route = '/', initialState, asyncReducers, theme = 'light' } = options;
 
   return (
     <MemoryRouter initialEntries={[route]}>
-      <StoreProvider asyncReducers={asyncReducers} initialState={initialState as StateSchema}>
+      <StoreProvider
+        asyncReducers={asyncReducers}
+        initialState={initialState as StateSchema}
+      >
         <I18nextProvider i18n={i18nForTests}>
           <ThemeProvider themeProps={theme}>
-            <div>
-              {children}
-            </div>
+            <div>{children}</div>
           </ThemeProvider>
         </I18nextProvider>
       </StoreProvider>

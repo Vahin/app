@@ -24,42 +24,50 @@ const entities = {
 };
 
 export const Tail: Story = {
-  decorators: [StoreDecorator({
-    articlePage: {
-      ids: [1, 2, 3, 4, 5, 6, 7, 8],
-      entities,
-      view: ArticleView.SMALL,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      articlePage: {
+        ids: [1, 2, 3, 4, 5, 6, 7, 8],
+        entities,
+        view: ArticleView.SMALL,
+      },
+    }),
+  ],
 };
 
 export const List: Story = {
-  decorators: [StoreDecorator({
-    articlePage: {
-      ids: [1, 2, 3, 4, 5, 6, 7, 8],
-      entities,
-      view: ArticleView.BIG,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      articlePage: {
+        ids: [1, 2, 3, 4, 5, 6, 7, 8],
+        entities,
+        view: ArticleView.BIG,
+      },
+    }),
+  ],
 };
 
 export const TailLoading: Story = {
-  decorators: [StoreDecorator({
-    articlePage: {
-      ids: [1, 2, 3, 4, 5, 6, 7, 8],
-      entities,
-      view: ArticleView.SMALL,
-      isLoading: true,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      articlePage: {
+        ids: [1, 2, 3, 4, 5, 6, 7, 8],
+        entities,
+        view: ArticleView.SMALL,
+        isLoading: true,
+      },
+    }),
+  ],
 };
 
 export const ListLoading: Story = {
-  decorators: [StoreDecorator({
-    articlePage: {
-      ids: [1, 2, 3, 4, 5, 6, 7, 8],
-      entities,
-      isLoading: true,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      articlePage: {
+        ids: [1, 2, 3, 4, 5, 6, 7, 8],
+        entities,
+        isLoading: true,
+      },
+    }),
+  ],
 };

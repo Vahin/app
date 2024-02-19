@@ -12,10 +12,12 @@ export default meta;
 type Story = StoryObj<typeof AddCommentForm>;
 
 export const Default: Story = {
-  decorators: [StoreDecorator({
-    addCommentForm: {
-      text: 'some text',
-      error: undefined,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      addCommentForm: {
+        text: 'some text',
+        error: undefined,
+      },
+    }),
+  ],
 };

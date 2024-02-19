@@ -12,47 +12,44 @@ interface ArticleRecommendationListProps {
   className?: string;
 }
 
-export const ArticleRecommendationList = memo((props: ArticleRecommendationListProps) => {
-  const { t } = useTranslation();
-  const { className } = props;
-  const { data, isLoading, error } = useArticleRecomendationsList(4);
+export const ArticleRecommendationList = memo(
+  (props: ArticleRecommendationListProps) => {
+    const { t } = useTranslation();
+    const { className } = props;
+    const { data, isLoading, error } = useArticleRecomendationsList(4);
 
-  if (isLoading) {
-    // ! Обработать состояния загрузки и ошибки
+    if (isLoading) {
+      // ! Обработать состояния загрузки и ошибки
+      return <Loader />;
+    }
+
+    if (error) {
+      return (
+        // eslint-disable-next-line
+        <div>Error</div>
+      );
+    }
+
+    if (!data) {
+      return (
+        // eslint-disable-next-line
+        <div>No data</div>
+      );
+    }
+
     return (
-      <Loader />
+      <VStack
+        gap='8'
+        className={classNames('', {}, [className])}
+        data-testid='ArticleRecommendationList'
+      >
+        <Text text={t('Рекомендации')} size='lg' />
+        <ArticlesList
+          articles={data}
+          className={cls.articles}
+          target='_blank'
+        />
+      </VStack>
     );
-  }
-
-  if (error) {
-    return (
-      // eslint-disable-next-line
-      <div>Error</div>
-    );
-  }
-
-  if (!data) {
-    return (
-      // eslint-disable-next-line
-      <div>No data</div>
-    );
-  }
-
-  return (
-    <VStack
-      gap="8"
-      className={classNames('', {}, [className])}
-      data-testid="ArticleRecommendationList"
-    >
-      <Text
-        text={t('Рекомендации')}
-        size="lg"
-      />
-      <ArticlesList
-        articles={data}
-        className={cls.articles}
-        target="_blank"
-      />
-    </VStack>
-  );
-});
+  },
+);

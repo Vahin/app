@@ -26,25 +26,29 @@ const data: Profile = {
 };
 
 export const Default: Story = {
-  decorators: [StoreDecorator({
-    profile: {
-      data,
-      form: data,
-    },
-    user: {
-      authData: {
-        id: '1',
+  decorators: [
+    StoreDecorator({
+      profile: {
+        data,
+        form: data,
       },
-    },
-  })],
+      user: {
+        authData: {
+          id: '1',
+        },
+      },
+    }),
+  ],
 };
 
 export const Readonly: Story = {
-  decorators: [StoreDecorator({
-    profile: {
-      data,
-      form: data,
-      readonly: true,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      profile: {
+        data,
+        form: data,
+        readonly: true,
+      },
+    }),
+  ],
 };

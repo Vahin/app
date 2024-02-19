@@ -6,43 +6,42 @@ import ProfileIcon from '../../assets/icons/profile.svg';
 import ArticlesIcon from '../../assets/icons/articles.svg';
 import { NavbarItemType } from '../types/navbar';
 import {
-  getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
+  getRouteAbout,
+  getRouteArticles,
+  getRouteMain,
+  getRouteProfile,
 } from '@/shared/const/router';
 
-export const getNavbarItems = createSelector(
-  getUserAuthData,
-  (authData) => {
-    const navbarItemsList: NavbarItemType[] = [
+export const getNavbarItems = createSelector(getUserAuthData, (authData) => {
+  const navbarItemsList: NavbarItemType[] = [
+    {
+      path: getRouteMain(),
+      text: 'Главная',
+      Icon: HomeIcon,
+    },
+    {
+      path: getRouteAbout(),
+      text: 'О сайте',
+      Icon: AboutIcon,
+    },
+  ];
+
+  if (authData) {
+    navbarItemsList.push(
       {
-        path: getRouteMain(),
-        text: 'Главная',
-        Icon: HomeIcon,
+        path: getRouteProfile(authData.id),
+        text: 'Профиль',
+        Icon: ProfileIcon,
+        authOnly: true,
       },
       {
-        path: getRouteAbout(),
-        text: 'О сайте',
-        Icon: AboutIcon,
+        path: getRouteArticles(),
+        text: 'Статьи',
+        Icon: ArticlesIcon,
+        authOnly: true,
       },
+    );
+  }
 
-    ];
-
-    if (authData) {
-      navbarItemsList.push(
-        {
-          path: getRouteProfile(authData.id),
-          text: 'Профиль',
-          Icon: ProfileIcon,
-          authOnly: true,
-        },
-        {
-          path: getRouteArticles(),
-          text: 'Статьи',
-          Icon: ArticlesIcon,
-          authOnly: true,
-        },
-      );
-    }
-
-    return navbarItemsList;
-  },
-);
+  return navbarItemsList;
+});

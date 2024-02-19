@@ -12,31 +12,35 @@ export default meta;
 
 type Story = StoryObj<typeof CommentList>;
 
-const comments: CommentType[] = [{
-  id: '1',
-  text: 'test 1',
-  user: {
+const comments: CommentType[] = [
+  {
     id: '1',
-    username: 'Username',
-    avatar: Avatar,
+    text: 'test 1',
+    user: {
+      id: '1',
+      username: 'Username',
+      avatar: Avatar,
+    },
   },
-}, {
-  id: '2',
-  text: 'test 2',
-  user: {
+  {
     id: '2',
-    username: 'Admin',
-    avatar: Avatar,
+    text: 'test 2',
+    user: {
+      id: '2',
+      username: 'Admin',
+      avatar: Avatar,
+    },
   },
-}, {
-  id: '1',
-  text: 'test 3',
-  user: {
+  {
     id: '1',
-    username: 'Username',
-    avatar: Avatar,
+    text: 'test 3',
+    user: {
+      id: '1',
+      username: 'Username',
+      avatar: Avatar,
+    },
   },
-}];
+];
 
 export const Default: Story = {
   args: {

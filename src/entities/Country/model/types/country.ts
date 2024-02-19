@@ -1,1 +1,6 @@
-export type CountryType = 'Russia' | 'Belarus' | 'Ukraine' | 'Kazakhstan' | 'Armenia'
+export type CountryType =
+  | 'Russia'
+  | 'Belarus'
+  | 'Ukraine'
+  | 'Kazakhstan'
+  | 'Armenia';

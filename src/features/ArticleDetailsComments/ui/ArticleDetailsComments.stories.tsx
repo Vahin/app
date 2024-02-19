@@ -40,16 +40,20 @@ export const Default: Story = {
   args: {
     id: '1',
   },
-  decorators: [StoreDecorator({
-    articleDetailsComments: data,
-  })],
+  decorators: [
+    StoreDecorator({
+      articleDetailsComments: data,
+    }),
+  ],
 };
 
 export const Loading: Story = {
   args: {
     id: '1',
   },
-  decorators: [StoreDecorator({
-    articleDetailsComments: { ...data, isLoading: true },
-  })],
+  decorators: [
+    StoreDecorator({
+      articleDetailsComments: { ...data, isLoading: true },
+    }),
+  ],
 };

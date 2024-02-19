@@ -9,8 +9,8 @@ import { Notification } from '../../model/types/Notifications';
 
 interface NotificationItemProps {
   className?: string;
-  item?: Notification
-  isLoading?: boolean
+  item?: Notification;
+  isLoading?: boolean;
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
@@ -18,16 +18,13 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
 
   if (isLoading || !item) {
     return (
-      <Card
-        className={classNames('', {}, [className])}
-        padding="0"
-      >
-        <VStack gap="8">
-          <Skeleton height="16px" width="100px" />
-          <VStack gap="4">
-            <Skeleton height="12px" width="300px" />
-            <Skeleton height="12px" width="200px" />
-            <Skeleton height="12px" width="200px" />
+      <Card className={classNames('', {}, [className])} padding='0'>
+        <VStack gap='8'>
+          <Skeleton height='16px' width='100px' />
+          <VStack gap='4'>
+            <Skeleton height='12px' width='300px' />
+            <Skeleton height='12px' width='200px' />
+            <Skeleton height='12px' width='200px' />
           </VStack>
         </VStack>
       </Card>
@@ -35,24 +32,14 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
   }
 
   const content = (
-    <Card
-      className={classNames('', {}, [className])}
-      padding="0"
-    >
-      <Text
-        title={item.title}
-        text={item.description}
-        size="sm"
-      />
+    <Card className={classNames('', {}, [className])} padding='0'>
+      <Text title={item.title} text={item.description} size='sm' />
     </Card>
   );
 
   if (item.href) {
     return (
-      <AppLink
-        target="_blank"
-        to={item.href}
-      >
+      <AppLink target='_blank' to={item.href}>
         {content}
       </AppLink>
     );

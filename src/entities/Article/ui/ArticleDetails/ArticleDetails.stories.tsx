@@ -15,11 +15,13 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetails>;
 
 export const Default: Story = {
-  decorators: [StoreDecorator({
-    articleDetails: {
-      data,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      articleDetails: {
+        data,
+      },
+    }),
+  ],
   // ! Костыль
   parameters: {
     loki: {
@@ -34,17 +36,21 @@ export const Loading: Story = {
       skip: true,
     },
   },
-  decorators: [StoreDecorator({
-    articleDetails: {
-      isLoading: true,
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      articleDetails: {
+        isLoading: true,
+      },
+    }),
+  ],
 };
 
 export const Error: Story = {
-  decorators: [StoreDecorator({
-    articleDetails: {
-      error: 'error',
-    },
-  })],
+  decorators: [
+    StoreDecorator({
+      articleDetails: {
+        error: 'error',
+      },
+    }),
+  ],
 };

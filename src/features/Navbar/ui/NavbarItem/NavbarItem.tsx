@@ -9,7 +9,7 @@ import { NavbarItemType } from '../../model/types/navbar';
 
 interface NavbarItemProps {
   item: NavbarItemType;
-  collapsed: boolean
+  collapsed: boolean;
 }
 
 export const NavbarItem = memo((props: NavbarItemProps) => {
@@ -32,9 +32,7 @@ export const NavbarItem = memo((props: NavbarItemProps) => {
       className={classNames(cls.link, mods)}
     >
       <item.Icon className={cls.icon} />
-      <span className={cls.linkText}>
-        {t(item.text)}
-      </span>
+      <span className={cls.linkText}>{t(item.text)}</span>
     </AppLink>
   );
 });

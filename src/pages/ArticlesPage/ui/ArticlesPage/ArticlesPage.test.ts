@@ -1,5 +1,3 @@
 describe('ArticlesPage', () => {
-  test('', () => {
-
-  });
+  test('', () => {});
 });

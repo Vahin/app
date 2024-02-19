@@ -1,12 +1,12 @@
 export enum ArticleView {
   BIG = 'BIG',
-  SMALL = 'SMALL'
+  SMALL = 'SMALL',
 }
 
 export enum ArticleSortField {
   VIEWS = 'views',
   TITLE = 'title',
-  CREATED = 'createdAt'
+  CREATED = 'createdAt',
 }
 
 export enum ArticleBlockType {

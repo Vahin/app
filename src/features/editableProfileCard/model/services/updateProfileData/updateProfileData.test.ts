@@ -38,9 +38,7 @@ describe('updateProfileData', () => {
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([
-      ValidateProfileError.SERVER_ERROR,
-    ]);
+    expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
   });
 
   test('Должен возвращать ошибку, если валидация не пройдена', async () => {
@@ -50,15 +48,12 @@ describe('updateProfileData', () => {
           ...data,
           firstname: '',
         },
-
       },
     });
     thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([
-      ValidateProfileError.INCORRECT_USER_DATA,
-    ]);
+    expect(result.payload).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
   });
 });

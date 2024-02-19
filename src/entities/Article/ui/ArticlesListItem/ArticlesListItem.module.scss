@@ -60,10 +60,6 @@
     height: 100%;
   }
 
-  *[loki-test] .image {
-    visibility: hidden;
-  }
-
   .date {
     position: absolute;
     top: 0;
@@ -105,4 +101,8 @@
 
     transform: scale(1.02);
   }
+}
+
+*[loki-test] .icon {
+  visibility: hidden;
 }

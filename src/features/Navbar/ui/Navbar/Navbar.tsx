@@ -14,17 +14,17 @@ export const Navbar = memo((props: NavbarProps) => {
   const { className, collapsed = false } = props;
   const navbarItemsList = useSelector(getNavbarItems);
 
-  const itemsList = useMemo(() => navbarItemsList.map((item) => (
-    <NavbarItem
-      item={item}
-      collapsed={collapsed}
-      key={item.path}
-    />
-  )), [collapsed, navbarItemsList]);
+  const itemsList = useMemo(
+    () =>
+      navbarItemsList.map((item) => (
+        <NavbarItem item={item} collapsed={collapsed} key={item.path} />
+      )),
+    [collapsed, navbarItemsList],
+  );
 
   return (
     <nav className={classNames('', {}, [className])}>
-      <VStack gap="16" role="navigation">
+      <VStack gap='16' role='navigation'>
         {itemsList}
       </VStack>
     </nav>

@@ -4,18 +4,19 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import './decorator.scss';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 
-export const ThemeDecorator = (invetred?: boolean) => (Story: StoryFn, context: StoryContext) => {
-  const { globals } = context;
+export const ThemeDecorator =
+  (invetred?: boolean) => (Story: StoryFn, context: StoryContext) => {
+    const { globals } = context;
 
-  const mods: Mods = {
-    inverted: invetred,
+    const mods: Mods = {
+      inverted: invetred,
+    };
+
+    return (
+      <ThemeProvider themeProps={globals.theme}>
+        <div className={classNames('viewport', mods)}>
+          <Story />
+        </div>
+      </ThemeProvider>
+    );
   };
-
-  return (
-    <ThemeProvider themeProps={globals.theme}>
-      <div className={classNames('viewport', mods)}>
-        <Story />
-      </div>
-    </ThemeProvider>
-  );
-};

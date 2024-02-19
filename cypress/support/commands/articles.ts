@@ -4,13 +4,12 @@ const defaultArticle = {
   userId: '1',
   title: 'Political Landscape in 2022',
   subtitle: 'Key events and developments in global politics',
-  img: 'https://www.ifri.org/sites/default/files/styles/image_contenu_article/public/'
-  + 'thumbnails/image/shutterstock_174209186.jpg?itok=DBwZsCZr',
+  img:
+    'https://www.ifri.org/sites/default/files/styles/image_contenu_article/public/' +
+    'thumbnails/image/shutterstock_174209186.jpg?itok=DBwZsCZr',
   views: 1021,
   createdAt: '10.06.2022',
-  type: [
-    'POLITICS',
-  ],
+  type: ['POLITICS'],
   blocks: [],
 };
 
@@ -35,7 +34,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       createArticle(article?: Article): Chainable<Article>;
-      removeArticle(articleId: string): Chainable<void>
+      removeArticle(articleId: string): Chainable<void>;
     }
   }
 }

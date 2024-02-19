@@ -16,11 +16,11 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="app">
-      <Suspense fallback="">
+    <div className='app'>
+      <Suspense fallback=''>
         <Header />
 
-        <div className="content-page">
+        <div className='content-page'>
           <Sidebar />
           {inited && <AppRouter />}
         </div>

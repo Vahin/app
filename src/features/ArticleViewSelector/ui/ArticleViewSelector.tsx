@@ -10,7 +10,7 @@ import { ArticleView } from '../../../entities/Article/model/consts/consts';
 interface ArticleViewSelectorProps {
   className?: string;
   view?: ArticleView;
-  onViewClick: (newView: ArticleView) => void
+  onViewClick: (newView: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -25,11 +25,7 @@ const viewTypes = [
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-  const {
-    className,
-    view,
-    onViewClick,
-  } = props;
+  const { className, view, onViewClick } = props;
 
   const onClick = (newView: ArticleView) => () => {
     onViewClick?.(newView);
@@ -37,21 +33,18 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 
   return (
     <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-      {
-        viewTypes.map((viewType) => (
-          <Button
-            key={viewType.view}
-            theme={ButtonTheme.CLEAR}
-            onClick={onClick(viewType.view)}
-
-          >
-            <Icon
-              Svg={viewType.icon}
-              fillVariant={view === viewType.view ? 'primary' : 'secondary'}
-            />
-          </Button>
-        ))
-      }
+      {viewTypes.map((viewType) => (
+        <Button
+          key={viewType.view}
+          theme={ButtonTheme.CLEAR}
+          onClick={onClick(viewType.view)}
+        >
+          <Icon
+            Svg={viewType.icon}
+            fillVariant={view === viewType.view ? 'primary' : 'secondary'}
+          />
+        </Button>
+      ))}
     </div>
   );
 });

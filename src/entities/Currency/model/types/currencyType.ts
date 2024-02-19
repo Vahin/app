@@ -1,1 +1,1 @@
-export type CurrencyType = 'RUB' | 'EUR' | 'USD'
+export type CurrencyType = 'RUB' | 'EUR' | 'USD';

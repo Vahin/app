@@ -2,9 +2,9 @@ import { HTMLAttributes, ReactNode, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
-export type CardTheme = 'normal' | 'outlined'
+export type CardTheme = 'normal' | 'outlined';
 
-type CardPadding = '0' | '4' | '8' | '16'
+type CardPadding = '0' | '4' | '8' | '16';
 
 const mapPaddingClass: Record<CardPadding, string> = {
   0: 'padding-0',
@@ -15,9 +15,9 @@ const mapPaddingClass: Record<CardPadding, string> = {
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
-  children: ReactNode
-  theme?: CardTheme
-  padding?: CardPadding
+  children: ReactNode;
+  theme?: CardTheme;
+  padding?: CardPadding;
 }
 
 export const Card = memo((props: CardProps) => {
@@ -29,11 +29,7 @@ export const Card = memo((props: CardProps) => {
     ...otherProps
   } = props;
 
-  const additional = [
-    className,
-    cls[theme],
-    cls[mapPaddingClass[padding]],
-  ];
+  const additional = [className, cls[theme], cls[mapPaddingClass[padding]]];
 
   return (
     <div className={classNames(cls.Card, {}, additional)} {...otherProps}>

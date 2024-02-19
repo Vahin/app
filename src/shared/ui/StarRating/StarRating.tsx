@@ -6,20 +6,15 @@ import cls from './StarRating.module.scss';
 
 interface StarRatingProps {
   className?: string;
-  onSelect?: (starNumber: number) => void
-  size?: number
-  selectedStars?: number
+  onSelect?: (starNumber: number) => void;
+  size?: number;
+  selectedStars?: number;
 }
 
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
-  const {
-    className,
-    onSelect,
-    size = 30,
-    selectedStars = 0,
-  } = props;
+  const { className, onSelect, size = 30, selectedStars = 0 } = props;
 
   const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
@@ -54,7 +49,7 @@ export const StarRating = memo((props: StarRatingProps) => {
         <Icon
           Svg={Star}
           key={starNumber}
-          strokeVariant="primary"
+          strokeVariant='primary'
           fillVariant={currentStarsCount >= starNumber ? 'primary' : 'none'}
           width={size}
           height={size}

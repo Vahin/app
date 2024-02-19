@@ -1,3 +1,3 @@
 export interface ScrollSaverSchema {
-  records: Record<string, number>
+  records: Record<string, number>;
 }

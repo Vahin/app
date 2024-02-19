@@ -8,7 +8,10 @@ import App from './app/App';
 import '@/shared/config/i18n/i18n';
 
 const container = document.getElementById('root');
-if (!container) throw new Error('Корневой элемент не найден. Не удалось смонтировать приложение.');
+if (!container)
+  throw new Error(
+    'Корневой элемент не найден. Не удалось смонтировать приложение.',
+  );
 const root = createRoot(container);
 
 root.render(

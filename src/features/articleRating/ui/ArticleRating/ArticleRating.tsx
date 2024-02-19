@@ -9,7 +9,7 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ArticleRatingProps {
   className?: string;
-  articleId: string
+  articleId: string;
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
@@ -20,31 +20,38 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const { data, isLoading } = useArticleRating({ articleId, userId });
   const [rateArticleMutation] = useRateArticle();
 
-  const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
-    try {
-      rateArticleMutation({
-        userId,
-        articleId,
-        rate: starsCount,
-        feedback,
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }, [rateArticleMutation, articleId, userId]);
+  const handleRateArticle = useCallback(
+    (starsCount: number, feedback?: string) => {
+      try {
+        rateArticleMutation({
+          userId,
+          articleId,
+          rate: starsCount,
+          feedback,
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    [rateArticleMutation, articleId, userId],
+  );
 
-  const onAccept = useCallback((starsCount: number, feedback?: string) => {
-    handleRateArticle(starsCount, feedback);
-  }, [handleRateArticle]);
+  const onAccept = useCallback(
+    (starsCount: number, feedback?: string) => {
+      handleRateArticle(starsCount, feedback);
+    },
+    [handleRateArticle],
+  );
 
-  const onCancel = useCallback((starsCount: number) => {
-    handleRateArticle(starsCount);
-  }, [handleRateArticle]);
+  const onCancel = useCallback(
+    (starsCount: number) => {
+      handleRateArticle(starsCount);
+    },
+    [handleRateArticle],
+  );
 
   if (isLoading) {
-    return (
-      <Skeleton width="100%" height="120px" />
-    );
+    return <Skeleton width='100%' height='120px' />;
   }
 
   const rating = data?.[0];

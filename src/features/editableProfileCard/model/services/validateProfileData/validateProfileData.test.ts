@@ -20,7 +20,11 @@ describe('validateProfileData', () => {
   });
 
   test('Возвращает ошибку, при вводе данных без имени и фамилии', async () => {
-    const result = validateProfileData({ ...data, firstname: '', lastname: '' });
+    const result = validateProfileData({
+      ...data,
+      firstname: '',
+      lastname: '',
+    });
 
     expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
   });
@@ -32,7 +36,7 @@ describe('validateProfileData', () => {
   });
 
   test('Возвращает ошибку, при отсутствующих данных', async () => {
-    const result = validateProfileData({ });
+    const result = validateProfileData({});
 
     expect(result).toEqual([
       ValidateProfileError.INCORRECT_USER_DATA,

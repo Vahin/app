@@ -2,9 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import {
-  ArticleType, ArticleSortField, ArticleView,
-} from '@/entities/Article';
+import { ArticleType, ArticleSortField, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
@@ -36,39 +34,57 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const search = useSelector(getArticlesPageSearch);
   const tabsValue = useSelector(getArticlesPageTabType);
 
-  const fetchData = useCallback((page: number) => {
-    dispatch(fetchArticlesList({ page, replace: true }));
-  }, [dispatch]);
+  const fetchData = useCallback(
+    (page: number) => {
+      dispatch(fetchArticlesList({ page, replace: true }));
+    },
+    [dispatch],
+  );
 
   const debouncedFetchData = useDebounce(fetchData, 500);
 
-  const onChangeView = useCallback((newView: ArticleView) => {
-    dispatch(articlesPageActions.setView(newView));
-  }, [dispatch]);
+  const onChangeView = useCallback(
+    (newView: ArticleView) => {
+      dispatch(articlesPageActions.setView(newView));
+    },
+    [dispatch],
+  );
 
-  const onChangeOrder = useCallback((newOrder: SortOrder) => {
-    dispatch(articlesPageActions.setOrder(newOrder));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData(1);
-  }, [dispatch, fetchData]);
+  const onChangeOrder = useCallback(
+    (newOrder: SortOrder) => {
+      dispatch(articlesPageActions.setOrder(newOrder));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData(1);
+    },
+    [dispatch, fetchData],
+  );
 
-  const onChangeSort = useCallback((newSort: ArticleSortField) => {
-    dispatch(articlesPageActions.setSort(newSort));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData(1);
-  }, [dispatch, fetchData]);
+  const onChangeSort = useCallback(
+    (newSort: ArticleSortField) => {
+      dispatch(articlesPageActions.setSort(newSort));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData(1);
+    },
+    [dispatch, fetchData],
+  );
 
-  const onChangeSearch = useCallback((newSearch: string) => {
-    dispatch(articlesPageActions.setSearch(newSearch));
-    dispatch(articlesPageActions.setPage(1));
-    debouncedFetchData(1);
-  }, [dispatch, debouncedFetchData]);
+  const onChangeSearch = useCallback(
+    (newSearch: string) => {
+      dispatch(articlesPageActions.setSearch(newSearch));
+      dispatch(articlesPageActions.setPage(1));
+      debouncedFetchData(1);
+    },
+    [dispatch, debouncedFetchData],
+  );
 
-  const onChangeTab = useCallback((value: ArticleType) => {
-    dispatch(articlesPageActions.setType(value));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData(1);
-  }, [dispatch, fetchData]);
+  const onChangeTab = useCallback(
+    (value: ArticleType) => {
+      dispatch(articlesPageActions.setType(value));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData(1);
+    },
+    [dispatch, fetchData],
+  );
 
   return (
     <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
@@ -79,18 +95,24 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
         />
-        <ArticleViewSelector view={view} onViewClick={onChangeView} className={cls.viewSelector} />
+        <ArticleViewSelector
+          view={view}
+          onViewClick={onChangeView}
+          className={cls.viewSelector}
+        />
       </div>
-      <Card
-        className={cls.search}
-      >
+      <Card className={cls.search}>
         <Input
           value={search}
           onChange={onChangeSearch}
           placeholder={t('Поиск')}
         />
       </Card>
-      <ArticleTypeTabs value={tabsValue} onChangeTab={onChangeTab} className={cls.tabs} />
+      <ArticleTypeTabs
+        value={tabsValue}
+        onChangeTab={onChangeTab}
+        className={cls.tabs}
+      />
     </div>
   );
 });

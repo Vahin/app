@@ -13,7 +13,7 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
 
   return (
     <Page className={classNames('', {}, [className])}>
-      { t('ARTICLE EDIT PAGE')}
+      {t('ARTICLE EDIT PAGE')}
     </Page>
   );
 });

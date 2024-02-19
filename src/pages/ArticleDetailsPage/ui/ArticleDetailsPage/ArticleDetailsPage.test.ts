@@ -1,4 +1,3 @@
 describe('ArticleDetailsPage', () => {
-  test('', () => {
-  });
+  test('', () => {});
 });

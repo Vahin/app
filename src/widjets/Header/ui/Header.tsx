@@ -1,6 +1,4 @@
-import {
-  memo, useCallback, useState,
-} from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -37,43 +35,27 @@ export const Header = memo((props: HeaderProps) => {
 
   return (
     <header className={classNames(cls.Header, {}, [className])}>
-      <Text
-        title={t('APP')}
-        className={cls.logo}
-        theme={TextTheme.INVERTED}
-      />
-      <AppLink
-        to={getRouteArticleCreate()}
-        theme={AppLinkTheme.INVERTED}
-      >
+      <Text title={t('APP')} className={cls.logo} theme={TextTheme.INVERTED} />
+      <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.INVERTED}>
         {t('Новая статья')}
       </AppLink>
-      {
-        authData ? (
-          <HStack
-            gap="16"
-            className={cls.actions}
-          >
-            <NotificationButton />
-            <AvatarDropdown authData={authData} />
-          </HStack>
-        ) : (
-          <Button
-            onClick={onShowModal}
-            theme={ButtonTheme.CLEAR_INVERTED}
-            className={cls.btn}
-          >
-            {t('Войти')}
-          </Button>
-        )
-      }
-      {isOpenAuthModal && (
-      <LoginModal
-        isOpen={isOpenAuthModal}
-        onClose={onCloseModal}
-      />
+      {authData ? (
+        <HStack gap='16' className={cls.actions}>
+          <NotificationButton />
+          <AvatarDropdown authData={authData} />
+        </HStack>
+      ) : (
+        <Button
+          onClick={onShowModal}
+          theme={ButtonTheme.CLEAR_INVERTED}
+          className={cls.btn}
+        >
+          {t('Войти')}
+        </Button>
       )}
-
+      {isOpenAuthModal && (
+        <LoginModal isOpen={isOpenAuthModal} onClose={onCloseModal} />
+      )}
     </header>
   );
 });

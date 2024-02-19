@@ -4,7 +4,8 @@ export const useDeviceDetect = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsTouchDevice(window.matchMedia('(pointer:coarse)').matches);
+    const handleResize = () =>
+      setIsTouchDevice(window.matchMedia('(pointer:coarse)').matches);
 
     handleResize();
 

@@ -4,7 +4,10 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
 import {
-  User, getIsUserAdmin, getIsUserManager, userActions,
+  User,
+  getIsUserAdmin,
+  getIsUserManager,
+  userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -13,7 +16,7 @@ import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
   className?: string;
-  authData: User
+  authData: User;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
@@ -37,24 +40,24 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
             content: t('Профиль'),
             href: getRouteProfile(authData.id),
           },
-          ...(isAdminPanelAvalible ? [{
-            content: t('Админка'),
-            href: getRouteAdminPanel(),
-          }] : []),
+          ...(isAdminPanelAvalible
+            ? [
+                {
+                  content: t('Админка'),
+                  href: getRouteAdminPanel(),
+                },
+              ]
+            : []),
           {
             content: t('Выйти'),
             onClick: onLogout,
           },
         ]}
-        trigger={(
-          <Avatar
-            src={authData.avatar}
-            size={40}
-            className={cls.avatar}
-          />
-              )}
+        trigger={
+          <Avatar src={authData.avatar} size={40} className={cls.avatar} />
+        }
         className={cls.box}
-        direction="bottom left"
+        direction='bottom left'
       />
     </div>
   );

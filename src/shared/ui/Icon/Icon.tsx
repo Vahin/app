@@ -2,7 +2,12 @@ import { SVGProps, FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Icon.module.scss';
 
-type IconVariant = 'primary' | 'secondary' | 'primary-inverted' | 'secondary-inverted' | 'none';
+type IconVariant =
+  | 'primary'
+  | 'secondary'
+  | 'primary-inverted'
+  | 'secondary-inverted'
+  | 'none';
 
 const mapFillClass: Record<IconVariant, string> = {
   primary: 'fill-primary',
@@ -22,9 +27,9 @@ const mapStrokeClass: Record<IconVariant, string> = {
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   className?: string;
-  Svg: FC<SVGProps<SVGSVGElement>>
-  fillVariant?: IconVariant
-  strokeVariant?: IconVariant
+  Svg: FC<SVGProps<SVGSVGElement>>;
+  fillVariant?: IconVariant;
+  strokeVariant?: IconVariant;
 }
 
 export const Icon = memo((props: IconProps) => {
@@ -43,9 +48,6 @@ export const Icon = memo((props: IconProps) => {
   ];
 
   return (
-    <Svg
-      className={classNames(cls.Icon, {}, additionals)}
-      {...otherProps}
-    />
+    <Svg className={classNames(cls.Icon, {}, additionals)} {...otherProps} />
   );
 });
