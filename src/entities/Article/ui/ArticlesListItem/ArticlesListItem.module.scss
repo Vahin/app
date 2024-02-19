@@ -60,6 +60,10 @@
     height: 100%;
   }
 
+  *[loki-test] .image {
+    visibility: hidden;
+  }
+
   .date {
     position: absolute;
     top: 0;
