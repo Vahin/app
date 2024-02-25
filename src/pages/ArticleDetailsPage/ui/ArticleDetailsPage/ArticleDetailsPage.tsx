@@ -11,6 +11,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleRating } from '@/features/articleRating';
 import { VStack } from '@/shared/ui/Stack';
+import { getFeatureFlags } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -20,6 +21,10 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article-details');
   const { className } = props;
   const { id } = useParams<{ id: string }>();
+  const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
+  const isArticleRecomendationListEnabled = getFeatureFlags(
+    'isArticleRecomendationListEnabled',
+  );
 
   if (!id) {
     return (
@@ -34,8 +39,10 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
       <VStack gap='32'>
         <ArticleDetailsHeader id={id} />
         <ArticleDetails id={id} />
-        <ArticleRating articleId={id} className={cls.rating} />
-        <ArticleRecommendationList />
+        {isArticleRatingEnabled && (
+          <ArticleRating articleId={id} className={cls.rating} />
+        )}
+        {isArticleRecomendationListEnabled && <ArticleRecommendationList />}
         <ArticleDetailsComments id={id} />
       </VStack>
     </Page>

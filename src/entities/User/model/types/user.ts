@@ -1,3 +1,5 @@
+import { FeatureFlags } from '@/shared/types/featureFlags';
+
 export enum UserRole {
   USER = 'USER',
   ADMIN = 'ADMIN',
@@ -9,6 +11,7 @@ export interface User {
   username: string;
   avatar?: string;
   roles?: UserRole[];
+  features?: FeatureFlags;
 }
 
 export interface UserSchema {
