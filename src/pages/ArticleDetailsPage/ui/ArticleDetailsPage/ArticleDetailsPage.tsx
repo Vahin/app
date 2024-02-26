@@ -11,7 +11,11 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleRating } from '@/features/articleRating';
 import { VStack } from '@/shared/ui/Stack';
-import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features';
+import {
+  ToggleComponentFeatures,
+  getFeatureFlags,
+  toggleFeatures,
+} from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
@@ -46,6 +50,11 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
         <ArticleDetailsHeader id={id} />
         <ArticleDetails id={id} />
         {articleRating}
+        <ToggleComponentFeatures
+          feature='isArticleRatingEnabled'
+          on={<ArticleRating articleId={id} className={cls.rating} />}
+          off={<Card>{t('Оценка статей скоро появиться')}</Card>}
+        />
         {isArticleRecomendationListEnabled && <ArticleRecommendationList />}
         <ArticleDetailsComments id={id} />
       </VStack>

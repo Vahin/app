@@ -69,6 +69,7 @@ module.exports = {
           'variant',
           'strokeVariant',
           'fillVariant',
+          'feature',
         ],
       },
     ],

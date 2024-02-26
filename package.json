@@ -28,10 +28,14 @@
     "storybook:build": "storybook build -c ./config/storybook",
     "prepare": "husky install",
     "create:slice": "node ./scripts/createSlice",
-    "postinstall": "node scripts/clear-cache.js"
+    "postinstall": "node scripts/clear-cache.js",
+    "remove-feature": "ts-node ./scripts/remove-feature.ts"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": ["prettier --list-different","eslint"]
+    "**/*.{ts,tsx}": [
+      "prettier --list-different",
+      "eslint"
+    ]
   },
   "author": "Danil Vakhrushev <danil.e.vakhrushev@gmail.com>",
   "license": "ISC",
