@@ -1,3 +1,10 @@
+export { saveJsonSettings } from './model/services/saveJsonSettings';
+
+export {
+  useJsonSettings,
+  getJsonSettings,
+} from './model/selectors/jsonSettings/jsonSettings';
+
 export { getUserRoles } from './model/selectors/getUserRoles/getUserRoles';
 
 export { UserRole } from './model/types/user';
