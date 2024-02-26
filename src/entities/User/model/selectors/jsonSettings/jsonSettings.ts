@@ -2,7 +2,7 @@ import { buildSelector } from '@/shared/lib/store';
 import { JsonSettings } from '../../types/jsonSettings';
 
 const defaultJsonSettings: JsonSettings = {
-  theme: 'light',
+  theme: undefined,
   isFirstVisit: true,
 };
 

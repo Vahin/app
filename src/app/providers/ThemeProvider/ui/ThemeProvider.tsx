@@ -5,24 +5,24 @@ import { useJsonSettings } from '@/entities/User';
 
 interface ThemeProviderProps {
   children: ReactNode;
-  themeProps?: Theme;
+  initialTheme?: Theme;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({ children, themeProps }) => {
-  const defaultTheme = useJsonSettings().theme ?? 'light';
-  const [theme, setTheme] = useState<Theme>(themeProps || defaultTheme);
+const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
+  const defaultTheme = useJsonSettings().theme;
   const [isThemeInited, steIsThemeInited] = useState(false);
 
+  const [theme, setTheme] = useState<Theme>(
+    initialTheme || defaultTheme || 'light',
+  );
+
   useEffect(() => {
-    if (!isThemeInited) {
+    if (!isThemeInited && defaultTheme) {
       setTheme(defaultTheme);
       steIsThemeInited(true);
     }
-  }, [defaultTheme, isThemeInited]);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = themeProps || theme;
-  }, [theme, themeProps]);
+    document.documentElement.dataset.theme = theme;
+  }, [defaultTheme, isThemeInited, theme]);
 
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme]);
 

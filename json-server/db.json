@@ -1725,7 +1725,7 @@
         "isArticleRecomendationListEnabled": true
       },
       "jsonSettings": {
-        "theme": "dark",
+        "theme": "purple",
         "isFirstVisit": true
       },
       "avatar": "https://image1.thematicnews.com/uploads/topics/preview/00/22/26/88/73072810a8.jpg"
@@ -1759,7 +1759,7 @@
         "isArticleRecomendationListEnabled": false
       },
       "jsonSettings": {
-        "theme": "purple",
+        "theme": "dark",
         "isFirstVisit": true
       },
       "avatar": "https://www.simplilearn.com/ice9/free_resources_article_thumb/How_to_become_a_marketing_manager.jpg"

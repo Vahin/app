@@ -13,7 +13,7 @@ export const ThemeDecorator =
     };
 
     return (
-      <ThemeProvider themeProps={globals.theme}>
+      <ThemeProvider initialTheme={globals.theme}>
         <div className={classNames('viewport', mods)}>
           <Story />
         </div>

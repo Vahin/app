@@ -34,7 +34,7 @@ export const TestProvider = (props: TestProviderProps) => {
         initialState={initialState as StateSchema}
       >
         <I18nextProvider i18n={i18nForTests}>
-          <ThemeProvider themeProps={theme}>
+          <ThemeProvider initialTheme={theme}>
             <div>{children}</div>
           </ThemeProvider>
         </I18nextProvider>
