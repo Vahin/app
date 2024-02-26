@@ -33,9 +33,12 @@ module.exports = {
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,
     'react/jsx-uses-react': 0,
-    'react/jsx-filename-extension': [2, {
-      extensions: ['js', 'jsx', 'tsx'],
-    }],
+    'react/jsx-filename-extension': [
+      2,
+      {
+        extensions: ['js', 'jsx', 'tsx'],
+      },
+    ],
     'import/no-unresolved': 0,
     'import/extensions': 0,
     'import/prefer-default-export': 0,
@@ -46,30 +49,36 @@ module.exports = {
     'no-unused-vars': 1,
     'import/no-extraneous-dependencies': 0,
     'no-underscore-dangle': 0,
-    'i18next/no-literal-string': [2, {
-      markupOnly: true,
-      ignoreAttribute: [
-        'to',
-        'data-testid',
-        'align',
-        'border',
-        'size',
-        'filling',
-        'theme',
-        'target',
-        'direction',
-        'role',
-        'as',
-        'justify',
-        'variant',
-        'strokeVariant',
-        'fillVariant',
-      ],
-    }],
-    'max-len': [2, {
-      ignoreComments: true,
-      code: 125,
-    }],
+    'i18next/no-literal-string': [
+      2,
+      {
+        markupOnly: true,
+        ignoreAttribute: [
+          'to',
+          'data-testid',
+          'align',
+          'border',
+          'size',
+          'filling',
+          'theme',
+          'target',
+          'direction',
+          'role',
+          'as',
+          'justify',
+          'variant',
+          'strokeVariant',
+          'fillVariant',
+        ],
+      },
+    ],
+    'max-len': [
+      2,
+      {
+        ignoreComments: true,
+        code: 125,
+      },
+    ],
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'react-hooks/rules-of-hooks': 2,
@@ -77,39 +86,52 @@ module.exports = {
     'no-param-reassign': 0,
     'no-undef': 0,
     'fsd-vakhr/path-checker': ['error', { alias: '@' }],
-    'fsd-vakhr/public-api-imports': ['error', {
-      alias: '@',
-      testFilesPatterns: [
-        '**/*.test.*', '**/*.stories.*', '**/StoreDecorator.ts*',
-      ],
-    }],
-    'fsd-vakhr/testing-api-imports': ['error', {
-      alias: '@',
-      testFilesPatterns: [
-        '**/*.test.*', '**/*.stories.*', '**/StoreDecorator.ts*',
-      ],
-    }],
-    'fsd-vakhr/layers-imports': ['error', {
-      alias: '@',
-      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-    }],
+    'fsd-vakhr/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.stories.*',
+          '**/StoreDecorator.ts*',
+        ],
+      },
+    ],
+    'fsd-vakhr/testing-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.stories.*',
+          '**/StoreDecorator.ts*',
+        ],
+      },
+    ],
+    'fsd-vakhr/layers-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
     'unused-imports/no-unused-imports': 'error',
     'react/jsx-first-prop-new-line': [2, 'multiline'],
-    'react/jsx-max-props-per-line': [
-      2,
-      { maximum: 1, when: 'multiline' },
-    ],
+    'react/jsx-max-props-per-line': [2, { maximum: 1, when: 'multiline' }],
+    'react/no-unstable-nested-components': 1,
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
     __PROJECT__: true,
   },
-  overrides: [{
-    files: ['**/src/**/*.test.{ts,tsx}', '**/src/**/*.stories.{ts,tsx}'],
-    rules: {
-      'i18next/no-literal-string': 0,
-      'max-len': 0,
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}', '**/src/**/*.stories.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 0,
+        'max-len': 0,
+      },
     },
-  }],
+  ],
 };
