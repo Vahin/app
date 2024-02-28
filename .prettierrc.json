@@ -7,5 +7,14 @@
   "bracketSpacing": true,
   "bracketSameLine": false,
   "arrowParens": "always",
-  "printWidth": 80
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": ["**/*.css", "**/*.scss", "**/*.html"],
+      "options": {
+        "singleQuote": false,
+        "printWidth": 400
+      }
+    }
+  ]
 }

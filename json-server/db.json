@@ -1722,10 +1722,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isArticleRecomendationListEnabled": true
+        "isArticleRecomendationListEnabled": true,
+        "isAppRedisigned": true
       },
       "jsonSettings": {
-        "theme": "dark",
+        "theme": "light",
         "isFirstVisit": true,
         "isArticlePageWasOpened": true
       },

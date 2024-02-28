@@ -10,6 +10,12 @@
   color: var(--primary-color);
 }
 
+:root[data-redisigned="true"] {
+  background: var(--bg-redisigned);
+  font: var(--font-m-redisigned);
+  color: var(--text-redisigned);
+}
+
 .app {
   min-height: 100vh;
 }

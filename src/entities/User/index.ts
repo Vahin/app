@@ -1,3 +1,9 @@
+export {
+  useUserFeatureByKey,
+  useUserFeature,
+  getUserFeatures,
+} from './model/selectors/features/features';
+
 export { initAuthData } from './model/services/initAuthData';
 
 export { saveJsonSettings } from './model/services/saveJsonSettings';

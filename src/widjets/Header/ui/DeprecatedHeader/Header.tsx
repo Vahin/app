@@ -17,7 +17,7 @@ interface HeaderProps {
   className?: string;
 }
 
-export const Header = memo((props: HeaderProps) => {
+export const DeprecatedHeader = memo((props: HeaderProps) => {
   const { className } = props;
   const { t } = useTranslation();
 

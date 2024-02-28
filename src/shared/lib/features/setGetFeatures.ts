@@ -1,6 +1,10 @@
 import { FeatureFlags } from '@/shared/types/featureFlags';
 
-let featureFlags: FeatureFlags;
+let featureFlags: FeatureFlags = {
+  isArticleRatingEnabled: false,
+  isArticleRecomendationListEnabled: false,
+  isAppRedisigned: false,
+};
 
 export const setFeatureFlags = (newFeatureFlags?: FeatureFlags) => {
   if (newFeatureFlags) {

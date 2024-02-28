@@ -10,7 +10,7 @@ interface ThemeProviderProps {
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
   const defaultTheme = useJsonSettings().theme;
-  const [isThemeInited, steIsThemeInited] = useState(false);
+  const [isThemeInited, setIsThemeInited] = useState(false);
 
   const [theme, setTheme] = useState<Theme>(
     initialTheme || defaultTheme || 'light',
@@ -19,7 +19,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
   useEffect(() => {
     if (!isThemeInited && defaultTheme) {
       setTheme(defaultTheme);
-      steIsThemeInited(true);
+      setIsThemeInited(true);
     }
     document.documentElement.dataset.theme = theme;
   }, [defaultTheme, isThemeInited, theme]);
