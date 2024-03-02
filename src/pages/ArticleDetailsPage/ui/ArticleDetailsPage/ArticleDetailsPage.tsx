@@ -11,12 +11,6 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleRating } from '@/features/articleRating';
 import { VStack } from '@/shared/ui/Stack';
-import {
-  ToggleComponentFeatures,
-  getFeatureFlags,
-  toggleFeatures,
-} from '@/shared/lib/features';
-import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -26,9 +20,6 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article-details');
   const { className } = props;
   const { id } = useParams<{ id: string }>();
-  const isArticleRecomendationListEnabled = getFeatureFlags(
-    'isArticleRecomendationListEnabled',
-  );
 
   if (!id) {
     return (
@@ -38,24 +29,13 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     );
   }
 
-  const articleRating = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} className={cls.rating} />,
-    off: () => <Card>{t('Оценка статей скоро появиться')}</Card>,
-  });
-
   return (
     <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
       <VStack gap='32'>
         <ArticleDetailsHeader id={id} />
         <ArticleDetails id={id} />
-        {articleRating}
-        <ToggleComponentFeatures
-          feature='isArticleRatingEnabled'
-          on={<ArticleRating articleId={id} className={cls.rating} />}
-          off={<Card>{t('Оценка статей скоро появиться')}</Card>}
-        />
-        {isArticleRecomendationListEnabled && <ArticleRecommendationList />}
+        <ArticleRating articleId={id} className={cls.rating} />
+        <ArticleRecommendationList />
         <ArticleDetailsComments id={id} />
       </VStack>
     </Page>

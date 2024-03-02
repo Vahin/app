@@ -1721,8 +1721,6 @@
         "ADMIN"
       ],
       "features": {
-        "isArticleRatingEnabled": true,
-        "isArticleRecomendationListEnabled": true,
         "isAppRedisigned": true
       },
       "jsonSettings": {
@@ -1745,7 +1743,8 @@
       },
       "jsonSettings": {
         "theme": "dark",
-        "isFirstVisit": true
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://w7.pngwing.com/pngs/791/512/png-transparent-user-profile-computer-icons-internet-bot-others-miscellaneous-monochrome-silhouette.png"
     },
@@ -1762,7 +1761,8 @@
       },
       "jsonSettings": {
         "theme": "dark",
-        "isFirstVisit": true
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://www.simplilearn.com/ice9/free_resources_article_thumb/How_to_become_a_marketing_manager.jpg"
     },

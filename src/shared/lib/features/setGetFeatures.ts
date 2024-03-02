@@ -1,8 +1,6 @@
 import { FeatureFlags } from '@/shared/types/featureFlags';
 
 let featureFlags: FeatureFlags = {
-  isArticleRatingEnabled: false,
-  isArticleRecomendationListEnabled: false,
   isAppRedisigned: false,
 };
 
