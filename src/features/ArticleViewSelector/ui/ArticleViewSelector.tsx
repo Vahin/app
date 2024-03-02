@@ -42,6 +42,8 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
           <Icon
             Svg={viewType.icon}
             fillVariant={view === viewType.view ? 'primary' : 'secondary'}
+            width={16}
+            height={16}
           />
         </Button>
       ))}
