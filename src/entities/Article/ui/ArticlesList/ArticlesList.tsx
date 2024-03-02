@@ -2,7 +2,7 @@ import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { ArticleView } from '../../model/consts/consts';
 import cls from './ArticlesList.module.scss';
 import { Article } from '../../model/types/article';

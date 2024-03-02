@@ -5,7 +5,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { ProfileCard } from '@/entities/Profile';
 import { CurrencyType } from '@/entities/Currency';
 import { CountryType } from '@/entities/Country';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import {
   DynamicModuleLoader,
   ReducersList,

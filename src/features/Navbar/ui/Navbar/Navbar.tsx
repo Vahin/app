@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getNavbarItems } from '../../model/selectors/getNavbarItems';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 
 interface NavbarProps {
