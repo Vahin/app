@@ -10,12 +10,13 @@ import { LangSwitcher } from '@/features/LangSwitcher';
 
 interface SidebarProps {
   className?: string;
+  collapse?: boolean;
 }
 
 export const Sidebar = memo((props: SidebarProps) => {
-  const { className } = props;
+  const { className, collapse = false } = props;
 
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(collapse);
 
   const toggleClickHandler = () => {
     setCollapsed(!collapsed);

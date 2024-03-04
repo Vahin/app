@@ -25,3 +25,20 @@ export const Default: Story = {
     }),
   ],
 };
+
+export const Collapsed: Story = {
+  args: {
+    collapse: true,
+  },
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          features: {
+            isAppRedisigned: true,
+          },
+        },
+      },
+    }),
+  ],
+};
