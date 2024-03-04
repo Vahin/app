@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { getNavbarItems } from '../../model/selectors/getNavbarItems';
 import { VStack } from '@/shared/ui/deprecated/Stack';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
   className?: string;
@@ -23,10 +24,16 @@ export const Navbar = memo((props: NavbarProps) => {
   );
 
   return (
-    <nav className={classNames('', {}, [className])}>
-      <VStack gap='16' role='navigation'>
-        {itemsList}
-      </VStack>
-    </nav>
+    <ToggleComponentFeatures
+      feature='isAppRedisigned'
+      on={<nav className={classNames('', {}, [className])}>{itemsList}</nav>}
+      off={
+        <nav className={classNames('', {}, [className])}>
+          <VStack gap='8' role='navigation'>
+            {itemsList}
+          </VStack>
+        </nav>
+      }
+    />
   );
 });

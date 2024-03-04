@@ -1,15 +1,17 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLogo.module.scss';
-import { HStack } from '../deprecated/Stack';
-import AppSvg from '../../assets/icons/logo.svg';
+
+import AppSvg from '../../../assets/icons/logo.svg';
+import { HStack } from '../../deprecated/Stack';
 
 interface AppLogoProps {
   className?: string;
+  size?: number;
 }
 
 export const AppLogo = memo((props: AppLogoProps) => {
-  const { className } = props;
+  const { className, size = 50 } = props;
 
   return (
     <HStack
@@ -18,7 +20,9 @@ export const AppLogo = memo((props: AppLogoProps) => {
       align='center'
       className={classNames(cls.appLogoWrapper, {}, [className])}
     >
-      <AppSvg className={cls.appLogo} />
+      <div className={cls.svgBox} style={{ maxWidth: size, maxHeight: size }}>
+        <AppSvg className={cls.appLogo} color='black' />
+      </div>
     </HStack>
   );
 });

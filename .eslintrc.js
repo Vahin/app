@@ -70,6 +70,7 @@ module.exports = {
           'strokeVariant',
           'fillVariant',
           'feature',
+          'color',
         ],
       },
     ],

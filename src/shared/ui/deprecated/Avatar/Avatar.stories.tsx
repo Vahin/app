@@ -3,7 +3,7 @@ import { Avatar } from './Avatar';
 import ava from './assets/medoed.jpeg';
 
 const meta: Meta<typeof Avatar> = {
-  title: 'shared/Avatar',
+  title: 'shared/deprecated/Avatar',
   component: Avatar,
 };
 

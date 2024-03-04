@@ -1,0 +1,20 @@
+.AppLink {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.primary {
+  color: var(--text-redisigned);
+
+  &:hover {
+    color: var(--accent-redisigned);
+  }
+}
+
+.red {
+  color: var(--cancel-redisigned);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

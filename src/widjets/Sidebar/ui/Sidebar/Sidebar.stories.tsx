@@ -1,21 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { DepricatedSidebar } from './Sidebar';
+import { Sidebar } from './Sidebar';
 
-const meta: Meta<typeof DepricatedSidebar> = {
-  title: 'widjet/depricated/Sidebar',
-  component: DepricatedSidebar,
+const meta: Meta<typeof Sidebar> = {
+  title: 'widjet/Sidebar',
+  component: Sidebar,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof DepricatedSidebar>;
+type Story = StoryObj<typeof Sidebar>;
 
 export const Default: Story = {
   decorators: [
     StoreDecorator({
-      user: { authData: {} },
+      user: {
+        authData: {
+          features: {
+            isAppRedisigned: true,
+          },
+        },
+      },
     }),
   ],
 };

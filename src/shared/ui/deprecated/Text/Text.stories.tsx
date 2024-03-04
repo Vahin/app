@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Text, TextTheme } from './Text';
 
 const meta: Meta<typeof Text> = {
-  title: 'shared/Text',
+  title: 'shared/deprecated/Text',
   component: Text,
 };
 

@@ -7,6 +7,10 @@ interface ThemeIconProps extends SVGProps<SVGSVGElement> {
   className?: string;
 }
 
+/**
+ * Используем новый компонент
+ * @deprecated
+ */
 export const ThemeIcon: FC<ThemeIconProps> = (props) => {
   const { className, ...otherProps } = props;
 

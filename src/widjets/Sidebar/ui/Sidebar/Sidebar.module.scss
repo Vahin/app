@@ -1,10 +1,59 @@
 .Sidebar {
-  background-color: var(--light-bg-redisigned);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   width: 220px;
-  height: 100%;
+  max-width: 220px;
+  height: 100vh;
   border-radius: 32px;
+  background-color: var(--light-bg-redisigned);
+  overflow: hidden;
+  transition: max-width 0.3s;
 }
 
 .appLogo {
   padding-top: 20px;
+  transition: all 0.3s;
+}
+
+.Navbar {
+  position: absolute;
+  top: 100px;
+}
+
+.switchers {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%) rotate(90deg);
+}
+
+.collapsed {
+  &.Sidebar {
+    max-width: 48px;
+  }
+
+  .collapseBtn {
+    transform: translate(0, -50%) rotate(-90deg);
+  }
+
+  .appLogo {
+    transform: translate(0, -10px);
+  }
+
+  .switchers {
+    flex-direction: column;
+  }
 }
