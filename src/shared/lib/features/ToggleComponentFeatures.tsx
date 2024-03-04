@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { FeatureFlags } from '../../types/featureFlags';
-import { getFeatureFlags } from './setGetFeatures';
+// eslint-disable-next-line
+import { useUserFeatureByKey } from '@/entities/User';
 
 interface ToggleComponentFeaturesProps {
   feature: keyof FeatureFlags;
@@ -12,8 +13,9 @@ export const ToggleComponentFeatures = (
   props: ToggleComponentFeaturesProps,
 ) => {
   const { feature, on, off } = props;
+  const featureFlag = useUserFeatureByKey(feature);
 
-  if (getFeatureFlags(feature)) {
+  if (featureFlag) {
     return on;
   }
 

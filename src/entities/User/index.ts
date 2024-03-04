@@ -2,6 +2,7 @@ export {
   useUserFeatureByKey,
   useUserFeature,
   getUserFeatures,
+  getUserFeaturesByKey,
 } from './model/selectors/features/features';
 
 export { initAuthData } from './model/services/initAuthData';

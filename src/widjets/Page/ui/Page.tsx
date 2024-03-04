@@ -10,7 +10,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests/tests';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -47,29 +47,35 @@ export const Page = memo((props: PageProps) => {
     );
   }, 500);
 
-  toggleFeatures({
-    name: 'isAppRedisigned',
-    on: () => cls.PageRedisigned,
-    off: () => cls.Page,
-  });
-
   return (
-    <section
-      ref={wrapperRef}
-      className={classNames(
-        toggleFeatures({
-          name: 'isAppRedisigned',
-          on: () => cls.PageRedisigned,
-          off: () => cls.Page,
-        }),
-        {},
-        [className],
-      )}
-      onScroll={onScroll}
-      data-testid={props['data-testid'] ?? 'Page'}
-    >
-      {children}
-      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
-    </section>
+    <ToggleComponentFeatures
+      feature='isAppRedisigned'
+      on={
+        <section
+          ref={wrapperRef}
+          className={classNames(cls.PageRedisigned, {}, [className])}
+          onScroll={onScroll}
+          data-testid={props['data-testid'] ?? 'Page'}
+        >
+          {children}
+          {onScrollEnd ? (
+            <div className={cls.trigger} ref={triggerRef} />
+          ) : null}
+        </section>
+      }
+      off={
+        <section
+          ref={wrapperRef}
+          className={classNames(cls.Page, {}, [className])}
+          onScroll={onScroll}
+          data-testid={props['data-testid'] ?? 'Page'}
+        >
+          {children}
+          {onScrollEnd ? (
+            <div className={cls.trigger} ref={triggerRef} />
+          ) : null}
+        </section>
+      }
+    />
   );
 });

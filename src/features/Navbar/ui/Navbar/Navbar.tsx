@@ -1,7 +1,10 @@
 import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { getNavbarItems } from '../../model/selectors/getNavbarItems';
+import {
+  getNavbarItems,
+  getNavbarItemsDeprecated,
+} from '../../model/selectors/getNavbarItems';
 import { VStack } from '@/shared/ui/deprecated/Stack';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 import { ToggleComponentFeatures } from '@/shared/lib/features';
@@ -13,7 +16,16 @@ interface NavbarProps {
 
 export const Navbar = memo((props: NavbarProps) => {
   const { className, collapsed = false } = props;
+  const navbarItemsListDeprecated = useSelector(getNavbarItemsDeprecated);
   const navbarItemsList = useSelector(getNavbarItems);
+
+  const itemsListDeprecated = useMemo(
+    () =>
+      navbarItemsListDeprecated.map((item) => (
+        <NavbarItem item={item} collapsed={collapsed} key={item.path} />
+      )),
+    [collapsed, navbarItemsListDeprecated],
+  );
 
   const itemsList = useMemo(
     () =>
@@ -30,7 +42,7 @@ export const Navbar = memo((props: NavbarProps) => {
       off={
         <nav className={classNames('', {}, [className])}>
           <VStack gap='8' role='navigation'>
-            {itemsList}
+            {itemsListDeprecated}
           </VStack>
         </nav>
       }

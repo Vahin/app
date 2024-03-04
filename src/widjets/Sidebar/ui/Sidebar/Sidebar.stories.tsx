@@ -25,11 +25,3 @@ export const Default: Story = {
     }),
   ],
 };
-
-export const WithoutAuth: Story = {
-  decorators: [
-    StoreDecorator({
-      user: {},
-    }),
-  ],
-};

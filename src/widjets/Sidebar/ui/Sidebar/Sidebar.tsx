@@ -35,7 +35,7 @@ export const Sidebar = memo((props: SidebarProps) => {
         <LangSwitcher short={collapsed} />
       </div>
       <Icon
-        data-testid='sidebar-toggle'
+        data-testid='Sidebar-toggle'
         Svg={Arrow}
         className={cls.collapseBtn}
         clickable

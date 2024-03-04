@@ -17,27 +17,55 @@ import {
   getRouteMain,
   getRouteProfile,
 } from '@/shared/const/router';
-import { toggleFeatures } from '@/shared/lib/features';
+
+export const getNavbarItemsDeprecated = createSelector(
+  getUserAuthData,
+  (authData) => {
+    const navbarItemsList: NavbarItemType[] = [
+      {
+        path: getRouteMain(),
+        text: 'Главная',
+        Icon: HomeIconDeprecated,
+      },
+      {
+        path: getRouteAbout(),
+        text: 'О сайте',
+        Icon: AboutIconDeprecated,
+      },
+    ];
+
+    if (authData) {
+      navbarItemsList.push(
+        {
+          path: getRouteProfile(authData.id),
+          text: 'Профиль',
+          Icon: ProfileIconDeprecated,
+          authOnly: true,
+        },
+        {
+          path: getRouteArticles(),
+          text: 'Статьи',
+          Icon: ArticlesIconDeprecated,
+          authOnly: true,
+        },
+      );
+    }
+
+    return navbarItemsList;
+  },
+);
 
 export const getNavbarItems = createSelector(getUserAuthData, (authData) => {
   const navbarItemsList: NavbarItemType[] = [
     {
       path: getRouteMain(),
       text: 'Главная',
-      Icon: toggleFeatures({
-        name: 'isAppRedisigned',
-        on: () => HomeIcon,
-        off: () => HomeIconDeprecated,
-      }),
+      Icon: HomeIcon,
     },
     {
       path: getRouteAbout(),
       text: 'О сайте',
-      Icon: toggleFeatures({
-        name: 'isAppRedisigned',
-        on: () => AboutIcon,
-        off: () => AboutIconDeprecated,
-      }),
+      Icon: AboutIcon,
     },
   ];
 
@@ -46,21 +74,13 @@ export const getNavbarItems = createSelector(getUserAuthData, (authData) => {
       {
         path: getRouteProfile(authData.id),
         text: 'Профиль',
-        Icon: toggleFeatures({
-          name: 'isAppRedisigned',
-          on: () => ProfileIcon,
-          off: () => ProfileIconDeprecated,
-        }),
+        Icon: ProfileIcon,
         authOnly: true,
       },
       {
         path: getRouteArticles(),
         text: 'Статьи',
-        Icon: toggleFeatures({
-          name: 'isAppRedisigned',
-          on: () => ArticlesIcon,
-          off: () => ArticlesIconDeprecated,
-        }),
+        Icon: ArticlesIcon,
         authOnly: true,
       },
     );

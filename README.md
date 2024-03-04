@@ -174,6 +174,10 @@ export const Default: Story = {
 
 ---
 
+## Widjet - слой
+
+-[Sidebar](/src/widjets/Sidebar/)
+
 ## Shared - слой
 
 -[AppLogo](/src/shared/ui/AppLogo/)

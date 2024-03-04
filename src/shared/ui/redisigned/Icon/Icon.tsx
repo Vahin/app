@@ -7,6 +7,7 @@ type SvgProps = Omit<SVGProps<SVGSVGElement>, 'onClick'>;
 interface IconBaseProps extends SvgProps {
   className?: string;
   Svg: FC<SVGProps<SVGSVGElement>>;
+  'data-testid'?: string;
 }
 
 interface DefaultIconProps extends IconBaseProps {
@@ -35,6 +36,7 @@ export const Icon = memo((props: IconProps) => {
       className={classNames(cls.Icon, {}, [className])}
       height={height}
       width={width}
+      data-testid={props['data-testid']}
       {...otherProps}
     />
   );
@@ -46,6 +48,7 @@ export const Icon = memo((props: IconProps) => {
         className={cls.button}
         onClick={props.onClick}
         style={{ height, width }}
+        data-testid={props['data-testid']}
       >
         {icon}
       </button>

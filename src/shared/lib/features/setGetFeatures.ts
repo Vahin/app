@@ -1,4 +1,4 @@
-import { FeatureFlags } from '@/shared/types/featureFlags';
+/* import { FeatureFlags } from '@/shared/types/featureFlags';
 
 let featureFlags: FeatureFlags = {
   isAppRedisigned: false,
@@ -11,3 +11,4 @@ export const setFeatureFlags = (newFeatureFlags?: FeatureFlags) => {
 };
 
 export const getFeatureFlags = (flag: keyof FeatureFlags) => featureFlags[flag];
+ */

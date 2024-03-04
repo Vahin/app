@@ -5,7 +5,7 @@
   gap: 40px;
   width: 220px;
   max-width: 220px;
-  height: 100vh;
+  height: calc(100vh - 64px);
   border-radius: 32px;
   background-color: var(--light-bg-redisigned);
   overflow: hidden;

@@ -5,6 +5,6 @@ export const [useUserFeature, getUserFeatures] = buildSelector(
   (state) => state.user.authData?.features,
 );
 
-export const [useUserFeatureByKey] = buildSelector(
+export const [useUserFeatureByKey, getUserFeaturesByKey] = buildSelector(
   (state, key: keyof FeatureFlags) => state.user.authData?.features?.[key],
 );
