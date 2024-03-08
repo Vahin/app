@@ -10,7 +10,7 @@ import { ArticleRecommendationList } from '@/features/ArticleRecommendationList'
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleRating } from '@/features/articleRating';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redisigned/Stack';
 
 interface ArticleDetailsPageProps {
   className?: string;

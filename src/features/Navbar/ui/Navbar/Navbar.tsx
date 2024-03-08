@@ -5,7 +5,7 @@ import {
   getNavbarItems,
   getNavbarItemsDeprecated,
 } from '../../model/selectors/getNavbarItems';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redisigned/Stack';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 import { ToggleComponentFeatures } from '@/shared/lib/features';
 

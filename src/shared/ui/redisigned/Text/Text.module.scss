@@ -1,0 +1,69 @@
+.title {
+  color: var(--text-redisigned);
+}
+
+.text {
+  color: var(--text-redisigned);
+}
+
+.error {
+  .title {
+    color: var(--cancel-redisigned);
+  }
+
+  .text {
+    color: var(--cancel-redisigned);
+  }
+}
+
+.accent {
+  .title {
+    color: var(--accent-redisigned);
+  }
+
+  .text {
+    color: var(--accent-redisigned);
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.s {
+  .title {
+    font: var(--font-m-redisigned);
+  }
+
+  .text {
+    font: var(--font-s-redisigned);
+  }
+}
+
+.m {
+  .title {
+    font: var(--font-l-redisigned);
+  }
+
+  .text {
+    font: var(--font-m-redisigned);
+  }
+}
+
+.l {
+  .title {
+    font: var(--font-xl-redisigned);
+  }
+
+  .text {
+    font: var(--font-l-redisigned);
+  }
+}

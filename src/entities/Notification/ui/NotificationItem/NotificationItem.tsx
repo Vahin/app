@@ -1,11 +1,14 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/deprecated/Card';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redisigned/Stack';
 import { Notification } from '../../model/types/Notifications';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/redisigned/Card';
+import { Text } from '@/shared/ui/redisigned/Text';
 
 interface NotificationItemProps {
   className?: string;
@@ -18,7 +21,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
 
   if (isLoading || !item) {
     return (
-      <Card className={classNames('', {}, [className])} padding='0'>
+      <CardDeprecated className={classNames('', {}, [className])} padding='0'>
         <VStack gap='8'>
           <Skeleton height='16px' width='100px' />
           <VStack gap='4'>
@@ -27,14 +30,28 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
             <Skeleton height='12px' width='200px' />
           </VStack>
         </VStack>
-      </Card>
+      </CardDeprecated>
     );
   }
 
   const content = (
-    <Card className={classNames('', {}, [className])} padding='0'>
-      <Text title={item.title} text={item.description} size='sm' />
-    </Card>
+    <ToggleComponentFeatures
+      feature='isAppRedisigned'
+      on={
+        <Card className={classNames('', {}, [className])} padding='0'>
+          <Text title={item.title} text={item.description} size='s' />
+        </Card>
+      }
+      off={
+        <CardDeprecated className={classNames('', {}, [className])} padding='0'>
+          <TextDeprecated
+            title={item.title}
+            text={item.description}
+            size='sm'
+          />
+        </CardDeprecated>
+      }
+    />
   );
 
   if (item.href) {

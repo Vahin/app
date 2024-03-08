@@ -2,9 +2,9 @@ import { CSSProperties, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 import { Appimage } from '../../redisigned/Appimage';
-import { Skeleton } from '../Skeleton';
 import { Icon } from '../Icon';
 import UserAvatar from './assets/avatar.svg';
+import { Skeleton } from '../../deprecated/Skeleton';
 
 interface AvatarProps {
   className?: string;
@@ -13,10 +13,6 @@ interface AvatarProps {
   size?: number;
 }
 
-/**
- * Устарел, используем новый компоненты.
- * @deprecated
- */
 export const Avatar = (props: AvatarProps) => {
   const { className, src, alt, size = 100 } = props;
 

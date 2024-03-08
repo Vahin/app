@@ -1,0 +1,29 @@
+.menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.items {
+  background: var(--dark-bg-redisigned);
+  z-index: 10;
+  position: absolute;
+  border-radius: 20px;
+  border: 1px solid var(--accent-redisigned);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.item {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-redisigned);
+}
+
+.item.active {
+  background: var(--light-bg-redisigned);
+}

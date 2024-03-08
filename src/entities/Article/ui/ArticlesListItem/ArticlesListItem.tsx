@@ -12,7 +12,7 @@ import { Article, ArticleTextBlock } from '../../model/types/article';
 import EyeIcon from '../../assets/icons/eye.svg';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { Appimage } from '@/shared/ui/deprecated/Appimage';
+import { Appimage } from '@/shared/ui/redisigned/Appimage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticlesListItemProps {

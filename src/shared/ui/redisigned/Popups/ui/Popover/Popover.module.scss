@@ -1,0 +1,12 @@
+.Popover {
+  position: relative;
+}
+
+.panel {
+  background: var(--dark-bg-redisigned);
+  z-index: 10;
+  position: absolute;
+  border-radius: 8px;
+  border: 1px solid var(--accent-redisigned);
+  padding: 10px;
+}
