@@ -1,26 +1,61 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  border: 1px solid var(--icon-redisigned);
+  width: 100%;
+}
+
+.paddingV-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.paddingV-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.paddingH-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.paddingH-16 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.withAddonLeft {
+  padding-left: 8px;
+}
+
+.withAddonRight {
+  padding-right: 8px;
+}
+
+.addonRight,
+.addonLeft {
+  display: flex;
+}
+
 .input {
-  padding: 5px 10px;
-  border: 1px solid transparent;
+  border: none;
   outline: none;
   width: 100%;
-  border-radius: 10px;
-  background-color: var(--invert-bg-color);
-  color: var(--inverted-secondary-color);
-  font: var(--font-m);
-  transition: all 0.3s ease-in;
+  color: var(--text-redisigned);
+  background: none;
 
-  &:focus {
-    border: 1px solid  var(--primary-color);
-    box-shadow: 0 0 5px var(--primary-color);
+  &::placeholder {
+    color: var(--hint-redisigned);
   }
 }
 
-.readOnly .input {
-  background-color: transparent;
-  color: var(--secondary-color);
+.focused {
+  border-color: var(--accent-redisigned);
 
-  &:focus {
-    border: 1px solid  transparent;
-    box-shadow: none;
+  .addonRight svg,
+  .addonLeft svg {
+    color: var(--accent-redisigned);
   }
 }

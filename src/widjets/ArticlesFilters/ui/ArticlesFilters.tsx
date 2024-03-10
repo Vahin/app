@@ -2,13 +2,16 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/redisigned/Card';
-import { Input } from '@/shared/ui/deprecated/Input';
+
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { VStack } from '@/shared/ui/redisigned/Stack';
 import { SortOrder } from '@/shared/types/SortOrder/SortOrder';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
 import cls from './ArticlesFilters.module.scss';
+import { Input } from '@/shared/ui/redisigned/Input';
+import SearchIcon from '@/shared/assets/icons/search.svg';
+import { Icon } from '@/shared/ui/redisigned/Icon';
 
 interface ArticlesFiltersProps {
   className?: string;
@@ -46,15 +49,16 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
           value={search}
           onChange={onChangeSearch}
           placeholder={t('Поиск')}
+          paddingV='none'
+          addonLeft={<Icon Svg={SearchIcon} />}
         />
+        <ArticleTypeTabs value={tabsValue} onChangeTab={onChangeTab} />
         <ArticleSortSelector
           order={order}
           sort={sort}
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
         />
-
-        <ArticleTypeTabs value={tabsValue} onChangeTab={onChangeTab} />
       </VStack>
     </Card>
   );

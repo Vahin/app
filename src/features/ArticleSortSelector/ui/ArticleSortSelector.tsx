@@ -26,11 +26,11 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     () => [
       {
         value: 'asc',
-        content: t('возрастанию'),
+        content: t('Возрастанию'),
       },
       {
         value: 'desc',
-        content: t('убыванию'),
+        content: t('Убыванию'),
       },
     ],
     [t],
@@ -40,15 +40,15 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     () => [
       {
         value: ArticleSortField.CREATED,
-        content: t('дате создания'),
+        content: t('Дате создания'),
       },
       {
         value: ArticleSortField.TITLE,
-        content: t('названию'),
+        content: t('Названию'),
       },
       {
         value: ArticleSortField.VIEWS,
-        content: t('просмотрам'),
+        content: t('Просмотрам'),
       },
     ],
     [t],
@@ -60,7 +60,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
       on={
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
           <VStack gap='8'>
-            <Text title={t('Сортировать по:')} />
+            <Text text={t('Сортировать по:')} />
             <Listbox
               items={sortFieldOptions}
               value={sort}

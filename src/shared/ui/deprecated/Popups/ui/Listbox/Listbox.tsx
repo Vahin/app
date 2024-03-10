@@ -17,9 +17,9 @@ export interface ListboxProps {
   className?: string;
   value?: string;
   defaultValue?: string;
-  onChange: (value: string) => void;
   readonly?: boolean;
   direction?: DropdownDirection;
+  onChange: (value: string) => void;
 }
 
 /**
