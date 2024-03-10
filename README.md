@@ -180,4 +180,5 @@ export const Default: Story = {
 
 ## Shared - слой
 
--[AppLogo](/src/shared/ui/AppLogo/)
+- [AppLogo](/src/shared/ui/redisigned/AppLogo/)
+- [Card](/src/shared/ui/redisigned/Card/)

@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui/ui';
@@ -7,22 +7,22 @@ import { Button } from '../../../Button/Button';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 
-export interface ListboxItem {
-  value: string;
+export interface ListboxItem<T extends string> {
+  value: T;
   content: ReactNode;
 }
 
-export interface ListboxProps {
-  items: ListboxItem[];
+export interface ListboxProps<T extends string> {
+  items: ListboxItem<T>[];
   className?: string;
-  value?: string;
-  defaultValue?: string;
-  onChange: (value: string) => void;
+  value?: T;
+  defaultValue?: T;
+  onChange: (value: T) => void;
   readonly?: boolean;
   direction?: DropdownDirection;
 }
 
-export const Listbox = (props: ListboxProps) => {
+export const Listbox = <T extends string>(props: ListboxProps<T>) => {
   const {
     className,
     items,
@@ -32,6 +32,11 @@ export const Listbox = (props: ListboxProps) => {
     readonly,
     direction = 'bottom right',
   } = props;
+
+  const selectedItem = useMemo(
+    () => items.find((item) => item.value === value),
+    [items, value],
+  );
 
   return (
     <HListbox
@@ -48,8 +53,8 @@ export const Listbox = (props: ListboxProps) => {
       disabled={readonly}
     >
       <HListbox.Button as='div' className={cls.trigger}>
-        <Button size='m' disabled={readonly}>
-          {value || defaultValue}
+        <Button size='m' disabled={readonly} variant='filled'>
+          {selectedItem?.content || defaultValue}
         </Button>
       </HListbox.Button>
       <HListbox.Options

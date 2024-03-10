@@ -1,0 +1,9 @@
+.Tabs {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--accent-redisigned);
+}

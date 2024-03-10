@@ -2,7 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
-type FlexDirection = 'column' | 'row' | 'columReverse' | 'rowReverse';
+export type FlexDirection = 'column' | 'row' | 'columReverse' | 'rowReverse';
 const directionClasses: Record<FlexDirection, string> = {
   column: cls.column,
   columReverse: cls.columnReverse,

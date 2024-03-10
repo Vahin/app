@@ -14,6 +14,10 @@ import cls from './ArticlesPage.module.scss';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 const reducers: ReducersList = {
   articlePage: articlesPageReducer,
@@ -36,16 +40,42 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
     dispatch(fetchNextArticlePage());
   }, [dispatch]);
 
+  const content = (
+    <ToggleComponentFeatures
+      feature='isAppRedisigned'
+      on={
+        <StickyContentLayout
+          left={<ViewSelectorContainer />}
+          right={<FiltersContainer />}
+          content={
+            <Page
+              onScrollEnd={onLoadNextPart}
+              className={classNames(cls.ArticlesPageRedisigned, {}, [
+                className,
+              ])}
+              data-testid='ArticlesPage'
+            >
+              <ArticleInfiniteList />
+            </Page>
+          }
+        />
+      }
+      off={
+        <Page
+          onScrollEnd={onLoadNextPart}
+          className={classNames(cls.ArticlesPage, {}, [className])}
+          data-testid='ArticlesPage'
+        >
+          <ArticlesPageFilters />
+          <ArticleInfiniteList />
+        </Page>
+      }
+    />
+  );
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        onScrollEnd={onLoadNextPart}
-        className={classNames(cls.ArticlesPage, {}, [className])}
-        data-testid='ArticlesPage'
-      >
-        <ArticlesPageFilters />
-        <ArticleInfiniteList />
-      </Page>
+      {content}
     </DynamicModuleLoader>
   );
 });

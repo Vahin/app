@@ -23,15 +23,14 @@
 }
 
 .active {
-  color: var(--secondary-color);
+  background: var(--light-bg-redisigned);
 }
 
 .selected {
-  color: var(--secondary-color);
+  background: var(--light-bg-redisigned);
 }
 
 .disabled {
-  color: var(--secondary-color);
   opacity: 0.3;
 }
 

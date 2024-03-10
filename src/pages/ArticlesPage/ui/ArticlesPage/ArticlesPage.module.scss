@@ -7,6 +7,14 @@
   gap: 20px;
 }
 
+.ArticlesPageRedisigned {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 *[loki-test] .ArticlesPage {
   box-shadow: none;
 }

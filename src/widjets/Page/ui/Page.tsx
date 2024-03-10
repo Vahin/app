@@ -18,7 +18,7 @@ interface PageProps extends TestProps {
   onScrollEnd?: () => void;
 }
 
-export const Page = memo((props: PageProps) => {
+const PageDeprecated = memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -48,34 +48,63 @@ export const Page = memo((props: PageProps) => {
   }, 500);
 
   return (
-    <ToggleComponentFeatures
-      feature='isAppRedisigned'
-      on={
-        <section
-          ref={wrapperRef}
-          className={classNames(cls.PageRedisigned, {}, [className])}
-          onScroll={onScroll}
-          data-testid={props['data-testid'] ?? 'Page'}
-        >
-          {children}
-          {onScrollEnd ? (
-            <div className={cls.trigger} ref={triggerRef} />
-          ) : null}
-        </section>
-      }
-      off={
-        <section
-          ref={wrapperRef}
-          className={classNames(cls.Page, {}, [className])}
-          onScroll={onScroll}
-          data-testid={props['data-testid'] ?? 'Page'}
-        >
-          {children}
-          {onScrollEnd ? (
-            <div className={cls.trigger} ref={triggerRef} />
-          ) : null}
-        </section>
-      }
-    />
+    <section
+      ref={wrapperRef}
+      className={classNames(cls.Page, {}, [className])}
+      onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
+    >
+      {children}
+      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+    </section>
   );
 });
+
+const PageRedisigned = memo((props: PageProps) => {
+  const { className, children, onScrollEnd } = props;
+  const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
+  const scrollPosition = useSelector((state: StateSchema) =>
+    getScrollRecord(state, pathname),
+  );
+
+  useInfiniteScroll({
+    triggerRef,
+    callback: onScrollEnd,
+  });
+
+  useInitialEffect(() => {
+    wrapperRef.current.scrollTop = scrollPosition;
+  }, []);
+
+  const onScroll = useThrottle((event: UIEvent<HTMLDivElement>) => {
+    dispatch(
+      scrollSaverActions.setScrollPosition({
+        path: pathname,
+        position: event.currentTarget.scrollTop,
+      }),
+    );
+  }, 500);
+
+  return (
+    <section
+      ref={wrapperRef}
+      className={classNames(cls.PageRedisigned, {}, [className])}
+      onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
+    >
+      {children}
+      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+    </section>
+  );
+});
+
+export const Page = (props: PageProps) => (
+  <ToggleComponentFeatures
+    feature='isAppRedisigned'
+    on={<PageRedisigned {...props} />}
+    off={<PageDeprecated {...props} />}
+  />
+);

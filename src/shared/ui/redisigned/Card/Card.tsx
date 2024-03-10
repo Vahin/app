@@ -1,24 +1,45 @@
 import { HTMLAttributes, ReactNode, memo } from 'react';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
-
-export type CardPadding = '0' | '8' | '16' | '24';
+export type CardPadding = '0' | '4' | '8' | '12' | '16' | '20' | '24';
+export type CardBorder = 'round' | 'normal';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
   variant?: CardVariant;
   padding?: CardPadding;
-  max?: boolean;
+  paddingH?: CardPadding;
+  paddingV?: CardPadding;
+  border?: CardBorder;
+  inlineBlock?: boolean;
 }
 
-const mapPaddingToClass: Record<CardPadding, string> = {
-  '0': 'padding-0',
-  '8': 'padding-8',
-  '16': 'padding-16',
-  '24': 'padding-24',
+const mapPaddingHToClass: Record<CardPadding, string> = {
+  '0': 'paddingH-0',
+  '4': 'paddingH-4',
+  '8': 'paddingH-8',
+  '12': 'paddingH-12',
+  '16': 'paddingH-16',
+  '20': 'paddingH-20',
+  '24': 'paddingH-24',
+};
+
+const mapPaddingVToClass: Record<CardPadding, string> = {
+  '0': 'paddingV-0',
+  '4': 'paddingV-4',
+  '8': 'paddingV-8',
+  '12': 'paddingV-12',
+  '16': 'paddingV-16',
+  '20': 'paddingV-20',
+  '24': 'paddingV-24',
+};
+
+const mapBorderToClass: Record<CardBorder, string> = {
+  normal: 'border-normal',
+  round: 'border-round',
 };
 
 export const Card = memo((props: CardProps) => {
@@ -26,18 +47,40 @@ export const Card = memo((props: CardProps) => {
     className,
     children,
     variant = 'normal',
-    max,
-    padding = '8',
+    padding,
+    paddingH = '8',
+    paddingV = '8',
+    border = 'normal',
+    inlineBlock,
     ...otherProps
   } = props;
 
-  const additional = [className, cls[variant], mapPaddingToClass[padding]];
-  const mods: Mods = {
-    [cls.max]: max,
-  };
+  const borderClass = cls[mapBorderToClass[border]];
+  const paddingHClass = padding
+    ? cls[mapPaddingHToClass[padding]]
+    : cls[mapPaddingHToClass[paddingH]];
+  const paddingVClass = padding
+    ? cls[mapPaddingVToClass[padding]]
+    : cls[mapPaddingVToClass[paddingV]];
+
+  const additional = [
+    className,
+    cls[variant],
+    paddingHClass,
+    paddingVClass,
+    borderClass,
+  ];
 
   return (
-    <div className={classNames(cls.Card, mods, additional)} {...otherProps}>
+    <div
+      className={classNames(
+        cls.Card,
+        { [cls.inlineBlock]: inlineBlock },
+        additional,
+      )}
+      data-testid='Card'
+      {...otherProps}
+    >
       {children}
     </div>
   );

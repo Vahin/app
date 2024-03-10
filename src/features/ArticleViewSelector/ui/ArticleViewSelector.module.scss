@@ -2,3 +2,12 @@
   display: flex;
   gap: 10px;
 }
+
+.ArticleViewSelectorRedisigned {
+  display: flex;
+  gap: 8px;
+}
+
+.notSelected {
+  color: var(--light-bg-redisigned);
+}

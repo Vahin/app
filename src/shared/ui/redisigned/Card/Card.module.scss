@@ -1,7 +1,3 @@
-.Card {
-  border-radius: 12px;
-}
-
 .normal {
   background: var(--dark-bg-redisigned);
 }
@@ -15,18 +11,84 @@
   background: var(--light-bg-redisigned);
 }
 
-.padding-0 {
-  padding: 0;
+.border-normal {
+  border-radius: 12px;
 }
 
-.padding-8 {
-  padding: 8px;
+.border-round {
+  border-radius: 9999px;
 }
 
-.padding-16 {
-  padding: 16px;
+.paddingV-0 {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.padding-24 {
-  padding: 24px;
+.paddingV-4 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.paddingV-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.paddingV-12 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.paddingV-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.paddingV-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.paddingV-24 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.paddingH-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.paddingH-4 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.paddingH-8 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.paddingH-12 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.paddingH-16 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.paddingH-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.paddingH-24 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.inlineBlock {
+  display: inline-block;
 }
