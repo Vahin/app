@@ -8,6 +8,7 @@ import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { Icon } from '../../../Icon';
+import { HStack } from '../../../Stack';
 
 export interface ListboxItem<T extends string> {
   value: T;
@@ -18,6 +19,7 @@ export interface ListboxProps<T extends string> {
   items: ListboxItem<T>[];
   className?: string;
   value?: T;
+  label?: T;
   defaultValue?: T;
   readonly?: boolean;
   direction?: DropdownDirection;
@@ -29,6 +31,7 @@ export const Listbox = <T extends string>(props: ListboxProps<T>) => {
     className,
     items,
     value,
+    label,
     defaultValue,
     onChange,
     readonly,
@@ -38,6 +41,19 @@ export const Listbox = <T extends string>(props: ListboxProps<T>) => {
   const selectedItem = useMemo(
     () => items.find((item) => item.value === value),
     [items, value],
+  );
+
+  const button = (
+    <Button
+      size='m'
+      className={cls.button}
+      disabled={readonly}
+      variant='filled'
+      padding='min'
+      addonRight={<Icon Svg={ArrowIcon} />}
+    >
+      {selectedItem?.content || defaultValue}
+    </Button>
   );
 
   return (
@@ -55,16 +71,13 @@ export const Listbox = <T extends string>(props: ListboxProps<T>) => {
       disabled={readonly}
     >
       <HListbox.Button as='div'>
-        <Button
-          size='m'
-          className={cls.trigger}
-          disabled={readonly}
-          variant='filled'
-          padding='min'
-          addonRight={<Icon Svg={ArrowIcon} />}
-        >
-          {selectedItem?.content || defaultValue}
-        </Button>
+        {label ? (
+          <HStack gap='8' align='center'>
+            {label}: {button}
+          </HStack>
+        ) : (
+          button
+        )}
       </HListbox.Button>
       <HListbox.Options
         className={classNames(cls.options, {}, [mapDirectionClass[direction]])}

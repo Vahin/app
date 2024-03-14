@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Listbox } from '@/shared/ui/deprecated/Popups';
+import { Listbox as ListboxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { CountryType } from '../model/types/country';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
+import { Listbox } from '@/shared/ui/redisigned/Popups';
 
 type CountryOptionType = {
   value: CountryType;
@@ -51,13 +53,29 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
   );
 
   return (
-    <Listbox
-      className={classNames('', {}, [className])}
-      items={CountryOptions}
-      value={value}
-      onChange={onChangeHandler}
-      defaultValue={t('Укажите страну')}
-      readonly={readonly}
+    <ToggleComponentFeatures
+      feature='isAppRedisigned'
+      on={
+        <Listbox
+          className={classNames('', {}, [className])}
+          items={CountryOptions}
+          value={value}
+          label='Страна'
+          onChange={onChangeHandler}
+          defaultValue={t('Укажите страну')}
+          readonly={readonly}
+        />
+      }
+      off={
+        <ListboxDeprecated
+          className={classNames('', {}, [className])}
+          items={CountryOptions}
+          value={value}
+          onChange={onChangeHandler}
+          defaultValue={t('Укажите страну')}
+          readonly={readonly}
+        />
+      }
     />
   );
 });

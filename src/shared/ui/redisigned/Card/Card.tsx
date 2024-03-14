@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactNode, memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
@@ -63,6 +63,10 @@ export const Card = memo((props: CardProps) => {
     ? cls[mapPaddingVToClass[padding]]
     : cls[mapPaddingVToClass[paddingV]];
 
+  const mods: Mods = {
+    [cls.inlineBlock]: inlineBlock,
+  };
+
   const additional = [
     className,
     cls[variant],
@@ -73,11 +77,7 @@ export const Card = memo((props: CardProps) => {
 
   return (
     <div
-      className={classNames(
-        cls.Card,
-        { [cls.inlineBlock]: inlineBlock },
-        additional,
-      )}
+      className={classNames(cls.Card, mods, additional)}
       data-testid='Card'
       {...otherProps}
     >

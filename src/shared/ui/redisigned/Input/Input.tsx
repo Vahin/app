@@ -9,6 +9,8 @@ import {
 } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
+import { HStack } from '../Stack';
+import { Text } from '../Text';
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -20,6 +22,7 @@ type PaddingProps = 'none' | 'standart';
 interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string | number;
+  label?: string;
   type?: string;
   autofocus?: boolean;
   readOnly?: boolean;
@@ -45,6 +48,7 @@ export const Input = memo((props: InputProps) => {
   const {
     className,
     value,
+    label,
     type = 'text',
     autofocus,
     readOnly = false,
@@ -94,8 +98,8 @@ export const Input = memo((props: InputProps) => {
 
   const additionalClasses = [className, paddingHClass, paddingVClass];
 
-  return (
-    <div className={classNames(cls.inputWrapper, mods, [className])}>
+  const input = (
+    <div className={classNames(cls.inputWrapper, mods, additionalClasses)}>
       {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
       <input
         ref={ref}
@@ -110,5 +114,16 @@ export const Input = memo((props: InputProps) => {
       />
       {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
     </div>
+  );
+
+  if (!label) {
+    return input;
+  }
+
+  return (
+    <HStack gap='8' align='center' max>
+      <Text text={label} divider noWrap />
+      {input}
+    </HStack>
   );
 });

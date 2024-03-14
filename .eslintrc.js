@@ -74,6 +74,7 @@ module.exports = {
           'padding',
           'paddingV',
           'paddingH',
+          'label',
         ],
       },
     ],
