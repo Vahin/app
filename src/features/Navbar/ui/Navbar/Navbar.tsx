@@ -8,6 +8,7 @@ import {
 import { VStack } from '@/shared/ui/redisigned/Stack';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 import { ToggleComponentFeatures } from '@/shared/lib/features';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
@@ -38,7 +39,11 @@ export const Navbar = memo((props: NavbarProps) => {
   return (
     <ToggleComponentFeatures
       feature='isAppRedisigned'
-      on={<nav className={classNames('', {}, [className])}>{itemsList}</nav>}
+      on={
+        <nav className={classNames(cls.Navbar, {}, [className])}>
+          {itemsList}
+        </nav>
+      }
       off={
         <nav className={classNames('', {}, [className])}>
           <VStack gap='8' role='navigation'>
