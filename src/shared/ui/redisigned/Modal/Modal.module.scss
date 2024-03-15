@@ -29,10 +29,17 @@
   border-radius: 12px;
   background-color: var(--bg-color);
   color: var(--secondary-color);
-  transition: transform 0.3s, opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
   transform: translateY(-30px);
   opacity: 0;
   max-width: 60%;
+}
+
+.ModalRedisigned .content {
+  background-color: var(--light-bg-redisigned);
+  color: var(--text-redisigned);
 }
 
 .opened {
@@ -47,7 +54,9 @@
   & .content {
     transform: translateY(0);
     opacity: 1;
-    transition: transform 0.3s 0.1s, opacity 0.3s 0.1s;
+    transition:
+      transform 0.3s 0.1s,
+      opacity 0.3s 0.1s;
   }
 }
 

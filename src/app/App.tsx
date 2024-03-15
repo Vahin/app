@@ -37,7 +37,7 @@ const App = () => {
     <ToggleComponentFeatures
       feature='isAppRedisigned'
       on={
-        <div className='app'>
+        <div id='App' className='app'>
           <Suspense fallback=''>
             <MainLayout
               content={<AppRouter />}
@@ -49,7 +49,7 @@ const App = () => {
         </div>
       }
       off={
-        <div className='app'>
+        <div id='App' className='app'>
           <Suspense fallback=''>
             <DeprecatedHeader />
 
