@@ -1,3 +1,5 @@
+export { updateFeatureFlags } from './model/services/updateFeatureFlags';
+
 export {
   useUserFeatureByKey,
   useUserFeature,

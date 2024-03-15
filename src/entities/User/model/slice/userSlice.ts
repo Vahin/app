@@ -4,6 +4,8 @@ import { User, UserSchema } from '../types/user';
 import { saveJsonSettings } from '../services/saveJsonSettings';
 import { JsonSettings } from '../types/jsonSettings';
 import { initAuthData } from '../services/initAuthData';
+import { updateFeatureFlags } from '../services/updateFeatureFlags';
+import { FeatureFlags } from '@/shared/types/featureFlags';
 
 const initialState: UserSchema = {
   _inited: false,
@@ -29,6 +31,14 @@ export const userSlice = createSlice({
         (state, action: PayloadAction<JsonSettings>) => {
           if (state.authData) {
             state.authData.jsonSettings = action.payload;
+          }
+        },
+      )
+      .addCase(
+        updateFeatureFlags.fulfilled,
+        (state, action: PayloadAction<FeatureFlags>) => {
+          if (state.authData) {
+            state.authData.features = action.payload;
           }
         },
       )

@@ -8,6 +8,7 @@ export enum AppRoutes {
   article_edit = 'article_edit',
   admin_panel = 'admin_panel',
   forbidden = 'forbidden',
+  settings = 'settings',
 
   // last
   not_found = 'not_found',
@@ -22,3 +23,4 @@ export const getRouteArticleCreate = () => '/articles/new';
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdminPanel = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
+export const getRouteSettings = () => '/settings';

@@ -17,7 +17,7 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
   if (isLoading) {
     return (
       <VStack
-        gap='4'
+        gap='8'
         max
         align='stretch'
         className={classNames('', {}, [className])}
