@@ -1,0 +1,108 @@
+.BIG {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .date {
+    margin-left: auto;
+  }
+
+  .img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .textBlock {
+    max-height: 200px;
+    overflow-y: hidden;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .views {
+    margin-left: auto;
+  }
+}
+
+.SMALL {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  width: 230px;
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .imageWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .types p {
+    width: 115px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .views {
+    margin-left: auto;
+    margin-right: 2px;
+  }
+
+  .link {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover {
+    & .date {
+      opacity: 1;
+    }
+
+    transform: scale(1.02);
+  }
+}
+
+*[loki-test] .icon {
+  visibility: hidden;
+}

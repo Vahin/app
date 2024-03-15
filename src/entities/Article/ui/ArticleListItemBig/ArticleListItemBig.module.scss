@@ -1,0 +1,14 @@
+.img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.paragraph {
+  max-height: calc(var(--font-line-m) * var(--font-size-m) * 3);
+  overflow: hidden;
+}
+
+.icon {
+  color: var(--icon-redisigned);
+}

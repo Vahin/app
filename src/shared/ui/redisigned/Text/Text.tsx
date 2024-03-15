@@ -25,6 +25,7 @@ interface TextProps {
   size?: TextSize;
   divider?: boolean;
   noWrap?: boolean;
+  bold?: boolean;
   'data-testid'?: string;
 }
 
@@ -38,6 +39,7 @@ export const Text = memo((props: TextProps) => {
     size = 'm',
     divider,
     noWrap,
+    bold,
     'data-testid': dataTestId = 'Text',
   } = props;
 
@@ -49,7 +51,10 @@ export const Text = memo((props: TextProps) => {
     <div className={classNames(cls.Text, { [cls.nowrap]: noWrap }, additional)}>
       {title && (
         <HeaderTag
-          className={classNames(cls.title, { [cls.nowrap]: noWrap })}
+          className={classNames(cls.title, {
+            [cls.nowrap]: noWrap,
+            [cls.bold]: bold,
+          })}
           data-testid={`${dataTestId}.Header`}
         >
           {title}
@@ -57,7 +62,10 @@ export const Text = memo((props: TextProps) => {
       )}
       {text && (
         <p
-          className={classNames(cls.text, { [cls.nowrap]: noWrap })}
+          className={classNames(cls.text, {
+            [cls.nowrap]: noWrap,
+            [cls.bold]: bold,
+          })}
           data-testid={`${dataTestId}.Paragraph`}
         >
           {text}

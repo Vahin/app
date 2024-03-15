@@ -1,12 +1,5 @@
-.SMALL {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.BIG {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.SmallLayout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }

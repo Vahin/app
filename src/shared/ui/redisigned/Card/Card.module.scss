@@ -1,3 +1,7 @@
+.Card {
+  overflow: hidden;
+}
+
 .normal {
   background: var(--dark-bg-redisigned);
 }
@@ -13,6 +17,10 @@
 
 .border-normal {
   border-radius: 12px;
+}
+
+.border-medium {
+  border-radius: 32px;
 }
 
 .border-round {

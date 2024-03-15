@@ -22,6 +22,13 @@
 
 .outline {
   background: none;
+  border: 1px solid var(--icon-redisigned);
+  border-radius: 16px;
+
+  &:hover {
+    border-color: var(--accent-redisigned);
+    color: var(--text-redisigned);
+  }
 }
 
 .clear {

@@ -23,3 +23,10 @@ export const BorderRound: Story = {
     border: 'round',
   },
 };
+
+export const BorderMedium: Story = {
+  args: {
+    ...BorderNormal.args,
+    border: 'medium',
+  },
+};

@@ -2,7 +2,7 @@
   min-width: 100%;
   display: grid;
   grid-template-areas: "sidebar content rightbar";
-  grid-template-columns: min-content 1fr 100px;
+  grid-template-columns: min-content 1fr min-content;
 }
 
 .sidebar {
@@ -15,7 +15,7 @@
   grid-area: content;
   max-width: 1200px;
   justify-self: center;
-  padding: 32px;
+  padding: 32px 0;
   width: 100%;
 }
 
