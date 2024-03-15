@@ -14,7 +14,7 @@ import { VStack } from '@/shared/ui/redisigned/Stack';
 import { ToggleComponentFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
-import { AdittionalInfoContainer } from '../AdittionalInfoContainer/AdittionalInfoContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -50,7 +50,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
               </VStack>
             </Page>
           }
-          right={<AdittionalInfoContainer />}
+          right={<AdditionalInfoContainer />}
         />
       }
       off={

@@ -1,20 +1,20 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleAdittionalInfo.module.scss';
+import cls from './ArticleAdditionalInfo.module.scss';
 import { ArticleEditButton } from '@/features/ArticleEditButton';
 import { VStack } from '@/shared/ui/redisigned/Stack';
 import { Text } from '@/shared/ui/redisigned/Text';
 
-interface ArticleAdittionalInfoProps {
+interface ArticleAdditionalInfoProps {
   className?: string;
   id: string;
   views: number;
   enableButton: boolean;
 }
 
-export const ArticleAdittionalInfo = memo(
-  (props: ArticleAdittionalInfoProps) => {
+export const ArticleAdditionalInfo = memo(
+  (props: ArticleAdditionalInfoProps) => {
     const { t } = useTranslation();
     const { className, id, views, enableButton } = props;
 

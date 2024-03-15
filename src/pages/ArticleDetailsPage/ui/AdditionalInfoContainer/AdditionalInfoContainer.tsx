@@ -3,18 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './AdittionalInfoContainer.module.scss';
 import { Card } from '@/shared/ui/redisigned/Card';
-import { ArticleAdittionalInfo } from '@/widjets/ArticleAdittionalInfo';
 import { getArticleDetailsData } from '@/entities/Article';
 import { getArticleDetailsEditability } from '../../model/selectors/getArticleDetailsEditability';
+import { ArticleAdditionalInfo } from '@/widjets/ArticleAdditionalInfo';
 
-interface AdittionalInfoContainerProps {
+interface AdditionalInfoContainerProps {
   className?: string;
 }
 
-export const AdittionalInfoContainer = memo(
-  (props: AdittionalInfoContainerProps) => {
+export const AdditionalInfoContainer = memo(
+  (props: AdditionalInfoContainerProps) => {
     const { t } = useTranslation();
     const { className } = props;
     const { id } = useParams<{ id: string }>();
@@ -24,11 +23,8 @@ export const AdittionalInfoContainer = memo(
     if (!id) return null;
 
     return (
-      <Card
-        padding='24'
-        className={classNames(cls.AdittionalInfoContainer, {}, [className])}
-      >
-        <ArticleAdittionalInfo
+      <Card padding='24' className={classNames('', {}, [className])}>
+        <ArticleAdditionalInfo
           id={id}
           views={views}
           enableButton={enableEditButton}
