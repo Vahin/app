@@ -11,6 +11,10 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleRating } from '@/features/articleRating';
 import { VStack } from '@/shared/ui/redisigned/Stack';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { AdittionalInfoContainer } from '../AdittionalInfoContainer/AdittionalInfoContainer';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -30,15 +34,37 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   }
 
   return (
-    <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-      <VStack gap='32'>
-        <ArticleDetailsHeader id={id} />
-        <ArticleDetails id={id} />
-        <ArticleRating articleId={id} className={cls.rating} />
-        <ArticleRecommendationList />
-        <ArticleDetailsComments id={id} />
-      </VStack>
-    </Page>
+    <ToggleComponentFeatures
+      feature='isAppRedisigned'
+      on={
+        <StickyContentLayout
+          content={
+            <Page
+              className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
+              <VStack gap='32'>
+                <DetailsContainer />
+                <ArticleRating articleId={id} className={cls.rating} />
+                <ArticleRecommendationList />
+                <ArticleDetailsComments id={id} />
+              </VStack>
+            </Page>
+          }
+          right={<AdittionalInfoContainer />}
+        />
+      }
+      off={
+        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+          <VStack gap='32'>
+            <ArticleDetailsHeader id={id} />
+            <ArticleDetails id={id} />
+            <ArticleRating articleId={id} className={cls.rating} />
+            <ArticleRecommendationList />
+            <ArticleDetailsComments id={id} />
+          </VStack>
+        </Page>
+      }
+    />
   );
 });
 

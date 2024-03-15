@@ -21,6 +21,17 @@
   padding: 15px;
 }
 
-.DrawerRedisigned .sheet {
-  background: var(--light-bg-redisigned);
+.DrawerRedisigned {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--z-index-modal);
+  display: flex;
+  align-items: flex-end;
+
+  .sheet {
+    background: var(--light-bg-redisigned);
+  }
 }

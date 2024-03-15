@@ -58,5 +58,8 @@
   "просмотрам": "views",
   "убыванию": "descending",
   "Язык": "English",
-  "Короткий язык": "En"
+  "Короткий язык": "En",
+  "{{count}} просмотров_zero": "{{count}} views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views"
 }

@@ -61,8 +61,8 @@ export const ArticleListItemSmall = memo((props: ArticleListItemProps) => {
           className={cls.link}
         />
         <HStack gap='4' align='center' className={cls.userInfo}>
-          <Avatar size={32} src={article.user.avatar} />
-          <Text text={article.user.username} bold />
+          <Avatar size={32} src={article.user?.avatar} />
+          <Text text={article.user?.username} bold />
         </HStack>
       </VStack>
     </Card>

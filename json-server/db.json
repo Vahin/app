@@ -1552,7 +1552,7 @@
         "ADMIN"
       ],
       "features": {
-        "isAppRedisigned": false
+        "isAppRedisigned": true
       },
       "jsonSettings": {
         "theme": "light"
