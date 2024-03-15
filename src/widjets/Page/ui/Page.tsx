@@ -63,7 +63,6 @@ const PageDeprecated = memo((props: PageProps) => {
 const PageRedisigned = memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
-  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
   const scrollPosition = useSelector((state: StateSchema) =>
@@ -76,7 +75,7 @@ const PageRedisigned = memo((props: PageProps) => {
   });
 
   useInitialEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition;
+    window.scrollTo({ top: scrollPosition });
   }, []);
 
   const onScroll = useThrottle((event: UIEvent<HTMLDivElement>) => {
@@ -88,9 +87,14 @@ const PageRedisigned = memo((props: PageProps) => {
     );
   }, 500);
 
+  useInitialEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <section
-      ref={wrapperRef}
       className={classNames(cls.PageRedisigned, {}, [className])}
       onScroll={onScroll}
       data-testid={props['data-testid'] ?? 'Page'}
