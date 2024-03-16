@@ -15,6 +15,7 @@ import { ToggleComponentFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
 import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
+import { Card } from '@/shared/ui/redisigned/Card';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -42,12 +43,14 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
             <Page
               className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-              <VStack gap='32'>
-                <DetailsContainer />
-                <ArticleRating articleId={id} className={cls.rating} />
-                <ArticleRecommendationList />
-                <ArticleDetailsComments id={id} />
-              </VStack>
+              <Card padding='24'>
+                <VStack gap='32'>
+                  <DetailsContainer />
+                  <ArticleRating articleId={id} className={cls.rating} />
+                  <ArticleRecommendationList />
+                  <ArticleDetailsComments id={id} />
+                </VStack>
+              </Card>
             </Page>
           }
           right={<AdditionalInfoContainer />}

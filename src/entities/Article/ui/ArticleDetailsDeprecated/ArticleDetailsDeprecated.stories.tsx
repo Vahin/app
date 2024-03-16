@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleDetails } from './ArticleDetails';
+import { ArticleDetailsDeprecated } from './ArticleDetailsDeprecated';
 import { mockedArticle } from '../../mocks/mockedArticle';
 
 const data = mockedArticle;
 
-const meta: Meta<typeof ArticleDetails> = {
+const meta: Meta<typeof ArticleDetailsDeprecated> = {
   title: 'entities/ArticleDetails',
-  component: ArticleDetails,
+  component: ArticleDetailsDeprecated,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ArticleDetails>;
+type Story = StoryObj<typeof ArticleDetailsDeprecated>;
 
 export const Default: Story = {
   decorators: [

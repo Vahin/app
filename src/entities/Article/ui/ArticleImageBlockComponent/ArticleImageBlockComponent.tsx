@@ -1,8 +1,11 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { ArticleImageBlock } from '../../model/types/article';
 import cls from './ArticleImageBlockComponent.module.scss';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
+import { Appimage } from '@/shared/ui/redisigned/Appimage';
+import { Text } from '@/shared/ui/redisigned/Text';
 
 interface ArticleImageBlockComponentProps {
   className?: string;
@@ -14,12 +17,33 @@ export const ArticleImageBlockComponent = memo(
     const { className, block } = props;
 
     return (
-      <div
-        className={classNames(cls.ArticleImageBlockComponent, {}, [className])}
-      >
-        <img src={block.src} alt={block.title} className={cls.img} />
-        {block.title && <Text text={block.title} align='center' />}
-      </div>
+      <ToggleComponentFeatures
+        feature='isAppRedisigned'
+        on={
+          <>
+            <div className={classNames(cls.imageWrapper, {}, [className])}>
+              <Appimage
+                src={block.src}
+                alt={block.title}
+                className={classNames(cls.image, {}, [cls.imagePosition])}
+              />
+            </div>
+            {block.title && <Text text={block.title} align='center' />}
+          </>
+        }
+        off={
+          <div
+            className={classNames(cls.ArticleImageBlockComponent, {}, [
+              className,
+            ])}
+          >
+            <img src={block.src} alt={block.title} className={cls.img} />
+            {block.title && (
+              <TextDeprecated text={block.title} align='center' />
+            )}
+          </div>
+        }
+      />
     );
   },
 );

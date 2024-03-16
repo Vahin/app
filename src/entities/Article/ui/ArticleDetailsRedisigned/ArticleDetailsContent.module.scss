@@ -1,15 +1,11 @@
-.img {
-  max-width: 100%;
-}
-
 .imageWrapper {
   width: 100%;
-  padding-top: 58%;
   position: relative;
+  padding-top: 58%;
 }
 
 .image {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .imagePosition {

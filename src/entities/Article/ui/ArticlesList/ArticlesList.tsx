@@ -49,6 +49,8 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
           .map((_, index) => (
             <ToggleComponentFeatures
               feature='isAppRedisigned'
+              // eslint-disable-next-line
+              key={index}
               on={
                 <ArticleListSkeleton
                   view={view}
