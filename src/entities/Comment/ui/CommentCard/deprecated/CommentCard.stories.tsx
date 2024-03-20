@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Avatar from '@/shared/assets/test/medoed.jpeg';
-import { CommentType } from '../../model/types/comment';
-import { CommentCard } from './CommentCard';
+import { CommentType } from '../../../model/types/comment';
+import { CommentCardDeprecated } from './CommentCardDeprecated';
 
-const meta: Meta<typeof CommentCard> = {
-  title: 'entities/CommentCard',
-  component: CommentCard,
+const meta: Meta<typeof CommentCardDeprecated> = {
+  title: 'entities/deprecated/CommentCard',
+  component: CommentCardDeprecated,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof CommentCard>;
+type Story = StoryObj<typeof CommentCardDeprecated>;
 
 const comment: CommentType = {
   id: '1',
