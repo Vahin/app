@@ -31,6 +31,26 @@
   }
 }
 
+.cancel {
+  background: none;
+  border: 1px solid var(--cancel-redisigned);
+  border-radius: 16px;
+
+  &:hover {
+    color: var(--cancel-redisigned);
+  }
+}
+
+.save {
+  background: none;
+  border: 1px solid var(--save-redisigned);
+  border-radius: 16px;
+
+  &:hover {
+    color: var(--save-redisigned);
+  }
+}
+
 .clear {
   padding: 0;
   margin: 0;

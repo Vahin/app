@@ -20,6 +20,9 @@ import { getValidateProfileErrors } from '../../model/selectors/getValidateProfi
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { ToggleComponentFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/redisigned/Card';
+import { VStack } from '@/shared/ui/redisigned/Stack';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -108,34 +111,46 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     [dispatch],
   );
 
+  const content = (
+    <>
+      <EditableProfileCardHeader data={formData} />
+      {validateErrors &&
+        validateErrors.map((error: ValidateProfileError) => (
+          <Text
+            text={validateErrorTranslates[error]}
+            theme={TextTheme.ERROR}
+            key={error}
+            data-testid='EditableProfileCard.Error'
+          />
+        ))}
+      <ProfileCard
+        data={formData}
+        isLoading={isLoading}
+        error={error}
+        readonly={readonly}
+        onChangeFirstname={onChangeFirstname}
+        onChangeLastname={onChangeLastname}
+        onChangeAge={onChangeAge}
+        onChangeCity={onChangeCity}
+        onChangeUsername={onChangeUsername}
+        onChangeAvatar={onChangeAvatar}
+        onChangeCurrency={onChangeCurrency}
+        onChangeCountry={onChangeCountry}
+      />
+    </>
+  );
+
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <>
-        <EditableProfileCardHeader />
-        {validateErrors &&
-          validateErrors.map((error: ValidateProfileError) => (
-            <Text
-              text={validateErrorTranslates[error]}
-              theme={TextTheme.ERROR}
-              key={error}
-              data-testid='EditableProfileCard.Error'
-            />
-          ))}
-        <ProfileCard
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-          onChangeFirstname={onChangeFirstname}
-          onChangeLastname={onChangeLastname}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUsername={onChangeUsername}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
-      </>
+      <ToggleComponentFeatures
+        feature='isAppRedisigned'
+        on={
+          <Card padding='24'>
+            <VStack gap='32'>{content}</VStack>
+          </Card>
+        }
+        off={content}
+      />
     </DynamicModuleLoader>
   );
 });

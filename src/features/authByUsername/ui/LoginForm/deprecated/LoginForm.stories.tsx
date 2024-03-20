@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import LoginForm from './LoginForm';
+import { LoginFormDeprecated } from './LoginFormDeprecated';
 
-const meta: Meta<typeof LoginForm> = {
-  title: 'features/LoginForm',
-  component: LoginForm,
+const meta: Meta<typeof LoginFormDeprecated> = {
+  title: 'features/deprecated/LoginForm',
+  component: LoginFormDeprecated,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof LoginForm>;
+type Story = StoryObj<typeof LoginFormDeprecated>;
 
 export const Fulfilled: Story = {
   decorators: [
