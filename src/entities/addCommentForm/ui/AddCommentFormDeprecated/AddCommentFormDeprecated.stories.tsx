@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { AddCommentForm } from './AddCommentForm';
+import { AddCommentFormDeprecated } from './AddCommentFormDeprecated';
 
-const meta: Meta<typeof AddCommentForm> = {
-  title: 'features/AddCommentForm',
-  component: AddCommentForm,
+const meta: Meta<typeof AddCommentFormDeprecated> = {
+  title: 'features/deprecated/AddCommentForm',
+  component: AddCommentFormDeprecated,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof AddCommentForm>;
+type Story = StoryObj<typeof AddCommentFormDeprecated>;
 
 export const Default: Story = {
   decorators: [

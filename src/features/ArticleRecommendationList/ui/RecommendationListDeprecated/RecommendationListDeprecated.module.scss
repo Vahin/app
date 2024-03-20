@@ -1,0 +1,13 @@
+.articles {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+*[loki-test] .articles {
+  box-shadow: none;
+}
+
+*[loki-test] .articles::before {
+  animation: none;
+  opacity: 0;
+}

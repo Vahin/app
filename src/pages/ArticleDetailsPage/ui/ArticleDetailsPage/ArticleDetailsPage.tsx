@@ -44,9 +44,9 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
               className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
               <Card padding='24'>
-                <VStack gap='32'>
+                <VStack gap='32' max align='stretch'>
                   <DetailsContainer />
-                  <ArticleRating articleId={id} className={cls.rating} />
+                  <ArticleRating articleId={id} />
                   <ArticleRecommendationList />
                   <ArticleDetailsComments id={id} />
                 </VStack>

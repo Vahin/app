@@ -2,12 +2,18 @@ import { SVGProps, FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Icon.module.scss';
 
-type SvgProps = Omit<SVGProps<SVGSVGElement>, 'onClick'>;
+type SvgProps = Omit<
+  SVGProps<SVGSVGElement>,
+  'onClick' | 'onMouseLeave' | 'onMouseEnter' | 'data-selected'
+>;
 
 interface IconBaseProps extends SvgProps {
   className?: string;
   Svg: FC<SVGProps<SVGSVGElement>>;
   'data-testid'?: string;
+  'data-selected'?: boolean;
+  onMouseLeave?: () => void;
+  onMouseEnter?: () => void;
 }
 
 interface DefaultIconProps extends IconBaseProps {
@@ -28,16 +34,19 @@ export const Icon = memo((props: IconProps) => {
     width = 32,
     height = 32,
     clickable,
-    ...otherProps
+    onMouseLeave,
+    onMouseEnter,
   } = props;
 
   const icon = (
     <Svg
-      className={classNames(cls.Icon, {}, [className])}
+      className={classNames(cls.Icon, {}, [clickable ? '' : className])}
       height={height}
       width={width}
       data-testid={props['data-testid']}
-      {...otherProps}
+      data-selected={props['data-selected']}
+      onMouseLeave={clickable ? undefined : onMouseLeave}
+      onMouseEnter={clickable ? undefined : onMouseEnter}
     />
   );
 
@@ -45,10 +54,12 @@ export const Icon = memo((props: IconProps) => {
     return (
       <button
         type='button'
-        className={cls.button}
+        className={classNames(cls.button, {}, [className])}
         onClick={props.onClick}
-        style={{ height, width }}
+        onMouseLeave={onMouseLeave}
+        onMouseEnter={onMouseEnter}
         data-testid={props['data-testid']}
+        data-selected={props['data-selected']}
       >
         {icon}
       </button>
