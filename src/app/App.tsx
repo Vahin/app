@@ -11,10 +11,11 @@ import {
 } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { PageLoader } from '@/widjets/PageLoader';
 import { DepricatedSidebar, Sidebar } from '@/widjets/Sidebar';
 import { ToggleComponentFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout/AppLoaderLayout';
+import { PageLoader } from '@/widjets/PageLoader';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -30,7 +31,13 @@ const App = () => {
   }, [redisigned]);
 
   if (!inited) {
-    return <PageLoader />;
+    return (
+      <ToggleComponentFeatures
+        feature='isAppRedisigned'
+        on={<AppLoaderLayout />}
+        off={<PageLoader />}
+      />
+    );
   }
 
   return (

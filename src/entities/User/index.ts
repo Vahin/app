@@ -14,6 +14,7 @@ export { saveJsonSettings } from './model/services/saveJsonSettings';
 export {
   useJsonSettings,
   getJsonSettings,
+  useUserTheme,
 } from './model/selectors/jsonSettings/jsonSettings';
 
 export { getUserRoles } from './model/selectors/getUserRoles/getUserRoles';
