@@ -1,0 +1,10 @@
+.ScrollToolbar {
+  display: block;
+  width: 94px;
+  height: 100%;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgb(116 162 178 / 4%);
+  }
+}

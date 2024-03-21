@@ -16,11 +16,13 @@ import { ToggleComponentFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout/AppLoaderLayout';
 import { PageLoader } from '@/widjets/PageLoader';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 const App = () => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
   const redisigned = useUserFeatureByKey('isAppRedisigned');
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     dispatch(initAuthData());
@@ -50,7 +52,7 @@ const App = () => {
               content={<AppRouter />}
               header={<Header />}
               sidebar={<Sidebar />}
-              toolbar={<div>111</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
