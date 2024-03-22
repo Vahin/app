@@ -69,7 +69,7 @@ export const getNavbarItems = createSelector(getUserAuthData, (authData) => {
     },
   ];
 
-  if (authData) {
+  if (authData?.id) {
     navbarItemsList.push(
       {
         path: getRouteProfile(authData.id),

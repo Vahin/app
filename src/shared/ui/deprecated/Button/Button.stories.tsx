@@ -29,7 +29,7 @@ export const ClearInverted: Story = {
     ...Default.args,
     theme: ButtonTheme.CLEAR_INVERTED,
   },
-  decorators: [ThemeDecorator(true)],
+  decorators: [ThemeDecorator],
 };
 
 export const OutlineSizeM: Story = {
@@ -52,7 +52,7 @@ export const Background: Story = {
     ...Default.args,
     theme: ButtonTheme.BACKGROUND,
   },
-  decorators: [ThemeDecorator(true)],
+  decorators: [ThemeDecorator],
 };
 
 export const BackgroundInverted: Story = {

@@ -1,14 +1,10 @@
 import './styles/index.scss';
 
-import { Suspense, useEffect } from 'react';
+import { Suspense, memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { DeprecatedHeader, Header } from '@/widjets/Header';
 
-import {
-  getUserInited,
-  initAuthData,
-  useUserFeatureByKey,
-} from '@/entities/User';
+import { getUserInited, initAuthData } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DepricatedSidebar, Sidebar } from '@/widjets/Sidebar';
@@ -17,20 +13,18 @@ import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout/AppLoaderLayout';
 import { PageLoader } from '@/widjets/PageLoader';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { useAppRedisign, withTheme } from './providers/ThemeProvider';
 
-const App = () => {
+const App = memo(() => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
-  const redisigned = useUserFeatureByKey('isAppRedisigned');
   const toolbar = useAppToolbar();
+
+  useAppRedisign();
 
   useEffect(() => {
     dispatch(initAuthData());
   }, [dispatch]);
-
-  useEffect(() => {
-    document.documentElement.dataset.redisigned = redisigned ? 'true' : 'false';
-  }, [redisigned]);
 
   if (!inited) {
     return (
@@ -71,6 +65,6 @@ const App = () => {
       }
     />
   );
-};
+});
 
-export default App;
+export default withTheme(App);

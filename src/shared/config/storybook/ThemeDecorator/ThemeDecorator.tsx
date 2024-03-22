@@ -1,22 +1,21 @@
+import { useEffect } from 'react';
 import { StoryContext, StoryFn } from '@storybook/react';
-// eslint-disable-next-line fsd-vakhr/layers-imports
-import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import './decorator.scss';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+// eslint-disable-next-line
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
-export const ThemeDecorator =
-  (invetred?: boolean) => (Story: StoryFn, context: StoryContext) => {
-    const { globals } = context;
+export const ThemeDecorator = (Story: StoryFn, context: StoryContext) => {
+  const { globals } = context;
 
-    const mods: Mods = {
-      inverted: invetred,
-    };
+  useEffect(() => {
+    document.documentElement.dataset.theme = globals.theme;
+  }, [globals.theme]);
 
-    return (
-      <ThemeProvider initialTheme={globals.theme}>
-        <div className={classNames('viewport', mods)}>
-          <Story />
-        </div>
-      </ThemeProvider>
-    );
-  };
+  return (
+    <ThemeProvider initialTheme={globals.theme}>
+      <div className='viewport' id='viewport'>
+        <Story />
+      </div>
+    </ThemeProvider>
+  );
+};
