@@ -2,7 +2,6 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItemSmall.module.scss';
 import { Card } from '@/shared/ui/redisigned/Card';
-import { Appimage } from '@/shared/ui/redisigned/Appimage';
 import { Skeleton } from '@/shared/ui/redisigned/Skeleton';
 import { ArticleListItemProps } from '../../types/ArticleListItemProps';
 import { Text } from '@/shared/ui/redisigned/Text';
@@ -12,6 +11,7 @@ import EyeIcon from '@/shared/assets/icons/eye-redisigned.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/redisigned/AppLink';
 import { Avatar } from '@/shared/ui/redisigned/Avatar';
+import { AppimageWrapper } from '@/shared/ui/redisigned/AppimageWrapper';
 
 export const ArticleListItemSmall = memo((props: ArticleListItemProps) => {
   const { className, article, target } = props;
@@ -23,34 +23,24 @@ export const ArticleListItemSmall = memo((props: ArticleListItemProps) => {
       className={classNames(cls.ArticlesListItem, {}, [className])}
       data-testid='ArticlesListItem'
     >
-      <div className={cls.imageWrapper}>
-        <Appimage
-          fallback={
-            <Skeleton
-              width='100%'
-              height='100%'
-              className={cls.imagePosition}
-            />
-          }
-          errorFallback={
-            <Skeleton
-              width='100%'
-              height='100%'
-              className={cls.imagePosition}
-            />
-          }
-          src={article.img}
-          className={classNames(cls.image, {}, [cls.imagePosition])}
-          alt={article.title}
-        />
-      </div>
+      <AppimageWrapper
+        fallback={
+          <Skeleton width='100%' height='100%' className={cls.position} />
+        }
+        errorFallback={
+          <Skeleton width='100%' height='100%' className={cls.position} />
+        }
+        ratio='horizontal-wide'
+        src={article.img}
+        alt={article.title}
+      />
 
-      <VStack gap='4' max className={cls.content}>
+      <VStack gap='8' max className={cls.content}>
         <Text title={article.title} className={cls.title} size='m' />
         <HStack justify='spaceBetween' max align='center'>
           <Text text={article.createdAt} className={cls.date} />
 
-          <HStack gap='8' align='center'>
+          <HStack gap='8' align='center' justify='center'>
             <Icon Svg={EyeIcon} />
             <Text text={String(article.views)} />
           </HStack>

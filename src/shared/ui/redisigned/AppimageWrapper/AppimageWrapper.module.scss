@@ -1,0 +1,47 @@
+.wrapper {
+  position: relative;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.ratio-horizontal {
+  padding-top: 133%;
+}
+
+.ratio-horizontal-wide {
+  padding-top: 56%;
+}
+
+.ratio-vertical {
+  padding-top: 75%;
+}
+
+.ratio-vertical-wide {
+  padding-top: 178%;
+}
+
+.fit-contain .image {
+  object-fit: contain;
+}
+
+.fit-cover .image {
+  object-fit: cover;
+}
+
+.position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ratio-none {
+  position: static;
+
+  .image {
+    position: static;
+  }
+}

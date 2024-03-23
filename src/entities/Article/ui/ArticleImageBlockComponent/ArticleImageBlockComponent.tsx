@@ -4,8 +4,8 @@ import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { ArticleImageBlock } from '../../model/types/article';
 import cls from './ArticleImageBlockComponent.module.scss';
 import { ToggleComponentFeatures } from '@/shared/lib/features';
-import { Appimage } from '@/shared/ui/redisigned/Appimage';
 import { Text } from '@/shared/ui/redisigned/Text';
+import { AppimageWrapper } from '@/shared/ui/redisigned/AppimageWrapper';
 
 interface ArticleImageBlockComponentProps {
   className?: string;
@@ -21,13 +21,7 @@ export const ArticleImageBlockComponent = memo(
         feature='isAppRedisigned'
         on={
           <>
-            <div className={classNames(cls.imageWrapper, {}, [className])}>
-              <Appimage
-                src={block.src}
-                alt={block.title}
-                className={classNames(cls.image, {}, [cls.imagePosition])}
-              />
-            </div>
+            <AppimageWrapper src={block.src} alt={block.title} />
             {block.title && <Text text={block.title} align='center' />}
           </>
         }

@@ -5,7 +5,6 @@ import cls from './ArticleListItemBig.module.scss';
 import { Card } from '@/shared/ui/redisigned/Card';
 import { Avatar } from '@/shared/ui/redisigned/Avatar';
 import { Text } from '@/shared/ui/redisigned/Text';
-import { Appimage } from '@/shared/ui/redisigned/Appimage';
 import { Skeleton } from '@/shared/ui/redisigned/Skeleton';
 import { AppLink } from '@/shared/ui/redisigned/AppLink';
 import { getRouteArticleDetails } from '@/shared/const/router';
@@ -16,6 +15,7 @@ import { Icon } from '@/shared/ui/redisigned/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-redisigned.svg';
 import { Button } from '@/shared/ui/redisigned/Button';
 import { ArticleListItemProps } from '../../types/ArticleListItemProps';
+import { AppimageWrapper } from '@/shared/ui/redisigned/AppimageWrapper';
 
 export const ArticleListItemBig = memo((props: ArticleListItemProps) => {
   const { t } = useTranslation();
@@ -39,12 +39,11 @@ export const ArticleListItemBig = memo((props: ArticleListItemProps) => {
         </HStack>
         <Text title={article.title} size='l' bold />
         <Text title={article.subtitle} />
-        <Appimage
+        <AppimageWrapper
           fallback={<Skeleton width='100%' height={250} />}
-          errorFallback={<div />}
+          width='full'
           src={article.img}
           alt={article.title}
-          className={cls.img}
         />
         {textBlock?.paragraphs && (
           <Text

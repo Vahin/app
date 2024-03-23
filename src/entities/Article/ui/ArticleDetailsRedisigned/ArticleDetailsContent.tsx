@@ -5,11 +5,8 @@ import { Avatar } from '@/shared/ui/redisigned/Avatar';
 import { Text } from '@/shared/ui/redisigned/Text';
 import { getArticleDetailsData } from '../../model/selectors/getArticleDetailsData/getArticleDetailsData';
 import { HStack, VStack } from '@/shared/ui/redisigned/Stack';
-import { Appimage } from '@/shared/ui/redisigned/Appimage';
 import { renderArticleBlock } from './renderArticleBlock';
-import { Skeleton } from '@/shared/ui/redisigned/Skeleton';
-import cls from './ArticleDetailsContent.module.scss';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppimageWrapper } from '@/shared/ui/redisigned/AppimageWrapper/AppimageWrapper';
 
 interface ArticleDetailsContainerProps {
   className?: string;
@@ -33,24 +30,13 @@ export const ArticleDetailsContent = memo(
         </VStack>
 
         <Text title={article?.subtitle} />
+
         {article?.img ? (
-          <div className={cls.imageWrapper}>
-            <Appimage
-              src={article?.img}
-              fallback={<Skeleton className={cls.imagePosition} />}
-              errorFallback={
-                <VStack
-                  max
-                  align='center'
-                  justify='center'
-                  className={cls.imagePosition}
-                >
-                  <Text title={t('Упс...')} />
-                </VStack>
-              }
-              className={classNames(cls.image, {}, [cls.imagePosition])}
-            />
-          </div>
+          <AppimageWrapper
+            src={article?.img}
+            width='full'
+            ratio='horizontal-wide'
+          />
         ) : null}
 
         {article?.blocks.map(renderArticleBlock)}
