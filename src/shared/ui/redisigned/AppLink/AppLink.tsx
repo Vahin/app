@@ -10,6 +10,7 @@ interface AppLinkProps extends LinkProps {
   variant?: AppLinkVariant;
   children?: ReactNode;
   activeClassName?: string;
+  'data-testid'?: string;
 }
 
 export const AppLink = forwardRef(
@@ -20,6 +21,7 @@ export const AppLink = forwardRef(
       activeClassName = '',
       variant = 'primary',
       to,
+      'data-testid': dataTestid,
       ...otherProps
     } = props;
 
@@ -33,6 +35,7 @@ export const AppLink = forwardRef(
             cls[variant],
           ])
         }
+        data-testid={dataTestid || 'AppLink'}
         {...otherProps}
       >
         {children}
