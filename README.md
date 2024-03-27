@@ -162,7 +162,7 @@ export const Default: Story = {
 
 ---
 
-### Работа с данными
+## Работа с данными
 
 Взаимодействие с данными осуществляется с помощью redux toolkit.
 По возможности переиспользуемые сущности необходимо нормализовать с помощью EntityAdapter
@@ -174,11 +174,13 @@ export const Default: Story = {
 
 ---
 
-## Widjet - слой
+### Компоненты
+
+## Widjet
 
 - [Sidebar](/src/widjets/Sidebar/)
 
-## Shared - слой
+## Shared
 
 - [Appimage](/src/shared/ui/redisigned/Appimage)
 - [AppimageWrapper](/src/shared/ui/redisigned/AppimageWrapper)

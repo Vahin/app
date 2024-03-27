@@ -19,6 +19,7 @@ interface AppimageWrapperProps extends AppimageProps {
   objectFit?: ObjectFitType;
   classNameContainer?: string;
   width?: WidthType;
+  'data-testid'?: string;
 }
 
 const mapWidthToClass: Record<WidthType, string> = {
@@ -46,6 +47,7 @@ export const AppimageWrapper = memo((props: AppimageWrapperProps) => {
     ratio = 'none',
     objectFit = 'cover',
     width = 'none',
+    'data-testid': dataTestid,
     ...otherProps
   } = props;
 
@@ -57,9 +59,13 @@ export const AppimageWrapper = memo((props: AppimageWrapperProps) => {
   ];
 
   return (
-    <div className={classNames(cls.wrapper, {}, additionals)}>
+    <div
+      className={classNames(cls.wrapper, {}, additionals)}
+      data-testid={dataTestid || 'AppimageWrapper'}
+    >
       <Appimage
         className={classNames(cls.image, {}, [cls.position, className])}
+        data-testid={`${dataTestid || 'AppimageWrapper'}.Image`}
         {...otherProps}
       />
     </div>
