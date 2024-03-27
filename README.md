@@ -183,5 +183,6 @@ export const Default: Story = {
 - [Appimage](/src/shared/ui/redisigned/Appimage)
 - [AppimageWrapper](/src/shared/ui/redisigned/AppimageWrapper)
 - [AppLink](/src/shared/ui/redisigned/AppLink)
+- [Avatar](/src/shared/ui/redisigned/Avatar)
 - [AppLogo](/src/shared/ui/redisigned/AppLogo)
 - [Card](/src/shared/ui/redisigned/Card)
