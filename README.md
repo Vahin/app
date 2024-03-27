@@ -176,9 +176,11 @@ export const Default: Story = {
 
 ## Widjet - слой
 
--[Sidebar](/src/widjets/Sidebar/)
+- [Sidebar](/src/widjets/Sidebar/)
 
 ## Shared - слой
 
+- [Appimage](/src/shared/ui/redisigned/Appimage)
+- [AppimageWrapper](/src/shared/ui/redisigned/AppimageWrapper)
 - [AppLogo](/src/shared/ui/redisigned/AppLogo/)
 - [Card](/src/shared/ui/redisigned/Card/)

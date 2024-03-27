@@ -34,7 +34,7 @@ export const ArticleDetailsContent = memo(
         {article?.img ? (
           <AppimageWrapper
             src={article?.img}
-            width='full'
+            width='max'
             ratio='horizontal-wide'
           />
         ) : null}

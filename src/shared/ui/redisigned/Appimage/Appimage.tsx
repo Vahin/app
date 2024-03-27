@@ -8,6 +8,7 @@ export const Appimage = memo((props: AppimageProps) => {
     alt = 'image',
     fallback,
     errorFallback,
+    'data-testid': dataTestId = 'Appimage',
     ...otherProps
   } = props;
   const [isLoading, setIsLoading] = useState(true);
@@ -36,5 +37,13 @@ export const Appimage = memo((props: AppimageProps) => {
     return null;
   }
 
-  return <img className={className} src={src} alt={alt} {...otherProps} />;
+  return (
+    <img
+      className={className}
+      src={src}
+      alt={alt}
+      data-testid={dataTestId}
+      {...otherProps}
+    />
+  );
 });

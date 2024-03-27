@@ -12,7 +12,7 @@ type RatioType =
   | 'vertical-wide'
   | 'none';
 type ObjectFitType = 'contain' | 'cover';
-type WidthType = 'full' | 'none';
+type WidthType = 'max' | 'none';
 
 interface AppimageWrapperProps extends AppimageProps {
   ratio?: RatioType;
@@ -22,7 +22,7 @@ interface AppimageWrapperProps extends AppimageProps {
 }
 
 const mapWidthToClass: Record<WidthType, string> = {
-  full: cls['width-full'],
+  max: cls['width-max'],
   none: cls['width-none'],
 };
 

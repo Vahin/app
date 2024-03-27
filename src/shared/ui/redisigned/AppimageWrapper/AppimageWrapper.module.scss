@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.width-full {
+.width-max {
   width: 100%;
 }
 
@@ -44,4 +44,8 @@
   .image {
     position: static;
   }
+}
+
+.containerStorybook {
+  background: red;
 }

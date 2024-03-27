@@ -41,7 +41,7 @@ export const ArticleListItemBig = memo((props: ArticleListItemProps) => {
         <Text title={article.subtitle} />
         <AppimageWrapper
           fallback={<Skeleton width='100%' height={250} />}
-          width='full'
+          width='max'
           src={article.img}
           alt={article.title}
         />

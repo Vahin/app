@@ -4,4 +4,5 @@ export interface AppimageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
   fallback?: ReactElement;
   errorFallback?: ReactElement;
+  'data-testid'?: string;
 }
