@@ -9,4 +9,22 @@ describe('AppLink', () => {
 
     expect(link).toBeInTheDocument();
   });
+
+  test('Компонент рендерится c классом primary', () => {
+    ComponentRender(<AppLink to='#'>Link</AppLink>);
+    const link = screen.getByTestId('AppLink');
+
+    expect(link).toHaveClass('primary');
+  });
+
+  test('Компонент рендерится c классом red', () => {
+    ComponentRender(
+      <AppLink to='#' variant='red'>
+        Link
+      </AppLink>,
+    );
+    const link = screen.getByTestId('AppLink');
+
+    expect(link).toHaveClass('red');
+  });
 });
