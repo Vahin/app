@@ -1,1 +1,1 @@
-export default () => <div />;
+export default (props) => <div {...props} />;

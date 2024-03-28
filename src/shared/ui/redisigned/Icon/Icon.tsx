@@ -38,12 +38,16 @@ export const Icon = memo((props: IconProps) => {
     onMouseEnter,
   } = props;
 
+  const dataTestid = clickable
+    ? props['data-testid'] ?? 'Button'
+    : props['data-testid'] ?? 'Icon';
+
   const icon = (
     <Svg
       className={classNames(cls.Icon, {}, [clickable ? '' : className])}
       height={height}
       width={width}
-      data-testid={props['data-testid']}
+      data-testid={clickable ? `${dataTestid}.Icon` : dataTestid}
       data-selected={props['data-selected']}
       onMouseLeave={clickable ? undefined : onMouseLeave}
       onMouseEnter={clickable ? undefined : onMouseEnter}
@@ -58,7 +62,7 @@ export const Icon = memo((props: IconProps) => {
         onClick={props.onClick}
         onMouseLeave={onMouseLeave}
         onMouseEnter={onMouseEnter}
-        data-testid={props['data-testid']}
+        data-testid={dataTestid}
         data-selected={props['data-selected']}
       >
         {icon}
