@@ -9,12 +9,12 @@ export type Padding = 'normal' | 'min';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: ButtonVariant;
-  square?: boolean;
   size?: ButtonSize;
   disabled?: boolean;
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
   padding?: Padding;
+  'data-testid'?: string;
 }
 
 const mapPaddingClass: Record<Padding, string> = {
@@ -27,18 +27,19 @@ export const Button = memo((props: ButtonProps) => {
     className,
     children,
     variant = 'outline',
-    square,
     size = 'm',
     disabled,
     addonLeft,
     addonRight,
     padding = 'normal',
+    'data-testid': dataTestid,
     ...otherProps
   } = props;
 
   const mods: Mods = {
-    [cls.square]: square,
     [cls.disabled]: disabled,
+    [cls.withAddonLeft]: Boolean(addonLeft),
+    [cls.withAddonRight]: Boolean(addonRight),
   };
 
   const additional = [
@@ -53,11 +54,12 @@ export const Button = memo((props: ButtonProps) => {
       type='button'
       className={classNames(cls.Button, mods, additional)}
       disabled={disabled}
+      data-testid={dataTestid ?? 'Button'}
       {...otherProps}
     >
-      {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
+      {addonLeft && <div className={cls.addonLeftDiv}>{addonLeft}</div>}
       {children}
-      {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
+      {addonRight && <div className={cls.addonRightDiv}>{addonRight}</div>}
     </button>
   );
 });
