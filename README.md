@@ -190,4 +190,5 @@ export const Default: Story = {
 - [Button](/src/shared/ui/redisigned/Button)
 - [Card](/src/shared/ui/redisigned/Card)
 - [Code](/src/shared/ui/redisigned/Code)
+- [Drawer](/src/shared/ui/redisigned/Drawer)
 - [Icon](/src/shared/ui/redisigned/Icon)

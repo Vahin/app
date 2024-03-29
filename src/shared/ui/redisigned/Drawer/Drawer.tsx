@@ -22,7 +22,7 @@ const height = window.innerHeight - 100;
 export const DrawerContent = memo((props: DrawerProps) => {
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
-  const { className, children, onClose, isOpen, lazy } = props;
+  const { className, children, onClose, isOpen } = props;
 
   const openDrawer = useCallback(() => {
     api.start({ y: 0, immediate: false });
@@ -31,6 +31,13 @@ export const DrawerContent = memo((props: DrawerProps) => {
   useEffect(() => {
     if (isOpen) {
       openDrawer();
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${window.scrollY}px`;
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
     }
   }, [api, isOpen, openDrawer]);
 
